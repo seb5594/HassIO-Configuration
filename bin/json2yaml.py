@@ -1,5 +1,4 @@
 #!/usr/bin/env python3
-# Credit to github.com/basnijholt/home-assistant-config
 
 import argparse
 import json
@@ -17,4 +16,5 @@ with open(json_fname) as f:
 
 yaml_fname = p.parse_args().yaml_fname
 with open(yaml_fname, "w") as f:
-    yaml.dump(info, f, allow_unicode=True) l
+    f.write("---\n")
+    yaml.dump(info, f, allow_unicode=True)

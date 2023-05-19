@@ -3,6 +3,7 @@
 light:
   - platform: group
     name: Alle Lichter
+    unique_id: alle_lichter
     entities:
       - light.abstellkammer_licht
       - light.alfi_licht_1
