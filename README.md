@@ -3,7 +3,7 @@
 Dies ist meine Home Assistant Konfiguration für Version <b>2023.5.3</b>.
 
 ## Hardware
-Die Produktions-Instanz von Home Assistant wird betrieben vom [Home Assistant Betriebssystem](https://github.com/home-assistant/operating-system) auf einem alten [Intel-NUC7i3BNK](https://ark.intel.com/content/www/de/de/ark/products/95069/intel-nuc-kit-nuc7i3bnk.html).
+Die Produktions-Instanz von Home Assistant wird betrieben vom [Home Assistant Betriebssystem](https://github.com/home-assistant/operating-system) auf einem alten [Intel-NUC7i3BNK](https://ark.intel.com/content/www/de/de/ark/products/95069/intel-nuc-kit-nuc7i3bnk.html) mit 16GB RAM.
 
 ## Ein paar Statistiken über meine Installation:
 
@@ -11,83 +11,84 @@ Beschreibung | Wert
 -- | --
 Anzahl Sensoren | 457
 Anzahl Entitäten | 1089
-Entitäten in [`person`](https://www.home-assistant.io/components/person) Domäne | 6
-Entitäten in [`update`](https://www.home-assistant.io/components/update) Domäne | 161
-Entitäten in [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) Domäne | 81
-Entitäten in [`group`](https://www.home-assistant.io/components/group) Domäne | 16
-Entitäten in [`sensor`](https://www.home-assistant.io/components/sensor) Domäne | 457
-Entitäten in [`calendar`](https://www.home-assistant.io/components/calendar) Domäne | 8
-Entitäten in [`light`](https://www.home-assistant.io/components/light) Domäne | 31
-Entitäten in [`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) Domäne | 3
-Entitäten in [`switch`](https://www.home-assistant.io/components/switch) Domäne | 77
-Entitäten in [`scene`](https://www.home-assistant.io/components/scene) Domäne | 1
-Entitäten in [`counter`](https://www.home-assistant.io/components/counter) Domäne | 1
-Entitäten in [`sun`](https://www.home-assistant.io/components/sun) Domäne | 1
-Entitäten in [`timer`](https://www.home-assistant.io/components/timer) Domäne | 1
-Entitäten in [`zone`](https://www.home-assistant.io/components/zone) Domäne | 9
-Entitäten in [`input_number`](https://www.home-assistant.io/components/input_number) Domäne | 2
-Entitäten in [`input_select`](https://www.home-assistant.io/components/input_select) Domäne | 3
-Entitäten in [`input_boolean`](https://www.home-assistant.io/components/input_boolean) Domäne | 12
-Entitäten in [`input_text`](https://www.home-assistant.io/components/input_text) Domäne | 4
-Entitäten in [`schedule`](https://www.home-assistant.io/components/schedule) Domäne | 1
-Entitäten in [`media_player`](https://www.home-assistant.io/components/media_player) Domäne | 6
-Entitäten in [`climate`](https://www.home-assistant.io/components/climate) Domäne | 4
-Entitäten in [`proximity`](https://www.home-assistant.io/components/proximity) Domäne | 4
-Entitäten in [`camera`](https://www.home-assistant.io/components/camera) Domäne | 12
-Entitäten in [`script`](https://www.home-assistant.io/components/script) Domäne | 26
-Entitäten in [`select`](https://www.home-assistant.io/components/select) Domäne | 19
-Entitäten in [`stt`](https://www.home-assistant.io/components/stt) Domäne | 1
-Entitäten in [`lock`](https://www.home-assistant.io/components/lock) Domäne | 2
-Entitäten in [`remote`](https://www.home-assistant.io/components/remote) Domäne | 1
-Entitäten in [`weather`](https://www.home-assistant.io/components/weather) Domäne | 1
-Entitäten in [`automation`](https://www.home-assistant.io/components/automation) Domäne | 50
-Entitäten in [`device_tracker`](https://www.home-assistant.io/components/device_tracker) Domäne | 83
-Entitäten in [`button`](https://www.home-assistant.io/components/button) Domäne | 5
+Anzahl Entitäten in Domänen:
+[`automation`](https://www.home-assistant.io/components/automation) | 50
+[`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 81
+[`button`](https://www.home-assistant.io/components/button) | 5
+[`calendar`](https://www.home-assistant.io/components/calendar) | 8
+[`camera`](https://www.home-assistant.io/components/camera) | 12
+[`climate`](https://www.home-assistant.io/components/climate) | 4
+[`counter`](https://www.home-assistant.io/components/counter) | 1
+[`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 83
+[`group`](https://www.home-assistant.io/components/group) | 16
+[`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
+[`input_number`](https://www.home-assistant.io/components/input_number) | 2
+[`input_select`](https://www.home-assistant.io/components/input_select) | 3
+[`input_text`](https://www.home-assistant.io/components/input_text) | 4
+[`light`](https://www.home-assistant.io/components/light) | 31
+[`lock`](https://www.home-assistant.io/components/lock) | 2
+[`media_player`](https://www.home-assistant.io/components/media_player) | 6
+[`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 3
+[`person`](https://www.home-assistant.io/components/person) | 6
+[`proximity`](https://www.home-assistant.io/components/proximity) | 4
+[`remote`](https://www.home-assistant.io/components/remote) | 1
+[`scene`](https://www.home-assistant.io/components/scene) | 1
+[`schedule`](https://www.home-assistant.io/components/schedule) | 1
+[`script`](https://www.home-assistant.io/components/script) | 26
+[`select`](https://www.home-assistant.io/components/select) | 19
+[`sensor`](https://www.home-assistant.io/components/sensor) | 457
+[`stt`](https://www.home-assistant.io/components/stt) | 1
+[`sun`](https://www.home-assistant.io/components/sun) | 1
+[`switch`](https://www.home-assistant.io/components/switch) | 77
+[`timer`](https://www.home-assistant.io/components/timer) | 1
+[`update`](https://www.home-assistant.io/components/update) | 161
+[`weather`](https://www.home-assistant.io/components/weather) | 1
+[`zone`](https://www.home-assistant.io/components/zone) | 9
 
 ## Meine installierten Erweiterungen:
 
 ### Add-ons
-- AdGuard Home (4.8.7)
-- Advanced SSH & Web Terminal (15.0.0)
-- AirCast (3.5.3)
-- Arpspoof (1.0.0-2)
-- CEC Scanner (3.0)
-- Check Home Assistant configuration (3.11.0)
-- chrony (2.6.0)
-- Crowdsec (1.4.6)
-- Crowdsec Firewall Bouncer (v0.0.26)
-- Dasshio (0.3.8)
-- DeepStack (2021.09.1)
-- diyHue (2.0.8)
-- Double Take (1.13.1)
-- Duck DNS (1.15.0)
-- Epic Games Free (c0dfe30ee94fa609a9efcb5eb2b8fd0c1dafe6e2-2023-05-03)
-- ESPHome (2023.5.1)
-- File editor (5.6.0)
-- Frigate (0.12.0)
-- Gitea (1.19.3)
-- Glances (0.19.0)
-- Home Assistant Google Drive Backup (0.110.4)
-- MariaDB (2.6.1)
-- Mosquitto broker (6.2.1)
-- Music Assistant BETA (2.0.0b30)
-- Network UPS Tools (0.11.2)
-- Nginx Proxy Manager (0.12.3)
-- Paperless NGX (1.14.4-2)
-- Portainer (2.18.2)
-- PS5 MQTT (1.3.1)
-- RPC Shutdown (2.4)
-- rsync local (1.6.0)
-- Samba share (10.0.1)
-- Scrutiny (Full Access) (v0.7.1)
-- Studio Code Server (5.5.5)
-- Teamspeak server (3.13.6-8)
-- Vaultwarden (Bitwarden) (0.19.4)
-- VLC (0.2.0)
-- wgeasy (7)
-- Whisper (0.2.0)
-- Xiaomi Mi Scale (0.3.6)
-- Zigbee2MQTT (1.30.4-1)
+- AdGuard Home (4.8.7) - 
+- Advanced SSH & Web Terminal (15.0.0) - 
+- AirCast (3.5.3) - 
+- Arpspoof (1.0.0-2) - 
+- CEC Scanner (3.0) - 
+- Check Home Assistant configuration (3.11.0) - 
+- chrony (2.6.0) - 
+- Crowdsec (1.4.6) - 
+- Crowdsec Firewall Bouncer (v0.0.26) - 
+- Dasshio (0.3.8) - 
+- DeepStack (2021.09.1) - 
+- diyHue (2.0.8) - 
+- Double Take (1.13.1) - 
+- Duck DNS (1.15.0) - 
+- Epic Games Free (c0dfe30ee94fa609a9efcb5eb2b8fd0c1dafe6e2-2023-05-03) - 
+- ESPHome (2023.5.1) - 
+- File editor (5.6.0) - 
+- Frigate (0.12.0) - 
+- Gitea (1.19.3) - 
+- Glances (0.19.0) - 
+- Home Assistant Google Drive Backup (0.110.4) - 
+- MariaDB (2.6.1) - 
+- Mosquitto broker (6.2.1) - 
+- Music Assistant BETA (2.0.0b30) - 
+- Network UPS Tools (0.11.2) - 
+- Nginx Proxy Manager (0.12.3) - 
+- Paperless NGX (1.14.4-2) - 
+- Portainer (2.18.2) - 
+- PS5 MQTT (1.3.1) - 
+- RPC Shutdown (2.4) - 
+- rsync local (1.6.0) - 
+- Samba share (10.0.1) - 
+- Scrutiny (Full Access) (v0.7.1) - 
+- Studio Code Server (5.5.5) - 
+- Teamspeak server (3.13.6-8) - 
+- Vaultwarden (Bitwarden) (0.19.4) - 
+- VLC (0.2.0) - 
+- wgeasy (7) - 
+- Whisper (0.2.0) - 
+- Xiaomi Mi Scale (0.3.6) - 
+- Zigbee2MQTT (1.30.4-1) - 
 
 ### Benutzerdefinierte Integrationen
 - <img src="https://github.com/home-assistant/brands/tree/master/custom_integrations/adaptive_lighting/icon.png" height="24" /> [Adaptive Lighting 1.11.0](https://github.com/basnijholt/adaptive-lighting)
