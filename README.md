@@ -1,17 +1,16 @@
-# Willkommen !
+# Willkommen!
 
-Dies ist meine Home Assistant Konfiguration, welche mit [Version](.HA_VERSION) kompatibel ist.
-
+Dies ist meine Home Assistant Konfiguration für [Version](../.HA_VERSION).
+<div><object data=".HA_VERSION"></object></div>
 
 ## Hardware
 Die Produktions-Instanz von Home Assistant wird betrieben vom [Home Assistant Betriebssystem](https://github.com/home-assistant/operating-system) auf einem alten [Intel-NUC7i3BNK](https://ark.intel.com/content/www/de/de/ark/products/95069/intel-nuc-kit-nuc7i3bnk.html).
-
 
 ## Ein paar Statistiken über meine Installation:
 
 Beschreibung | Wert
 -- | --
-Anzahl Entitäten | 1089
+Anzahl Entitäten | 1086
 Anzahl Sensoren | 458
 
 
@@ -175,7 +174,6 @@ Anzahl Sensoren | 458
 - [Nordic Theme](https://github.com/coltondick/nordic-theme-main)
 - [Whatsapp Theme](https://github.com/robinwittebol/whatsapp-theme)
 - [Windows 10 Themes](https://github.com/mikosoft83/hass-windows10-themes)
-
 
 ***
 
