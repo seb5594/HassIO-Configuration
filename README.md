@@ -1,6 +1,6 @@
 # Willkommen !
 
-Dies ist meine Home Assistant Installation.
+Dies ist meine Home Assistant Konfiguration, welche mit [Version](../.HA_VERSION) kompatibel ist.
 
 
 ## Hardware
@@ -11,8 +11,8 @@ Die Produktions-Instanz von Home Assistant wird betrieben vom [Home Assistant Be
 
 Beschreibung | Wert
 -- | --
-Anzahl Entitäten | 1178
-Anzahl Sensoren | 501
+Anzahl Entitäten | 1089
+Anzahl Sensoren | 458
 
 
 ## Meine installierten Erweiterungen:
@@ -179,4 +179,5 @@ Anzahl Sensoren | 501
 
 ***
 
-Generiert von [custom readme integration](https://github.com/custom-components/readme)
+![GitHub letzter commit](https://img.shields.io/github/last-commit/seb5594/HassIO-Configuration?style=flat-square)
+![GitHub commit Aktivität](https://img.shields.io/github/commit-activity/w/seb5594/HassIO-Configuration?style=flat-square)
