@@ -1,7 +1,7 @@
 # Willkommen!
 
 Dies ist meine Home Assistant Konfiguration für [Version](../.HA_VERSION).
-<div><object data="../.HA_VERSION"></object></div>
+<embed src="../.HA_VERSION"></embed>
 
 ## Hardware
 Die Produktions-Instanz von Home Assistant wird betrieben vom [Home Assistant Betriebssystem](https://github.com/home-assistant/operating-system) auf einem alten [Intel-NUC7i3BNK](https://ark.intel.com/content/www/de/de/ark/products/95069/intel-nuc-kit-nuc7i3bnk.html).
