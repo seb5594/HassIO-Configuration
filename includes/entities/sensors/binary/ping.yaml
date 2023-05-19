@@ -31,12 +31,6 @@
   name: Lokaler DNS Server
   scan_interval: 15
 
-# # broadlink remote
-# - platform: ping
-#   host: !secret ip_broadlink
-#   name: Broadlink Ping Status
-#   scan_interval: 60
-
 # # tablet
 # - platform: ping
 #   host: !secret ip_tablet

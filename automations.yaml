@@ -833,8 +833,18 @@
   action:
   - service: readme.generate
     data: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
   - service: shell_command.gen_fakesecrets
     data: {}
+  - delay:
+      hours: 0
+      minutes: 0
+      seconds: 5
+      milliseconds: 0
   - service: shell_command.push_to_github
     data: {}
 - id: '1680769352243'

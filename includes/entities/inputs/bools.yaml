@@ -1,18 +1,18 @@
 maintenance_mode:
-  name: Wartungs Modus
+  name: Wartungs-Modus
   icon: mdi:auto-fix
 
 private_mode:
-  name: Privatsphären Modus
+  name: Privatsphären-Modus
   #icon: mdi:auto-
   initial: off
 
 urlaubs_modus:
-  name: Urlaubs Modus
+  name: Urlaubs-Modus
   icon: mdi:airplane
 
 schlaf_modus:
-  name: Schlaf Modus
+  name: Schlaf-Modus
   icon: mdi:bed
   initial: off
 

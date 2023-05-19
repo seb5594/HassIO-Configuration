@@ -4,7 +4,11 @@ Dies ist meine Home Assistant Konfiguration für die Version <b>2023.5.3</b>.
 
 ## Hardware
 Die Produktions-Instanz von Home Assistant wird betrieben vom [Home Assistant Betriebssystem](https://github.com/home-assistant/operating-system) auf einem alten [Intel-NUC7i3BNK](https://ark.intel.com/content/www/de/de/ark/products/95069/intel-nuc-kit-nuc7i3bnk.html) mit 16GB RAM.
-Über die USB-Schnittstelle sind folgende Geräte angeschlossen: Ein [Google Coral USB-Beschleuniger](https://coral.ai/products/accelerator/) zur Objekt-Erkennung, ein [Phoscon Conbee 2 Stick](https://phoscon.de/en/conbee2) für das Zigbee-Protokol sowie ein USB-Stick für eine tägliche Sicherung.
+
+Über die USB-Schnittstelle sind folgende Geräte angeschlossen:
+  - [Google Coral USB-Beschleuniger](https://coral.ai/products/accelerator/) zur Objekt-Erkennung
+  - [Phoscon Conbee 2 Stick](https://phoscon.de/en/conbee2) für das Zigbee-Protokol
+  - USB-Stick für tägliche Sicherung.
 
 ## Sicherungen
 Der Server wurde so konfiguriert, dass Sicherungen auf 2 Wegen funktioniert.
@@ -20,10 +24,10 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 Beschreibung | Wert
 -- | --
 Anzahl Sensoren | 7
-Anzahl Entitäten | 1086
+Anzahl Entitäten | 1075
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
-  [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 81
+  [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 80
   [`button`](https://www.home-assistant.io/components/button) | 5
   [`calendar`](https://www.home-assistant.io/components/calendar) | 8
   [`camera`](https://www.home-assistant.io/components/camera) | 12
@@ -35,7 +39,7 @@ Anzahl Entitäten nach Domäne
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
   [`input_select`](https://www.home-assistant.io/components/input_select) | 3
   [`input_text`](https://www.home-assistant.io/components/input_text) | 4
-  [`light`](https://www.home-assistant.io/components/light) | 31
+  [`light`](https://www.home-assistant.io/components/light) | 30
   [`lock`](https://www.home-assistant.io/components/lock) | 2
   [`media_player`](https://www.home-assistant.io/components/media_player) | 6
   [`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 3
@@ -51,7 +55,7 @@ Anzahl Entitäten nach Domäne
   [`sun`](https://www.home-assistant.io/components/sun) | 1
   [`switch`](https://www.home-assistant.io/components/switch) | 77
   [`timer`](https://www.home-assistant.io/components/timer) | 1
-  [`update`](https://www.home-assistant.io/components/update) | 160
+  [`update`](https://www.home-assistant.io/components/update) | 151
   [`weather`](https://www.home-assistant.io/components/weather) | 1
   [`zone`](https://www.home-assistant.io/components/zone) | 9
 
@@ -109,10 +113,8 @@ Anzahl Entitäten nach Domäne
 - [<img src="https://brands.home-assistant.io/_/blitzortung/icon.png" height="24"/>](https://brands.home-assistant.io/_/blitzortung/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/blitzortung/icon.png" height="24"/>](https://brands.home-assistant.io/_/blitzortung/icon.png#gh-light-mode-only) [Blitzortung.Org Lightning Detector (v1.3.1)](https://github.com/mrk-its/homeassistant-blitzortung)
 - [<img src="https://brands.home-assistant.io/_/browser_mod/icon.png" height="24"/>](https://brands.home-assistant.io/_/browser_mod/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/browser_mod/icon.png" height="24"/>](https://brands.home-assistant.io/_/browser_mod/icon.png#gh-light-mode-only) [Browser Mod (2.2.1)](https://github.com/thomasloven/hass-browser_mod)
 - [<img src="https://brands.home-assistant.io/_/config_editor/icon.png" height="24"/>](https://brands.home-assistant.io/_/config_editor/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/config_editor/icon.png" height="24"/>](https://brands.home-assistant.io/_/config_editor/icon.png#gh-light-mode-only) [Config Editor (4.3)](https://github.com/htmltiger/config-editor)
-- [<img src="https://brands.home-assistant.io/_/deutschebahn/icon.png" height="24"/>](https://brands.home-assistant.io/_/deutschebahn/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/deutschebahn/icon.png" height="24"/>](https://brands.home-assistant.io/_/deutschebahn/icon.png#gh-light-mode-only) [Deutsche Bahn (1.0.2)](https://github.com/FaserF/ha-deutschebahn)
 - [<img src="https://brands.home-assistant.io/_/dwd_weather/icon.png" height="24"/>](https://brands.home-assistant.io/_/dwd_weather/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/dwd_weather/icon.png" height="24"/>](https://brands.home-assistant.io/_/dwd_weather/icon.png#gh-light-mode-only) [Deutscher Wetterdienst (v1.2.27)](https://github.com/FL550/dwd_weather)
 - [<img src="https://brands.home-assistant.io/_/dwd_pollenflug/icon.png" height="24"/>](https://brands.home-assistant.io/_/dwd_pollenflug/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/dwd_pollenflug/icon.png" height="24"/>](https://brands.home-assistant.io/_/dwd_pollenflug/icon.png#gh-light-mode-only) [Dwd Pollenflug (1.0.3)](https://github.com/mampfes/hacs_dwd_pollenflug)
-- [<img src="https://brands.home-assistant.io/_/entity_controller/icon.png" height="24"/>](https://brands.home-assistant.io/_/entity_controller/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/entity_controller/icon.png" height="24"/>](https://brands.home-assistant.io/_/entity_controller/icon.png#gh-light-mode-only) [Entity Controller (v9.6.0)](https://github.com/danobot/entity-controller)
 - [<img src="https://brands.home-assistant.io/_/feedparser/icon.png" height="24"/>](https://brands.home-assistant.io/_/feedparser/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/feedparser/icon.png" height="24"/>](https://brands.home-assistant.io/_/feedparser/icon.png#gh-light-mode-only) [Feedparser (0.1.9)](https://github.com/custom-components/feedparser)
 - [<img src="https://brands.home-assistant.io/_/fontawesome/icon.png" height="24"/>](https://brands.home-assistant.io/_/fontawesome/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/fontawesome/icon.png" height="24"/>](https://brands.home-assistant.io/_/fontawesome/icon.png#gh-light-mode-only) [Fontawesome (2.1.5)](https://github.com/thomasloven/hass-fontawesome)
 - [<img src="https://brands.home-assistant.io/_/frigate/icon.png" height="24"/>](https://brands.home-assistant.io/_/frigate/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/frigate/icon.png" height="24"/>](https://brands.home-assistant.io/_/frigate/icon.png#gh-light-mode-only) [Frigate (v4.0.0)](https://github.com/blakeblackshear/frigate-hass-integration)
@@ -136,7 +138,6 @@ Anzahl Entitäten nach Domäne
 - [<img src="https://brands.home-assistant.io/_/rki_covid/icon.png" height="24"/>](https://brands.home-assistant.io/_/rki_covid/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/rki_covid/icon.png" height="24"/>](https://brands.home-assistant.io/_/rki_covid/icon.png#gh-light-mode-only) [Rki Covid Numbers (1.5.8)](https://github.com/thebino/rki_covid)
 - [<img src="https://brands.home-assistant.io/_/ssh/icon.png" height="24"/>](https://brands.home-assistant.io/_/ssh/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/ssh/icon.png" height="24"/>](https://brands.home-assistant.io/_/ssh/icon.png#gh-light-mode-only) [Sensor.Ssh (1.15)](https://github.com/custom-components/sensor.ssh)
 - [<img src="https://brands.home-assistant.io/_/snowtire/icon.png" height="24"/>](https://brands.home-assistant.io/_/snowtire/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/snowtire/icon.png" height="24"/>](https://brands.home-assistant.io/_/snowtire/icon.png#gh-light-mode-only) [Snowtire Sensor (1.4.5)](https://github.com/Limych/ha-snowtire)
-- [<img src="https://brands.home-assistant.io/_/var/icon.png" height="24"/>](https://brands.home-assistant.io/_/var/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/var/icon.png" height="24"/>](https://brands.home-assistant.io/_/var/icon.png#gh-light-mode-only) [Variable (v0.15.0)](https://github.com/snarky-snark/home-assistant-variables)
 - [<img src="https://brands.home-assistant.io/_/waste_collection_schedule/icon.png" height="24"/>](https://brands.home-assistant.io/_/waste_collection_schedule/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/waste_collection_schedule/icon.png" height="24"/>](https://brands.home-assistant.io/_/waste_collection_schedule/icon.png#gh-light-mode-only) [Waste Collection Schedule (1.39.0)](https://github.com/mampfes/hacs_waste_collection_schedule)
 - [<img src="https://brands.home-assistant.io/_/watchman/icon.png" height="24"/>](https://brands.home-assistant.io/_/watchman/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/watchman/icon.png" height="24"/>](https://brands.home-assistant.io/_/watchman/icon.png#gh-light-mode-only) [Watchman (v0.6.1)](https://github.com/dummylabs/thewatchman)
 - [<img src="https://brands.home-assistant.io/_/whatspie/icon.png" height="24"/>](https://brands.home-assistant.io/_/whatspie/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/whatspie/icon.png" height="24"/>](https://brands.home-assistant.io/_/whatspie/icon.png#gh-light-mode-only) [Whatspie (None)](https://github.com/arifwn/homeassistant-whatspie-integration)
@@ -146,7 +147,6 @@ Anzahl Entitäten nach Domäne
 ### Lovelace plugins
 - [Apexcharts Card (v2.0.4)](https://github.com/RomRider/apexcharts-card)
 - [Auto Entities (1.12.1)](https://github.com/thomasloven/lovelace-auto-entities)
-- [Auto Reload (None)](https://github.com/ben8p/lovelace-auto-reload-card)
 - [Badge Card (None)](https://github.com/thomasloven/lovelace-badge-card)
 - [Bar Card (3.2.0)](https://github.com/custom-cards/bar-card)
 - [Battery Entity Row (v1.3.1)](https://github.com/benct/lovelace-battery-entity-row)
@@ -158,7 +158,6 @@ Anzahl Entitäten nach Domäne
 - [Config Editor Card (4.6)](https://github.com/htmltiger/config-editor-card)
 - [Config Template Card (1.3.6)](https://github.com/iantrich/config-template-card)
 - [Custom Icons (v0.3.7)](https://github.com/Mariusthvdb/custom-icons)
-- [Custom Ui (20221115)](https://github.com/Mariusthvdb/custom-ui)
 - [Dark Thermostat (0.0.5)](https://github.com/ciotlosm/lovelace-thermostat-dark-card)
 - [Datetime Card (v1.0.2)](https://github.com/a-p-z/datetime-card)
 - [Digital Clock (v1.2.4)](https://github.com/wassy92x/lovelace-digital-clock)
@@ -175,12 +174,8 @@ Anzahl Entitäten nach Domäne
 - [Header Cards (0.0.10)](https://github.com/gadgetchnnel/lovelace-header-cards)
 - [Home Assistant Swipe Navigation (v1.11.1)](https://github.com/zanna-37/hass-swipe-navigation)
 - [Hourly Weather Card (4.11.0)](https://github.com/decompil3d/lovelace-hourly-weather)
-- [Hue Like Light Card (v1.3.0)](https://github.com/Gh61/lovelace-hue-like-light-card)
-- [Hui Element (None)](https://github.com/thomasloven/lovelace-hui-element)
-- [Layout Card (2.4.4)](https://github.com/thomasloven/lovelace-layout-card)
 - [List Card (0.1.2)](https://github.com/iantrich/list-card)
 - [Logbook Card (1.10.1)](https://github.com/royto/logbook-card)
-- [Lovelace Card Preloader (0.0.5)](https://github.com/gadgetchnnel/lovelace-card-preloader)
 - [Midea Humidifier Card (v1.0.8)](https://github.com/sicknesz/midea-humidifier-card)
 - [Mini Graph Card (v0.11.0)](https://github.com/kalkih/mini-graph-card)
 - [Minimalistic Area Card (v1.1.16)](https://github.com/junalmeida/homeassistant-minimalistic-area-card)
