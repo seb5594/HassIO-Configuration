@@ -39,7 +39,7 @@ cameras:
       height: 500
     ffmpeg:
       inputs:
-        - path: rtsp://192.168.31.15/live/ch00_0 #"!secret spycam_rtsp"
+        - path: "!secret spycam_rtsp"
           roles:
             - detect
             - rtmp
@@ -60,7 +60,7 @@ cameras:
       height: 500
     ffmpeg:
       inputs:
-        - path: rtsp://admin:056565099@192.168.31.16:8554/Streaming/Channels/101 #"!secret ptz_cam_rtsp"
+        - path: "!secret ptz_cam_rtsp"
           roles:
             - detect
             - rtmp

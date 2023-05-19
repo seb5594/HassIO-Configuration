@@ -1,6 +1,0 @@
-# fix for device 0x520D
-
-fix_broadlink_520d: wget https://raw.githubusercontent.com/mjg59/python-broadlink/new_product_ids/broadlink/__init__.py -O /./usr/local/lib/python3.10/site-packages/broadlink/__init__.py
-#  docker exec -it homeassistant /bin/bash; cd /./usr/local/lib/python3.10/site-packages/broadlink; wget -O __init__.py https://raw.githubusercontent.com/mjg59/python-broadlink/new_product_ids/broadlink/__init__.py
-
-# docker exec -it homeassistant wget https://raw.githubusercontent.com/mjg59/python-broadlink/new_product_ids/broadlink/__init__.py -O /./usr/local/lib/python3.10/site-packages/broadlink/__init__.py

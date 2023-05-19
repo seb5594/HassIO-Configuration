@@ -1,0 +1,17 @@
+#light: !include includes/light_groups.yaml
+
+light:
+  - platform: group
+    name: Alle Lichter
+    entities:
+      - light.abstellkammer_licht
+      - light.alfi_licht_1
+      - light.alfi_licht_2
+      - light.alfi_licht_3
+      - light.badezimmer_licht
+      - light.flur_licht_1
+      - light.flur_licht_2
+      - light.kueche_licht
+      - light.sebi_licht
+      - light.sebi_stimmungslicht
+      - light.wohnzimmer_licht

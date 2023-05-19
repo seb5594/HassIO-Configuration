@@ -4,6 +4,3 @@ lovelace:
 #  mode: yaml
 
 #lovelace_gen:
-
-#preload_cards:
-#- zigbee2mqtt-networkmap #zigbee-netzwerk

@@ -1,3 +1,0 @@
-#shutdown_server_1: !secret command_shutdown_server_1
-
-#shutdown_server_2: !secret command_shutdown_server_2

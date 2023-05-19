@@ -1,0 +1,9 @@
+# repo: https://github.com/Poeschl/Remote-PicoTTS
+# pico tts => android aosp tts#
+
+- platform: picotts_remote
+  #  host: 127.0.0.1
+  #  port:
+  language: de-DE
+# available languages
+# -US, en-GB, de-DE, es-ES, fr-FR and it-IT

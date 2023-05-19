@@ -1,0 +1,16 @@
+# microsoft tts
+
+- platform: edge_tts
+  #service_name: edge_say # service: tts.xiaomo_say
+  #volume: 100
+  language: de-AT-JonasNeural # https://raw.githubusercontent.com/hasscc/hass-edge-tts/29587ecf05ecd9d40269e13d7bd37f7f7f70c874/custom_components/edge_tts/tts.py
+
+# list of all german speaking voice actors
+# de-AT-IngridNeural': 'de-AT'
+# de-AT-JonasNeural': 'de-AT'
+# de-CH-JanNeural': 'de-CH'
+# de-CH-LeniNeural': 'de-CH'
+# de-DE-AmalaNeural': 'de-DE'
+# de-DE-ConradNeural': 'de-DE'
+# de-DE-KatjaNeural': 'de-DE'
+# de-DE-KillianNeural': 'de-DE'

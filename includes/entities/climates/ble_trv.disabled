@@ -1,6 +1,0 @@
-# referece: https://www.home-assistant.io/integrations/eq3btsmart/
-
-- platform: eq3btsmart
-  devices:
-    sebi_heizungsthermostat:
-      mac: !secret mac_ble_radiator

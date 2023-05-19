@@ -1,0 +1,12 @@
+# reverso tts
+- platform: reversotts
+  language: Sarah-German #Klaus-German
+  pitch: 100 # speak speed; vals from 10-100 are allowed. 100 is default
+  bitrate: 320k # sound quality; possible values are: 22k, 96k, 128k, 192k, 320k (default=128k)
+
+# all german voice actors (all: https://github.com/rt400/ReversoTTS-HA/blob/master/custom_components/reversotts/tts.py)
+# Andreas-German	Andreas22k	Male
+# Claudia-German	Claudia22k	Female
+# Julia-German	Julia22k	Female
+# Klaus-German	Klaus22k	Male
+# Sarah-German	Sarah22k	Female

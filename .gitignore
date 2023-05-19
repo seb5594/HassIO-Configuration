@@ -32,7 +32,7 @@ themes
 addons_config/diyhue
 addons_config/double-take/.*
 addons_config/epicgamesfree
-tts
+/config/tts
 zigbee2mqtt
 templates
 esphome/.esphome

@@ -22,7 +22,3 @@ http:
     - !secret ip_home_range
     - !secret ip_internal_services_range_1
     - !secret ip_internal_services_range_2
-
-    # externals
-    #- https://www.home-assistant.io
-    #- https://www.zigbee2mqtt.io
