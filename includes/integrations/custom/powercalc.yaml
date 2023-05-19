@@ -1,0 +1,21 @@
+# reference: https://github.com/bramstroker/homeassistant-powercalc#readme
+
+powercalc:
+  enable_autodiscovery: true
+  force_update_frequency: 00:01:00 # each minute
+  create_energy_sensors: true
+  #power_sensor_naming: "{}_leistung_kwh"
+  power_sensor_friendly_naming: "{} Strom"
+  #energy_sensor_naming: "{}_verbrauch_kwh"
+  energy_sensor_friendly_naming: "{} Verbrauch"
+  energy_sensor_unit_prefix: k
+  energy_integration_method: left
+  energy_sensor_precision: 4
+  # following line creates sensors for all utility meters..
+  #create_utility_meters: true
+  #utility_meter_types:
+  #  - hourly
+  #  - daily
+  #  - weekly
+  #  - monthly
+  #  - yearly

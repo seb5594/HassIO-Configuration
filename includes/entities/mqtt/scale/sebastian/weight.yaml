@@ -1,0 +1,8 @@
+- name: "Sebastian Gewicht"
+  state_topic: "miscale/Sebastian/weight"
+  value_template: "{{ value_json['weight'] }}"
+  unit_of_measurement: "kg"
+  json_attributes_topic: "miscale/Sebastian/weight"
+  icon: mdi:scale-bathroom
+  # Below lines only needed if long term statistics are required
+  state_class: "measurement"

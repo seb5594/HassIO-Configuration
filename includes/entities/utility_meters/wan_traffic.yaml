@@ -1,0 +1,31 @@
+# wan traffic meter
+wan_verkehr_gesendet_taeglich:
+  name: WAN-Verkehr gesendet (Heute)
+  unique_id: wan_verkehr_gesendet_taeglich
+  source: sensor.fritz_box_7560_ui_download_throughput
+  cycle: daily
+wan_verkehr_erhalten_taeglich:
+  name: WAN-Verkehr erhalten (Heute)
+  unique_id: wan_verkehr_erhalten_heute
+  source: sensor.fritz_box_7560_ui_gb_received
+  cycle: daily
+wan_verkehr_erhalten_monatlich:
+  name: WAN-Verkehr erhalten (Monat)
+  unique_id: wan_verkehr_erhalten_monatlich
+  source: sensor.fritz_box_7560_ui_gb_received
+  cycle: monthly
+wan_verkehr_gesendet_monatlich:
+  name: WAN-Verkehr gesendet (Monat)
+  unique_id: wan_verkehr_gesendet_monatlich
+  source: sensor.fritz_box_7560_ui_download_throughput
+  cycle: monthly
+wan_verkehr_erhalten_woechentlich:
+  name: WAN-Verkehr erhalten (Woche)
+  unique_id: wan_verkehr_erhalten_woechentlich
+  source: sensor.fritz_box_7560_ui_gb_received
+  cycle: weekly
+wan_verkehr_gesendet_woechentlich:
+  name: WAN-Verkehr gesendet (Woche)
+  unique_id: wan_verkehr_gesendet_woechentlich
+  source: sensor.fritz_box_7560_ui_download_throughput
+  cycle: weekly

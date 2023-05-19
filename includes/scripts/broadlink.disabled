@@ -1,0 +1,124 @@
+# learn_light_power_button:
+#   sequence:
+#     - service: remote.learn_command
+#       target:
+#         entity_id: remote.broadlink_rm4c_mini_remote
+#       data:
+#         device: light
+#         command: power
+#         alternative: true
+
+broadlink_remote_learn_light_commands:
+  alias: "Zimmer Lerne Licht Kommandos"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: light
+        command:
+          - turn on
+          - turn off
+          - rgb
+          - lamp
+          - gradual
+          - jumpy
+
+broadlink_remote_light_power:
+  alias: "Zimmer Licht An-/Ausschalten"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: light
+        command: power
+
+broadlink_remote_light_turn_on:
+  alias: "Zimmer Licht Anschalten"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: light
+        command: turn on
+
+broadlink_remote_light_turn_off:
+  alias: "Zimmer Licht Ausschalten"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: light
+        command: turn off
+
+broadlink_remote_light_rgb:
+  alias: "Zimmer Licht RGB"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: light
+        command: rgb
+
+broadlink_remote_light_lamp:
+  alias: "Zimmer Licht Lampe"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: light
+        command: lamp
+
+broadlink_remote_light_gradual:
+  alias: "Zimmer Licht Sukzessiv"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: light
+        command: gradual
+
+broadlink_remote_light_jumpy:
+  alias: "Zimmer Licht Party"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: light
+        command: jumpy
+
+broadlink_remote_light_red:
+  alias: "Zimmer Licht Rot"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: script.broadlink_remote_light_turn_off
+    - service: script.broadlink_remote_light_rgb
+
+broadlink_remote_light_green:
+  alias: "Zimmer Licht Grün"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: script.broadlink_remote_light_red
+    - service: script.broadlink_remote_light_rgb
+
+broadlink_remote_light_blue:
+  alias: "Zimmer Licht Blau"
+  icon: hue:ceiling-aurelle
+  sequence:
+    - service: script.broadlink_remote_light_green
+    - service: script.broadlink_remote_light_rgb

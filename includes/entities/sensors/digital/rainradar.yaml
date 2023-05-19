@@ -1,0 +1,29 @@
+- platform: rest
+  name: Regen Radar
+  scan_interval: 300
+  json_attributes:
+    - raintext
+    - rainin30min
+    - rainin60min
+    - rainin120min
+  resource: https://morgenwirdes.de/api/v3/rain.php?lat=8.747440=&long=50.107760
+  value_template: "{{ value_json.raintext }}"
+
+- platform: template
+  sensors:
+    raintext:
+      friendly_name: Regenvorhersage
+      unique_id: regen_vorhersage
+      value_template: "{{ state_attr('sensor.regen_radar', 'raintext') }}"
+    rainin30min:
+      friendly_name: Regen in 30 min
+      unique_id: regen_30min
+      value_template: "{{ state_attr('sensor.regen_radar', 'rainin30min') }}"
+    rainin60min:
+      friendly_name: Regen in 60 min
+      unique_id: regen_60min
+      value_template: "{{ state_attr('sensor.regen_radar', 'rainin60min') }}"
+    rainin120min:
+      friendly_name: Regen in 120 min
+      unique_id: regen_120min
+      value_template: "{{ state_attr('sensor.regen_radar', 'rainin120min') }}"

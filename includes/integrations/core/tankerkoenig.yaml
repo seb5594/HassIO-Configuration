@@ -1,0 +1,28 @@
+# integration of tankerkönig api to monitor fuel prices
+# referencee: https://www.home-assistant.io/integrations/tankerkoenig/
+
+tankerkoenig:
+  api_key: !secret api_key_tankerkoenig
+  fuel_types:
+    - e5
+    - e10
+  scan_interval: "0:10:01"
+  show_on_map: true
+  radius: 1
+  stations:
+    # offenbach
+    - 5596f29f-82d0-4bc2-821c-68db55f1ce30 # hessol mühlheimer
+    - 7d4a25b1-6335-4e37-8dda-6e0b9fce4402 # esso bieberer str (of ost)
+    - 51d4b488-a095-1aa0-e100-80009459e03a # jet bieberer
+    - 46ee0d42-4179-4450-a3be-a5c2b384794c # bft rumpenheimer str
+    - 4f661418-1ebf-4f18-ac5f-85a9a7d2653f # omv waldstr
+    - 0fc41d90-7a45-4d5b-8f3f-52305d365514 # oil sprendlinger
+    - 51d4b6f6-a095-1aa0-e100-80009459e03a # jet odenwaldring
+
+    # mühlheim
+    #- a66508c2-504c-4fb8-83e4-e3f582063db0 # agip
+    - 51d4b522-a095-1aa0-e100-80009459e03a # jet
+
+    # egelsbach / langen
+    - 76842ca9-0fe1-4a2f-8b03-fa539a5a7bc4 # shell egelsbach
+    - 5ccc524a-3520-4e39-8eaf-62b285f2630a # shell langen mörfelder

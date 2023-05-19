@@ -1,0 +1,11 @@
+# This handles the loading of my automations
+# https://www.home-assistant.io/docs/automation/
+
+# some inspiration:
+# https://github.com/klaasnicolaas/Student-homeassistant-config/tree/master/automations
+
+# Automations I create in the UI
+automation: !include ../../../automations.yaml
+
+# My manual made automations
+automation manual: !include_dir_merge_list ../../automations

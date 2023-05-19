@@ -1,0 +1,5 @@
+paperless:
+  title: Paperless-NGX
+  icon: mdi:file-document-multiple
+  url: !secret domain_hass_paperless_url
+  #require_admin: true

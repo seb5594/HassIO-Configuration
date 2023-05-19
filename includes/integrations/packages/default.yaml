@@ -1,0 +1,31 @@
+api:
+dhcp:
+discovery:
+
+image_upload:
+  location: /local/floorplan/2d/home.svg
+  cache: false
+
+map: # Enables a map showing the location of tracked devices
+
+# My Home Assistant allows the documentation to link you to specific pages in your Home Assistant instance. See the My Home Assistant FAQ for more information.
+# see https://www.home-assistant.io/integrations/my/
+my:
+
+# The ssdp “Simple Service Discovery Protocol” integration will scan the network for supported devices and services.
+#Discovered integrations will show up in the discovered section on the integrations page in the config panel.
+ssdp:
+
+# The System Health component provides an API to offer information
+# on the system and its components.
+system_health:
+
+# https://www.home-assistant.io/integrations/usb/
+usb:
+
+wake_on_lan:
+
+# The zeroconf integration will scan the network for supported devices and services.
+# Discovered integrations will show up in the discovered section on the integrations page in the config panel. It will also make Home Assistant discoverable for other services in the network.
+# Zeroconf is also sometimes known as Bonjour, Rendezvous, and Avahi.
+zeroconf:

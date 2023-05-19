@@ -1,0 +1,38 @@
+###
+# SpaceX API Collection
+#
+# Credit: 
+#   @jones (https://community.home-assistant.io/t/spacex-sensors-starman-and-next-rocket-launch/65467)
+#
+# API Documentation: https://docs.spacexdata.com/
+###
+
+sensor:
+# Next Rocket Launch
+  - platform: rest
+    resource: 'https://api.spacexdata.com/v3/launches/next'
+    value_template: '{{ value_json["rocket"]["rocket_name"] }}'
+    name: spacex_next_rocket_launch
+    json_attributes:
+      - mission_name
+      - launch_date_local
+      - launch_date_utc
+      - launch_site
+      - rocket
+      - links
+      - details
+
+homeassistant:
+  customize:
+    sensor.spacex_next_rocket_launch:
+      friendly_name: SpaceX Nächster Raketen Start
+      icon: mdi:rocket-launch
+
+###
+# Clear recorder
+###
+
+recorder:
+  exclude:
+    entities:
+      - sensor.spacex_next_rocket_launch

@@ -1,0 +1,9 @@
+#- platform: bluetooth_le_tracker
+#  track_new_devices: true
+#  track_battery: true
+#  interval_seconds: 15
+
+#- platform: bluetooth_tracker
+#  request_rssi: true
+#  interval_seconds: 20
+#  track_new_devices: yes

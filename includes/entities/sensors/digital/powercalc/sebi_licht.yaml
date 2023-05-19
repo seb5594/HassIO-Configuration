@@ -1,0 +1,10 @@
+- platform: powercalc
+  name: Sebi Licht Strom
+  unique_id: sebi_licht_power
+  entity_id: light.sebi_licht
+  linear:
+    min_power: 1
+    max_power: 20
+  #fixed:
+  #  power: 22
+  energy_integration_method: left

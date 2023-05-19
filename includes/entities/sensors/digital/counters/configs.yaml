@@ -1,0 +1,22 @@
+- platform: command_line
+  name: Anzahl YAML-Konfigurationen
+  command: find . -type f \( -iname "*.yaml" ! -path "*/.config/*" \) |wc -l
+
+- platform: command_line
+  name: Anzahl deaktivierter Konfigurationen
+  command: find . -type f \( -iname "*.disabled" ! -path "*/.config/*" \) |wc -l
+
+- platform: command_line
+  name: Anzahl Datenbanken
+  command: find . -type f \( -iname "*.db" ! -path "/*" \) |wc -l
+# - platform: command_line
+#   sensors:
+#     count_yaml_configs:
+#       friendly_name: Anzahl YAML-Konfigurationen
+#       command: find . -type f \( -iname "*.yaml" ! -path "*/.config/*" \) |wc -l
+#     count_disabled_configs:
+#       friendly_name: Anzahl deaktivierter Konfigurationen
+#       command: find . -type f \( -iname "*.disabled" ! -path "*/.config/*" \) |wc -l
+#     count_databases:
+#       friendly_name: Anzahl Datenbanken
+#       command: find . -type f \( -iname "*.db" ! -path "/*" \) |wc -l

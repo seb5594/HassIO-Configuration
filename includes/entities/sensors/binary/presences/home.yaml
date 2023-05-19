@@ -1,0 +1,17 @@
+- platform: template
+  sensors:
+    home_presence:
+      friendly_name: "Zuhause Präsenz"
+      device_class: occupancy
+      value_template: >-
+          {% if states("person.sebastian") == "home" or states("proximity.sebi_home") | int < 200 %}
+            on
+          {% elif states("person.alf") == "home" or states("proximity.alfi_home") | int < 200 %}
+            on
+          {% elif states("person.christian") == "home" %}
+            on
+          {% elif states("person.lukas") == "home" %}
+            on
+          {% else %}
+            off
+          {% endif %}

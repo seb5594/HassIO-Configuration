@@ -1,0 +1,30 @@
+image_processing:
+  - platform: deepstack_object
+    ip_address: c7657554-deepstack # localhost
+    port: 5000 #80
+    #api_key: mysecretkey
+    
+    # custom_model: mask
+    # confidence: 80
+    save_file_folder: /media/deepstack/snapshots/
+    save_file_format: png
+    save_timestamped_file: True
+    always_save_latest_file: True
+    scale: 0.75
+    # roi_x_min: 0.35
+    roi_x_max: 0.8
+    #roi_y_min: 0.4
+    roi_y_max: 0.8
+    crop_to_roi: True
+    targets:
+      - target: person
+      - target: cat
+        confidence: 60
+    source:
+      - entity_id: camera.eingang
+
+
+camera:
+  - platform: local_file
+    file_path: /media/deepstack/snapshots/deepstack_object_local_file_latest.jpg
+    name: deepstack_letzte_person

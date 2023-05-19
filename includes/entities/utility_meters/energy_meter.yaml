@@ -1,0 +1,55 @@
+# energy runtime meter
+
+wohnzimmer_licht_laufzeit_heute:
+  name: Wohnzimmer Licht Tages-Verbrauch
+  unique_id: wohnzimmer_licht_kwd
+  source: sensor.wohnzimmer_licht_laufzeit
+  cycle: daily
+
+wohnzimmer_licht_laufzeit_monat:
+  name: Wohnzimmer Licht Monats-Verbrauch
+  unique_id: wohnzimmer_licht_kwm
+  source: sensor.wohnzimmer_licht_laufzeit
+  cycle: monthly
+
+sebi_steckdose_server_ecke_kwd:
+  name: Sebi Steckdose Server-Ecke Tages-Verbrauch
+  unique_id: sebi_steckdose_server_ecke_kwd
+  source: sensor.sebi_steckdose_server_ecke_verbrauch_kwh
+  cycle: daily
+
+sebi_steckdose_pc_ecke_kwd:
+  name: Sebi Steckdose PC-Ecke Tages-Verbrauch
+  unique_id: sebi_steckdose_pc_ecke_kwd
+  source: sensor.sebi_steckdose_pc_ecke_verbrauch_kwh
+  cycle: daily
+
+abstellkammer_licht_kwd:
+  name: Abstellkammer Licht Tages-Verbrauch
+  unique_id: abstellkammer_licht_kwd
+  source: sensor.abstellkammmer_licht_verbrauch_kwh
+  cycle: daily
+
+flur_steckdose_trockner_kwd:
+  name: Flur Steckdose Trockner Tages-Verbrauch
+  unique_id: flur_steckdose_trockner_kwd
+  source: sensor.flur_steckdose_trockner_verbrauch_kwh
+  cycle: daily
+
+flur_steckdose_trockner_kwm:
+  name: Flur Steckdose Trockner Monats-Verbrauch
+  unique_id: flur_steckdose_trockner_kwm
+  source: sensor.flur_steckdose_trockner_verbrauch_kwh
+  cycle: monthly
+
+badezimmer_steckdose_waschmaschine_kwd:
+  name: Badezimmer Steckdose Waschmaschine Tages-Verbrauch
+  unique_id: badezimmer_steckdose_waschmaschine_kwd
+  source: sensor.badezimmer_steckdose_waschmaschine_verbrauch_kwh
+  cycle: daily
+
+badezimmer_steckdose_waschmaschine_kwm:
+  name: Badezimmer Steckdose Waschmaschine Monats-Verbrauch
+  unique_id: badezimmer_steckdose_waschmaschine_kwm
+  source: sensor.badezimmer_steckdose_waschmaschine_verbrauch_kwh
+  cycle: monthly

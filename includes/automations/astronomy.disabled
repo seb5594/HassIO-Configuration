@@ -1,0 +1,22 @@
+## Send a notification on full moon nights
+- id: routine_astronomy_full_moon
+  alias: '[Benachrichtigung] - Vollmondwarnung'
+  trigger:
+    - platform: state
+      entity_id: sun.sun
+      from: 'above_horizon'
+      to: 'below_horizon'
+  condition:
+    condition: and
+    conditions:
+      - condition: state
+        entity_id: sensor.moon
+        state: 'full_moon'
+      - condition: state
+        entity_id: weather.piraten_wetter
+        # entity_id: sensor.dark_sky_summary # This will be broken in 2022
+        state: 'Clear'
+  action:
+    - service: notify.alle_gerate
+      data:
+        message: "Heute Nacht ist Vollmond"

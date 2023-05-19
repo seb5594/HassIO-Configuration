@@ -1,0 +1,6 @@
+- platform: group
+  name: Sebs Geräte
+  unique_id: sebi_devices
+  services:
+    - service: mobile_app_xiaomi_mi_10
+    - service: mobile_app_xiaomi_poco_x4_pro

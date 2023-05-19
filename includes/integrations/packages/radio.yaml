@@ -1,0 +1,62 @@
+input_select:
+  # Select a radio station
+  select_radio_station:
+    name: "Wähle Radio Station:"
+    icon: mdi:radio
+    options:
+      - Ausgeschaltet
+      - FFH
+      - Planet Radio
+      - Radio BOB
+      - Radio Bollerwagen
+
+  select_audio_source:
+    name: "Audio Quelle"
+    options:
+      - Küche
+      - Sebi Zimmer
+      - Überall
+      - Keine
+    icon: mdi:speaker-wireless
+
+script:
+  radio_play:
+    alias: "Starte Radio Wiedergabe"
+    sequence:
+      #- service: media_player.volume_set
+      #  data:
+      #    entity_id: media_player.ca_hall
+      #    volume_level: '0.35'
+      #-  service: media_player.volume_set
+         #data:
+           #entity_id: media_player.ca_bathroom
+           #volume_level: '0.20'
+      #-  service: media_player.volume_set
+         #data:
+           #entity_id: media_player.ca_livingroom
+           #volume_level: '0.30'
+      -  service: media_player.play_media
+         data_template:
+           entity_id: >
+            {% if is_state("input_select.select_radio_station", "Küche") %} media_player.mass_e89bd1de_8b4504bc
+            {% elif is_state("input_select.select_radio_station", "Sebi Zimmer") %} media_player.mass_vlc_telnet
+            {% elif is_state("input_select.select_radio_station", "Überall") %} media_player.all
+            {% elif is_state("input_select.select_radio_station", "Keine") %} media_player.ca_bathroom
+            {% endif %}
+           media_content_id: >
+            {% if is_state("input_select.select_audio_source", "Ausgeschaltet") %} 
+            {% elif is_state("input_select.select_audio_source", "FFH") %} FFH
+            {% elif is_state("input_select.select_audio_source", "Planet Radio") %} Planet Radio 
+            {% elif is_state("input_select.select_audio_source", "Radio BOB") %} Radio BOB
+            {% elif is_state("input_select.select_audio_source", "Radio Bollerwagen") %} Radio Bollerwagen
+            {% endif %}
+           #media_content_type: 'audio/mp4'
+
+
+group:
+  Radio_group:
+    name: Radiogruppe
+    entities:
+      - input_select.select_radio_station
+      - input_select.select_audio_source
+      - script.radio_play

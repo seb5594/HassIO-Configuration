@@ -1,0 +1,14 @@
+- platform: powercalc
+  name: Alfi Licht Verbrauch
+  unique_id: alfi_licht_verbrauch
+  entity_id: light.alfi_licht
+  multiply_factor: 3
+  manufacturer: lidl
+  model: HG06492B
+  ignore_unavailable_state: false
+  energy_integration_method: left
+  mode: lut
+  #entities:
+    #- light.alfi_licht_1
+    #- light.alfi_licht_2
+    #- light.alfi_licht_3

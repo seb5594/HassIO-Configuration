@@ -1,0 +1,9 @@
+# The lovelace config. One or more lovelace dashboards can be configured here.
+lovelace:
+  mode: storage
+#  mode: yaml
+
+#lovelace_gen:
+
+#preload_cards:
+#- zigbee2mqtt-networkmap #zigbee-netzwerk

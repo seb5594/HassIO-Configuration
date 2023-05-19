@@ -1,0 +1,4 @@
+stream:
+  ll_hls: true
+  part_duration: 0.65
+  segment_duration: 6

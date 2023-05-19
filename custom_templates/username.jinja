@@ -1,0 +1,16 @@
+{% macro username_title(name_ent, target) %}
+
+{% set zonename = state_attr("zone.home", "friendly_name") %}
+{% set username = state_attr(name_ent, "friendly_name") %}
+{% set value = states(target) | int %}
+{% set unit = state_attr(target, "unit_of_measurement") %}
+
+{% if unit == "m" and value >= 1000 %}
+  {% set unit = "km" %}
+  {% set value = value / 1000 %}
+  {% set value = value | float | round(2) %}
+{% endif %}
+
+{{ username }}  ({{ value }} {{ unit }} von {{ zonename }} entfernt & WLAN: {{ states("sensor.sebs_smartphone_wifi_location") }})
+
+{% endmacro %}

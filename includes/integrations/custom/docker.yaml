@@ -1,0 +1,4 @@
+# monitor docker host container
+# https://github.com/ualex73/monitor_docker
+
+monitor_docker: !include_dir_merge_list ../../entities/docker

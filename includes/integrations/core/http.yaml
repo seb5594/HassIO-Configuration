@@ -1,0 +1,28 @@
+http:
+  ip_ban_enabled: true
+  login_attempts_threshold: 3
+  use_x_forwarded_for: true
+  trusted_proxies:
+    #- 127.0.0.1
+    - !secret ip_home_range
+    - !secret ip_internal_services_range_1
+    - !secret ip_internal_services_range_2
+    - 10.11.22.0/24
+    #- !secret ip_vpn_range
+  cors_allowed_origins:
+    # internals
+    - localhost
+    - !secret domain_local_lan
+    - !secret domain_localhost
+    - !secret domain_hass_vpn
+    - !secret domain_hass_external
+    - !secret domain_hass_external_url
+    - !secret domain_hass_wildcard
+
+    - !secret ip_home_range
+    - !secret ip_internal_services_range_1
+    - !secret ip_internal_services_range_2
+
+    # externals
+    #- https://www.home-assistant.io
+    #- https://www.zigbee2mqtt.io

@@ -1,0 +1,10 @@
+bathroom:
+  name: Badezimmer
+  entities:
+    - climate.badezimmer_heizungs_thermostat
+    - light.badezimmer_licht
+    - binary_sensor.badezimmer_fenster
+    - sensor.badezimmer_fenster_klein_temperatur
+    - sensor.badezimmer_fenster_gross_temperatur
+    - sensor.badezimmer_temperatur_lokal
+    - sensor.badezimmer_temperatur_raum

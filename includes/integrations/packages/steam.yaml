@@ -1,0 +1,17 @@
+  sensor steam:
+    - platform: steam_online
+      api_key: !secret api_key_steam
+      accounts:
+        - !secret steam_account_id_self
+        - !secret steam_account_id_erefiks
+
+    # #Current game
+    # - platform: template
+    #   sensors:
+    #     steam_game:
+    #       friendly_name: Spiel
+    #       value_template: !secret steam_current_game
+    #     steam_game_id:
+    #       friendly_name: Spiel ID
+    #       value_template: !secret steam_current_game_id
+      

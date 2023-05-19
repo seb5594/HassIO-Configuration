@@ -1,0 +1,51 @@
+# https://github.com/alexbelgium/hassio-addons/tree/master/arpspoof
+
+- platform: command_line
+  switches:
+    cam1_arp_spoof:
+      friendly_name: Spycam Internet-Sperre
+      unique_id: cam1_arp_spoof
+      icon_template: mdi:block-helper
+      command_on: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/disconnect?ip=192.168.31.15"
+      command_off: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/reconnect?ip=192.168.31.15"
+      command_state: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/status?ip=192.168.31.15"
+      #value_template: "{{ value == '1' }}"
+    cam2_arp_spoof:
+      friendly_name: LSC-Cam Internet-Sperre
+      unique_id: cam2_arp_spoof
+      icon_template: mdi:block-helper
+      command_on: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/disconnect?ip=192.168.31.16"
+      command_off: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/reconnect?ip=192.168.31.16"
+      command_state: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/status?ip=192.168.31.16"
+      #value_template: "{{ value == '1' }}"
+
+    # cam1_internet:
+    #   friendly_name: Spycam Internet-Zugang
+    #   command_off: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/disconnect?ip=192.168.31.15"
+    #   command_on: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/reconnect?ip=192.168.31.15"
+    #   command_state: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/status?ip=192.168.31.15"
+    #   value_template: "{{ value != '1' }}"
+    # cam2_internet:
+    #   friendly_name: LSC-Cam Internet-Zugang
+    #   command_off: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/disconnect?ip=192.168.31.16"
+    #   command_on: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/reconnect?ip=192.168.31.16"
+    #   command_state: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/status?ip=192.168.31.16"
+    #   value_template: "{{ value != '1' }}"
+    # sebi_steckdose_pc_ecke_internet:
+    #   friendly_name: Sebi Steckdose PC-Ecke Internet-Zugang
+    #   command_off: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/disconnect?ip=192.168.31.108"
+    #   command_on: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/reconnect?ip=192.168.31.108"
+    #   command_state: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/status?ip=192.168.31.108"
+    #   value_template: "{{ value != '1' }}"
+    # sebi_steckdose_server_ecke_internet:
+    #   friendly_name: Sebi Steckdose Server-Ecke Internet-Zugang
+    #   command_off: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/disconnect?ip=192.168.31.109"
+    #   command_on: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/reconnect?ip=192.168.31.109"
+    #   command_state: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/status?ip=192.168.31.109"
+    #   value_template: "{{ value != '1' }}"
+    # kueche_steckdose_friteuse_internet:
+    #   friendly_name: Küche Steckdose Friteuse Internet-Zugang
+    #   command_off: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/disconnect?ip=192.168.31.114"
+    #   command_on: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/reconnect?ip=192.168.31.114"
+    #   command_state: "/usr/bin/curl -f -X GET http://db21ed7f-arpspoof:7022/status?ip=192.168.31.114"
+    #   value_template: "{{ value != '1' }}"

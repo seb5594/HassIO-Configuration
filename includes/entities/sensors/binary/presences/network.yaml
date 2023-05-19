@@ -1,0 +1,25 @@
+- platform: template
+  sensors:
+    network_status:
+      friendly_name: Netzwerkstatus
+      device_class: connectivity
+      value_template: >-
+        {% if is_state('binary_sensor.internet_konnektivitat_wan', 'on') or is_state('binary_sensor.lokaler_dns_server', 'on') %}
+          on
+        {% else %}
+          off
+        {% endif %}
+      icon_template: >-
+        {% if is_state('sensor.network_status', 'on') %}
+          mdi:server-network
+        {% else %}
+          mdi:server-network-off
+        {% endif %}  
+
+- platform: command_line
+  name: Lokaler Proxy Server
+  unique_id: proxy_available
+  command: !secret command_proxy_available
+  payload_on: "0"
+  scan_interval: 15
+  device_class: connectivity

@@ -1,0 +1,14 @@
+media_player:
+  platform: universal
+  name: Sebi PS5
+  unique_id: sebi_ps5
+  state_template: "{{ sensor.sebi_ps5_activity }}"
+  commands:
+    turn_on:
+      service: switch.turn_on
+      target:
+        entity_id: switch.sebi_ps5_power
+    turn_off:
+      service: switch.turn_off
+      target:
+        entity_id: switch.sebi_ps5_power

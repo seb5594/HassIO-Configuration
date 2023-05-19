@@ -1,0 +1,20 @@
+# This contain all helper inputs.
+# They can for example be used to disable or enable certain automations.
+
+# https://www.home-assistant.io/integrations/input_boolean/
+input_boolean: !include ../../entities/inputs/bools.yaml
+
+# https://www.home-assistant.io/integrations/input_button/
+input_button: !include ../../entities/inputs/buttons.yaml
+
+# https://www.home-assistant.io/integrations/input_date/
+input_datetime: !include ../../entities/inputs/dates.yaml
+
+# https://www.home-assistant.io/integrations/input_number/
+input_number: !include ../../entities/inputs/numbers.yaml
+
+# https://www.home-assistant.io/integrations/input_text/
+input_text: !include ../../entities/inputs/texts.yaml
+
+# https://www.home-assistant.io/integrations/input_select/
+input_select: !include ../../entities/inputs/selections.yaml

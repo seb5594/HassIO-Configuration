@@ -1,0 +1,6 @@
+# Enables configuration UI
+config:
+
+# reference: https://github.com/htmltiger/config-editor
+#config_editor:
+#  file: /config/secrets.yaml

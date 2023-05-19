@@ -1,0 +1,18 @@
+- id: system_notification_new_device
+  alias: "[Benachrichtigung][System] - Neues Gerät"
+  trigger:
+    - platform: event
+      event_type: device_tracker_new_device
+  action:
+    - service: notify.sebs_gerate
+      data_template:
+        message: >
+          Home Assistant erkannte ein neues Gerät:
+          {{trigger.event.data.entity_id}}
+        title: Neues Gerät
+    - service: notify.telegram_self
+      data_template:
+        message: >
+          Home Assistant erkannte ein neues Gerät:
+          {{trigger.event.data.entity_id}}
+        title: Neues Gerät

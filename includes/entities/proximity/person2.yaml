@@ -1,0 +1,16 @@
+alfi_home:
+  zone: home #!secret zone_1_name
+  devices:
+    - person.alf
+    #- device_tracker.xiaomi_poco_x3_pro
+  tolerance: 15
+  unit_of_measurement: m
+alfi_work:
+  zone: !secret zone_7_name
+  ignored_zones:
+    - home #!secret zone_1_name
+  devices:
+    - person.alf
+    - device_tracker.xiaomi_poco_x3_pro
+  tolerance: 35
+  unit_of_measurement: km

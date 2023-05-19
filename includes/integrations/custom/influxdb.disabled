@@ -1,0 +1,21 @@
+influxdb:
+  host: a0d7b954-influxdb
+  port: 8086
+  database: homeassistant
+  username: !secret server_hass_user
+  password: !secret server_hass_pass
+  max_retries: 3
+  default_measurement: state
+  include:
+    entities:
+      ## Türen & Fenster
+      - binary_sensor.alfi_fenster_klein
+      - binary_sensor.alfi_fenster_gross
+      - binary_sensor.badezimmer_fenster_klein
+      - binary_sensor.badezimmer_fenster_gross
+      - binary_sensor.flur_eingangstur
+      - binary_sensor.kueche_fenster
+      - binary_sensor.sebi_fenster_klein
+      - binary_sensor.sebi_fenster_gross
+      - binary_sensor.wohnzimmer_balkontur
+      - binary_sensor.wohnzimmer_fenster

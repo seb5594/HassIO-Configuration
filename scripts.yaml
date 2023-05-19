@@ -1,0 +1,112 @@
+turn_off_everything:
+  alias: '[Wohnung] - Alles ausschalten'
+  sequence:
+  - service: script.alle_lichter_ausschalten
+    data: {}
+  - type: turn_off
+    device_id: b43ac270ed3f262ca5e53ca7afe66ab4
+    entity_id: remote.roku_express_4k
+    domain: remote
+    enabled: false
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.desktop_5594
+  mode: parallel
+  icon: mdi:shield-home
+  max: 10
+alle_lichter_ausschalten:
+  alias: '[Wohnung] - Alle Lichter ausschalten'
+  sequence:
+  - service: light.turn_off
+    data:
+      transition: 3
+    target:
+      entity_id:
+      - light.abstellkammer_licht
+      - light.alfi_licht
+      - light.flur_licht_1
+      - light.flur_licht_2
+      - light.wohnzimmer_licht
+      - light.badezimmer_licht
+      - light.kueche_licht
+      - light.sebi_licht
+      - light.sebi_stimmungslicht
+  mode: single
+  icon: mdi:home-lightbulb-outline
+lights_partying_on:
+  alias: '[Wohnzimmer] - Partylicht AN'
+  sequence:
+  - service: scene.create
+    data:
+      scene_id: studioprimaparty
+      snapshot_entities:
+      - light.wohnzimmer_licht
+  - service: script.turn_on
+    entity_id: script.lights_partying
+  mode: single
+lights_partying:
+  sequence:
+  - repeat:
+      while:
+      - condition: state
+        entity_id: input_boolean.wohnzimmer_party_modus
+        state: 'on'
+      sequence:
+      - service: light.turn_on
+        data_template:
+          entity_id: light.wohnzimmer_licht
+          rgb_color:
+          - '{{ (range(0, 255)|random) }}'
+          - '{{ (range(0, 255)|random) }}'
+          - '{{ (range(0, 255)|random) }}'
+          brightness: '{{ (range(50, 250)|random) }}'
+          transition: 0.1
+      - delay: '{{ states.input_number.party_speed.state }}'
+  mode: single
+  alias: '[Wohnzimmer] - Partylicht'
+lights_partying_off:
+  alias: '[Wohnzimmer] - Partylicht AUS'
+  sequence:
+  - service: scene.turn_on
+    data:
+      entity_id: scene.studioprimaparty
+  mode: single
+server_automatisches_herunterfahren:
+  alias: '[Server] Automatisches Herunterfahren'
+  sequence:
+  - service: hassio.host_shutdown
+    data: {}
+  - service: shell_command.shutdown_server_1
+    data: {}
+  - service: shell_command.shutdown_server_2
+    data: {}
+  mode: single
+  icon: mdi:power
+alexa_tts:
+  alias: Alexa TTS
+  sequence:
+  - service: notify.alexa_media
+    data:
+      message: '{{ message }}'
+      data:
+        type: tts
+      target: "{% if echo is defined and echo|length %}\n  media_player.{{ echo }}_echo_dot\n{%
+        else %}\n  media_player.alf_echo_dot\n{% endif %}"
+  mode: single
+alexa_tts_alle:
+  alias: Alexa TTS Alle
+  sequence:
+  - service: notify.alexa_media
+    data:
+      message: '{{ message }}'
+      data:
+        type: tts
+      target: media_player.alf_echo_dot
+  - service: notify.alexa_media
+    data:
+      message: '{{ message }}'
+      data:
+        type: tts
+      target: media_player.sebis_echo_dot
+  mode: single

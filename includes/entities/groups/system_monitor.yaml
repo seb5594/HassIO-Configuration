@@ -1,0 +1,16 @@
+system_monitor:
+  name: System Monitor
+  entities:
+    - sensor.processor_use
+    - sensor.memory_use_percent
+    - sensor.swap_use_percent
+    - sensor.memory_use
+    - sensor.memory_free
+    - sensor.disk_use
+    - sensor.disk_free
+    - sensor.swap_use
+    - sensor.swap_free
+    - sensor.load_1m
+    - sensor.load_5m
+    - sensor.load_15m
+    - sensor.last_boot

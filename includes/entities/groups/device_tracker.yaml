@@ -1,0 +1,12 @@
+residents:
+  name: Bewohner
+  #unique_id: all_residents
+  entities:
+    - person.alf
+    - person.sebastian
+
+visitors:
+  name: Besucher
+  entities:
+    - person.christian
+    - person.lukas

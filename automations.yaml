@@ -1,0 +1,1027 @@
+- id: '1647412975015'
+  alias: '[Home] - Wohnzimmer Heizung aus, wenn Balkon auf'
+  description: Schaltet die Heizung im Wohnzimmer aus, falls die Balkontür länger
+    als 30 sek geöffnet ist.
+  trigger:
+  - type: opened
+    platform: device
+    device_id: db0d000cdff86395fefd6991cc1bcde5
+    entity_id: binary_sensor.wohnzimmer_balkontur
+    domain: binary_sensor
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 30
+  condition: []
+  action:
+  - device_id: f780fe56a6ff9538aca3f4b48a27e2fd
+    domain: climate
+    entity_id: climate.wohnzimmer_heizungs_thermostat
+    type: set_hvac_mode
+    hvac_mode: 'off'
+  mode: single
+- id: '1651264787835'
+  alias: '[Benachrichtigung] - Niedriger Batteriestand'
+  description: ''
+  use_blueprint:
+    path: Sbyx/low-battery-level-detection-notification-for-all-battery-sensors.yaml
+    input:
+      threshold: 25
+      actions:
+      - service: notify.sebs_gerate
+        data:
+          message: 'Niedriger Batteriestand: {{sensors}}'
+- id: '1651481195507'
+  alias: '[Benachrichtigung] - Tür/Fenster ist offen'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.alf
+    - person.sebastian
+    - binary_sensor.kueche_fenster
+    - binary_sensor.sebi_fenster
+    - binary_sensor.alfi_fenster
+    - binary_sensor.wohnzimmer_zugang
+    from: home
+    to: not_home
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+  condition:
+  - type: is_open
+    condition: device
+    device_id: b226fdffc1c6981a7e21c73fa6e740b2
+    entity_id: binary_sensor.flur_eingangstur
+    domain: binary_sensor
+  - type: is_open
+    condition: device
+    device_id: d01ccbd326bb7afa7467af49f5ff435a
+    entity_id: binary_sensor.alfi_fenster
+    domain: binary_sensor
+  - type: is_open
+    condition: device
+    device_id: b4dc1f5189772ecc21b46e0bee903b26
+    entity_id: binary_sensor.badezimmer_fenster_gross
+    domain: binary_sensor
+  - type: is_open
+    condition: device
+    device_id: 1cb4ded07878be31280423b7004e849a
+    entity_id: binary_sensor.badezimmer_fenster_klein
+    domain: binary_sensor
+  - type: is_on
+    condition: device
+    device_id: 72238a1552d61fa749c39c809bb62c41
+    entity_id: binary_sensor.kueche_fenster
+    domain: binary_sensor
+  - type: is_open
+    condition: device
+    device_id: eeb6b1aa121ebfbc49e656a9997f43d1
+    entity_id: binary_sensor.sebi_fenster_gross
+    domain: binary_sensor
+  - type: is_open
+    condition: device
+    device_id: 1b67b5a6d97bea6a52bea597be5ac9ca
+    entity_id: binary_sensor.sebi_fenster_klein
+    domain: binary_sensor
+  - type: is_open
+    condition: device
+    device_id: b7c669f4faba4c30cad51fc12edb19f0
+    entity_id: binary_sensor.wohnzimmer_fenster
+    domain: binary_sensor
+  action:
+  - service: notify.alle_gerate
+    data:
+      message: Tür oder Fenster ist noch geöffnet!
+  - service: notify.telegram_group
+    data:
+      message: Tür oder Fenster ist noch geöffnet!
+  mode: single
+- id: '1655171229809'
+  alias: '[Benachrichtigung] - Türen Manipulationsalarm'
+  description: Wird ausgelöst, sobald Eingangstür oder Balkontür manipuliert wird!
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.flur_eingangstur
+    - binary_sensor.wohnzimmer_balkontur
+    attribute: tamper
+    to: 'on'
+  - type: tampered
+    platform: device
+    device_id: fe9afa6decdc7e70ef0eb054fc4e00b0
+    entity_id: binary_sensor.flur_eingangstur_tamper
+    domain: binary_sensor
+    enabled: false
+  - type: tampered
+    platform: device
+    device_id: 4427705aa75443055697e0bf8c7bd804
+    entity_id: binary_sensor.wohnzimmer_balkontur_tamper
+    domain: binary_sensor
+    enabled: false
+  condition: []
+  action:
+  - service: notify.alle_gerate
+    data:
+      message: '{{ trigger.to_state.attributes.friendly_name }} ausgelöst!'
+      title: Manipulationsalarm!
+    enabled: false
+  - service: notify.telegram_self
+    data:
+      message: '{{ trigger.to_state.attributes.friendly_name }} ausgelöst!'
+  mode: single
+- id: '1655665982954'
+  alias: '[Home] - Sende Eingangs-Kamera Bild bei erkannte Bewegung'
+  description: ''
+  use_blueprint:
+    path: vorion/send-camera-snapshot-notification-on-motion.yaml
+    input:
+      motion_sensor: binary_sensor.eingang_motion
+      camera: camera.eingang
+      notify_device: dc448b9eefe3e9e33aa7f1631a7021be
+      notification_title: Spycam Bewegung erkannt!
+      notification_message: '{{ motion_sensor_name }} erkannte Bewegung!'
+      delay: 1
+- id: '1657066330508'
+  alias: '[System] - USV Statusänderung'
+  description: Statusänderung der Notfall-Stromversorgung.
+  trigger:
+  - platform: event
+    event_type: nut.ups_event
+    context: {}
+  action:
+  - service: notify.sebs_gerate
+    data_template:
+      title: USV änderte Status
+      message: '{{ trigger.event.data.notify_msg }}'
+      data:
+        push:
+          sound:
+            name: default
+            critical: 1
+            volume: 1
+- id: '1657563841769'
+  alias: '[Benachrichtigung] - Tür zulange offen'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.flur_eingangstur
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 3
+      seconds: 0
+    enabled: false
+  - platform: state
+    entity_id:
+    - binary_sensor.flur_eingangstur
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 5
+      seconds: 0
+    enabled: true
+  - platform: state
+    entity_id:
+    - binary_sensor.flur_eingangstur
+    to: 'on'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+    enabled: false
+  condition: []
+  action:
+  - service: notify.alle_gerate
+    data:
+      title: Eingangstür-Alarm!
+      message: Tür steht seit länger als 3 Minuten offen!
+    enabled: false
+  - service: notify.telegram_group
+    data:
+      message: Die Tür steht seit 5 Minuten offen!
+  mode: single
+- id: '1658014390592'
+  alias: '[Home] - Badezimmer Lichtsteuerung'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.badezimmer_tuer
+  condition:
+  - condition: sun
+    after: sunset
+    before: sunrise
+    enabled: true
+  action:
+  - if:
+    - condition: state
+      entity_id: binary_sensor.badezimmer_tuer
+      state: 'off'
+    then:
+    - service: light.turn_on
+      data: {}
+      target:
+        entity_id: light.badezimmer_licht
+    else:
+    - service: light.turn_off
+      data: {}
+      target:
+        entity_id: light.badezimmer_licht
+  mode: single
+- id: '1661221524611'
+  alias: '[Benachrichtigung] - KOSTI Alarm'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.double_take_kosti
+    to: eingang
+  condition: []
+  action:
+  - service: notify.sebs_gerate
+    data:
+      title: CHRISTIAN
+      message: Kosti am anrollen
+  - service: script.alexa_tts_alle
+    data: {}
+  mode: single
+- id: sys_startbenachrichtigung
+  alias: '[Benachrichtigung] - Systemstart'
+  description: ''
+  trigger:
+  - platform: homeassistant
+    event: start
+  condition: []
+  action:
+  - service: system_log.write
+    data_template:
+      message: -=-=- Hass.io Online -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+      level: warning
+  - service: notify.sebs_gerate
+    data:
+      title: HassOS gestartet!
+      message: Home Assistant OS ist gestartet.
+  - service: script.alexa_tts
+    data:
+      echo: sebis
+      message: Home Assistent wurde gestartet.
+    enabled: false
+  mode: single
+- id: '1661229905842'
+  alias: '[Benachrichtigung] - Systemshutdown'
+  description: ''
+  trigger:
+  - platform: homeassistant
+    event: shutdown
+  condition: []
+  action:
+  - service: system_log.write
+    data_template:
+      message: -=-=- Hass.io Offline -=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-
+      level: warning
+  - service: notify.sebs_gerate
+    data:
+      title: HassOS fährt runter!
+      message: Home Assistant OS wird beendet.
+  mode: single
+- id: '1661230899441'
+  alias: Update Benachrichtigung
+  description: ''
+  use_blueprint:
+    path: mdegat01/update_notifications.yaml
+    input:
+      reminder_hours: '3'
+      update_entities:
+      - update.*
+      mobile_app_device: 129bd54cfe685ba1a0125aa14d760949
+      send_to_ha: true
+      take_backup: true
+- id: '1661791078782'
+  alias: '[Benachrichtigung][System] - USV primäre Stromquelle'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.amazon_usv_status_data
+    from: OL
+    to: OB
+  condition: []
+  action:
+  - service: notify.sebs_gerate
+    data:
+      title: Alarm von HomeAssistant
+      message: USV ist primäre Stromquelle nun
+  mode: single
+- id: '1661792103637'
+  alias: '[System] - Auto Shutdown Server'
+  description: USV versorgt Server seit 3 Minuten mit Energie.
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.amazon_usv_status_data
+    from: OL
+    to: OB
+    for:
+      hours: 0
+      minutes: 3
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.sebs_gerate
+    data:
+      title: Server werden abgeschaltet!
+      message: USV versorgt seit 3 Minuten die Server. Aus Sicherheitsgründen werden
+        alle Server sicher Heruntergefahren!
+  - service: notify.telegram_group
+    data:
+      message: USV versorgt seit 3 Minuten die Server. Aus Sicherheitsgründen werden
+        alle Server sicher Heruntergefahren!
+      title: Server werden abgeschaltet!
+  - service: script.server_automatisches_herunterfahren
+    data: {}
+  mode: single
+- id: '1662665669851'
+  alias: '[System] - Addon Neustart USV'
+  description: Starte Nut Tools neu, falls beim HassOS Start nicht verfügbare USV
+    Entitäten besitzt
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.amazon_usv_battery_runtime
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 20
+  condition: []
+  action:
+  - service: hassio.addon_restart
+    data:
+      addon: a0d7b954_nut
+  - service: notify.telegram_self
+    data:
+      message: USV Addon wird automatisch neugestartet.
+    enabled: false
+  mode: single
+- id: '1663290213839'
+  alias: '[Home] - Auto Neustart Router'
+  description: Starte Router neu wenn Ping oder Download zu schlecht ist.
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.speedtest_download
+    below: 20
+  - platform: numeric_state
+    entity_id: sensor.speedtest_ping
+    above: 75
+  condition: []
+  action:
+  - service: fritz.reboot
+    data:
+      device_id: 212d62e365e4d285cabe1fff33086011
+  - service: notify.alle_gerate
+    data:
+      message: Der Router wird automatisch neugestartet wegen {{ trigger.to_state.name
+        }} Performance von {{ trigger.to_state.state }} {{ trigger.to_state.attributes.unit_of_measurement
+        }}.
+      title: Automatischer Router Neustart
+  - service: notify.telegram_group
+    data:
+      message: Der Router wird automatisch neugestartet wegen {{ trigger.to_state.name
+        }} Performance von {{ trigger.to_state.state }} {{ trigger.to_state.attributes.unit_of_measurement
+        }}.
+  mode: single
+- id: '1663343140926'
+  alias: '[System] - Addon Neustart MQTT'
+  description: Starte MQTT Addons neu, falls beim HassOS Start die Eingangstür nicht
+    verfügbar ist.
+  trigger:
+  - platform: homeassistant
+    event: start
+    enabled: false
+  - platform: state
+    entity_id:
+    - binary_sensor.flur_eingangstur
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 3
+      seconds: 0
+  condition:
+  - condition: state
+    state: unavailable
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 0
+    enabled: true
+    entity_id: binary_sensor.wohnzimmer_balkontur
+  action:
+  - service: hassio.addon_restart
+    data:
+      addon: core_mosquitto
+  - service: hassio.addon_restart
+    data:
+      addon: 45df7312_zigbee2mqtt
+  - service: notify.telegram_self
+    data:
+      message: MQTT Addons wurden automatisch neugestartet.
+  mode: single
+- &id001
+  id: b16f2155-4688-4c0f-9cf8-b382e294a029
+  alias: '[Benachrichtigung] - Festplatten Selbst-Heilungs-Alarm'
+  description: ''
+  trigger:
+  - platform: numeric_state
+    entity_id: sensor.disk_use_percent
+    above: 80
+  action:
+  - service: notify.telegram_self
+    data:
+      message: Deine Festplatte hat kaum noch Speicher! /dev/root:{{ states.sensor.disk_use_percent.state
+        }}%!
+      title: Versuche HDD aufzuräumen
+  - service: tts.clear_cache
+    data: {}
+- *id001
+- id: '1663875492767'
+  alias: '[Benachrichtigung] - Katzenalarm'
+  description: ''
+  use_blueprint:
+    path: hunterjm/frigate_0.10_notification.yaml
+    input:
+      notify_device: b0d5197b390b8718780600d1a8d14e68
+      notify_group: alle_gerate
+      labels:
+      - cat
+      zones: {}
+      cooldown: 25
+      camera: Eingang
+      base_url: http://c7657554-double-take:3000
+- id: '1664512435293'
+  alias: '[System] - Rsync config'
+  description: Starte Rsync Addon um lokale Sicherung anzustoßen.
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: 0
+  condition: []
+  action:
+  - service: hassio.addon_start
+    data:
+      addon: 7d80160c_rsync-local
+  mode: single
+- id: '1665309441007'
+  alias: '[Benachrichtigung] - Sebi Medikamentenerinnerung'
+  description: ''
+  use_blueprint:
+    path: homeassistant/advanced_medication_reminder.yaml
+    input:
+      reminder_time: 00:00:00
+      notify_device: dc448b9eefe3e9e33aa7f1631a7021be
+      input_boolean: input_boolean.medication_reminder
+      notification_title: Medikamentenerinnerung!
+      notification_message: Es ist Zeit deine Medikamente einzunehmen
+      notification_action_taken: Eingeworfen
+      notification_action_skip: Überspringen
+      logbook_message_remind: Erinnerung gesendet
+      logbook_message_taken: Medizin eingeworfen
+      logbook_message_later: Erinnerung aufschieben
+      logbook_message_skip: Erinnerung übersprungen
+      logbook_message_no_answer: Keine Reaktion
+      notification_action_later: Später
+- id: '1667952012726'
+  alias: '[Benachrichtigung] - Sebi Rewe Prospekt'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.rewe_langen_bahnstr
+    attribute: discounts
+  condition: []
+  action:
+  - service: notify.sebs_gerate
+    data:
+      message: 'Neue Angebote im Rewe Prospekt {%- set product_list_loop =  state_attr(''sensor.rewe_langen_winkelwiese'',
+        ''discounts'') -%} {%- for product in product_list_loop -%} {% if ''Cola''
+        in product.product or ''Becks'' in product.product or ''Wurst'' in product.product
+        or ''Fleisch'' in product.product %}
+
+        - {{product.product }} Preis: {{product.price.price }} {%- endif -%} {%- endfor
+        -%}
+
+        '
+  mode: single
+- id: '1676283801406'
+  alias: '[Benachrichtigung] - Waschmaschinenalarm'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.waschmaschine_in_betrieb
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.telegram_group
+    data:
+      message: "Bitte erledigen \U0001F44D\U0001F3FB"
+      title: Waschmaschine hat ihren Dienst verrichtet
+  - service: notify.alle_gerate
+    data:
+      title: Waschmaschine hat ihren Dienst verrichtet
+      message: "Bitte erledigen \U0001F44D\U0001F3FB"
+    enabled: false
+  - service: script.alexa_tts_alle
+    data:
+      message: Waschmaschine fertig!
+    enabled: true
+  mode: single
+- id: '1676921834653'
+  alias: '[Benachrichtigung] - Jahreszeitenwechsel'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sensor.jahreszeit
+  condition:
+  - condition: template
+    value_template: '{{ trigger.from_state.state | lower != "unknown" }}'
+  action:
+  - service: notify.alle_gerate
+    data_template:
+      message: Auf Wiedersehen {{ trigger.from_state.state }}, und begrüße den {{
+        trigger.to_state.state }}!
+  mode: single
+  initial_state: true
+- id: routine_astronomy_full_moon
+  alias: '[Benachrichtigung] - Vollmondwarnung'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: sun.sun
+    from: above_horizon
+    to: below_horizon
+  condition:
+  - condition: and
+    conditions:
+    - condition: state
+      entity_id: sensor.moon
+      state: full_moon
+    - condition: state
+      entity_id: weather.dwd_weather_offenbach
+      state: Clear
+  action:
+  - service: notify.alle_gerate
+    data:
+      message: Heute Nacht ist Vollmond
+- id: '1676923811749'
+  alias: '[Home] - Eingangsflurlicht'
+  description: Wenn Alf oder Sebastian Zuhause ermittelt werden und die Eingangstür
+    geöffnet wird, dann wird Flur Licht 1 eingeschaltet.
+  trigger:
+  - platform: state
+    entity_id:
+    - person.sebastian
+    - person.alf
+    - person.christian
+    to: home
+  condition:
+  - condition: state
+    entity_id: binary_sensor.flur_eingangstur
+    state: 'on'
+  action:
+  - service: script.alexa_tts_alle
+    data:
+      message: Eingangslicht für {{ trigger.to_state.attributes.friendly_name }} automatisch
+        eingeschaltet.
+  - service: notify.telegram_self
+    data:
+      message: Eingangslicht für {{ trigger.to_state.attributes.friendly_name }} automatisch
+        eingeschaltet.
+  - service: light.turn_on
+    data: {}
+    target:
+      entity_id: light.flur_licht_1
+  mode: single
+- id: '1676933254440'
+  alias: '[Home] - Alle Geräte ausschalten automatisch'
+  description: Wenn alle Bewohner das Zuhause verlassen haben, werden alle Geräte
+    nach 2 1/2 min ausgeschaltet.
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.home_presence
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.telegram_self
+    data:
+      message: Bewohner außer Haus. Schalte Geräte automatisch ab!
+  - service: script.alle_lichter_ausschalten
+    data: {}
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id: switch.desktop_5594
+    enabled: false
+  - service: climate.turn_off
+    data: {}
+    target:
+      entity_id:
+      - climate.wohnzimmer_klimaanlage
+      - climate.badezimmer_heizungs_thermostat
+      - climate.wohnzimmer_heizungs_thermostat
+  - service: media_player.turn_off
+    data: {}
+    target:
+      entity_id:
+      - media_player.lg_webos_smart_tv
+      - media_player.fire_tv_192_168_31_26
+      - media_player.fire_tv_192_168_31_119
+  mode: single
+- id: '1676952221492'
+  alias: '[Home] - Sebi Kamera-Steuerung'
+  description: Schalte Kamera basierend auf Sebis Anwesenheit.
+  trigger:
+  - platform: state
+    entity_id:
+    - person.sebastian
+    from: home
+  - platform: state
+    entity_id:
+    - person.sebastian
+    to: home
+  condition: []
+  action:
+  - if:
+    - condition: not
+      conditions:
+      - condition: zone
+        entity_id: person.sebastian
+        zone: zone.home
+    then:
+    - service: switch.turn_on
+      data: {}
+      target:
+        entity_id: switch.lsc_ptz_camera_motion_tracking
+    - service: notify.alexa_media_sebis_echo_dot
+      data:
+        message: Automatische Kamerasteuerung aktiviert
+      enabled: false
+    - service: notify.telegram_self
+      data:
+        message: Automatische Kamerasteuerung aktiviert
+      enabled: false
+    else:
+    - service: switch.turn_off
+      data: {}
+      target:
+        entity_id: switch.lsc_ptz_camera_motion_tracking
+    - service: notify.alexa_media_sebis_echo_dot
+      data:
+        message: Automatische Kamerasteuerung deaktiviert
+      enabled: false
+    - service: notify.telegram_self
+      data:
+        message: Automatische Kamerasteuerung deaktiviert
+      enabled: false
+  mode: single
+- id: '1677000187031'
+  alias: '[Benachrichtigung] - Trockneralarm'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.trockner_in_betrieb
+    to: 'off'
+    from: 'on'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition: []
+  action:
+  - service: notify.telegram_group
+    data:
+      message: "Bitte erledigen \U0001F44D\U0001F3FB"
+      title: Trockner hat seinen Dienst verrichtet
+  - service: notify.alle_gerate
+    data:
+      title: Trockner hat seinen Dienst verrichtet
+      message: "Bitte erledigen \U0001F44D\U0001F3FB"
+    enabled: false
+  - service: script.alexa_tts_alle
+    data:
+      message: Trockner fertig!
+    enabled: true
+  mode: single
+- id: sys_readme
+  alias: '[System] - Generiere README.md'
+  description: ''
+  trigger:
+  - platform: time
+    at: 05:00:00
+  condition: []
+  action:
+  - service: readme.generate
+    data: {}
+  initial_state: true
+- id: sys_database_repack
+  alias: '[System] - Datenbank wöchentlich neupacken'
+  description: ''
+  trigger:
+  - platform: time
+    at: 02:00
+  condition:
+  - condition: time
+    weekday:
+    - sun
+    - tue
+    - thu
+  action:
+  - service: recorder.purge
+    data:
+      apply_filter: true
+      repack: true
+  mode: single
+- id: weather_lightningnotification
+  alias: '[Benachrichtigung] - Blitzdistanz '
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.blitzortung_lightning_counter
+  condition:
+  - condition: numeric_state
+    entity_id: sensor.blitzortung_lightning_distance
+    below: 1
+  - condition: numeric_state
+    entity_id: sensor.blitzortung_lightning_distance
+    below: 5
+  - condition: numeric_state
+    entity_id: sensor.blitzortung_lightning_distance
+    below: 10
+  action:
+  - service: notify.alle_gerate
+    data:
+      title: Wetteralarm
+      message: Blitz innerhalb {{ states("sensor.blitzortung_lightning_distance")
+        }}km von {{ state_attr("zone.home", "friendly_name") }} entfernt!
+      data:
+        tag: weather-lightning
+        subtitle: ⚡️ Blitz innerhalb {{ states("sensor.blitzortung_lightning_distance")
+          }}km ⚡️
+  mode: single
+- id: sys_auto_arm
+  alias: '[System] - Auto Alarmalage'
+  description: Aktiviere Alarmalage sobald keine Person mehr Zuhause präsent ist.
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.home_presence
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+  condition: []
+  action:
+  - service: alarmo.arm
+    data:
+      mode: custom
+      skip_delay: false
+      entity_id: alarm_control_panel.master
+  mode: single
+- &id002
+  id: system_notification_certification_expiration
+  alias: '[Benachrichtigung] - System SSL-Zertifikatsablauf'
+  description: Erinnert an das Ablaufdatum des SSL Zertifikats.
+  trigger:
+  - platform: template
+    value_template: '{{ states("sensor.ssl_certificate_expiry") | int <= 14 }}
+
+      '
+  condition:
+  - condition: template
+    value_template: '{{ states("sensor.ssl_certificate_expiry") != "unknown" }}
+
+      '
+  action:
+  - service: notify.sebs_gerate
+    data_template:
+      message: 'Home Assistent''s Zertifikat läuft in {{ states("sensor.ssl_certificate_expiry")
+        }} Tagen.
+
+        '
+- *id002
+- id: github_push
+  alias: '[System] - Github schiebe täglich Konfiguration'
+  description: ''
+  trigger:
+  - at: 06:00:00
+    platform: time
+  action:
+  - service: readme.generate
+    data: {}
+  - service: shell_command.gen_fakesecrets
+    data: {}
+  - service: shell_command.push_to_github
+    data: {}
+- id: '1680769352243'
+  alias: '[System] - Addon Neustart Proxy'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.proxy_online
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 31
+    from: 'on'
+  - platform: state
+    entity_id:
+    - binary_sensor.proxy_online
+    to: unavailable
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 31
+    from: 'on'
+  condition: []
+  action:
+  - service: hassio.addon_restart
+    data:
+      addon: a0d7b954_nginxproxymanager
+  - service: notify.telegram_self
+    data:
+      message: Lokaler Proxy Server abgestürzt und wird neu gestartet!
+  mode: single
+- id: notify_when_internet_offline
+  alias: '[Benachrichtigung][Home] - Internet Konnektivität'
+  description: ''
+  trigger:
+  - entity_id: binary_sensor.internet_konnektivitat_wan
+    from: 'on'
+    platform: state
+    to: 'off'
+    for:
+      minutes: 1
+    enabled: false
+  - platform: state
+    entity_id:
+    - binary_sensor.internet_konnektivitat_wan
+    for:
+      hours: 0
+      minutes: 1
+      seconds: 0
+    enabled: false
+  condition: []
+  action:
+  - service: notify.telegram_self
+    data:
+      message: Internet komplett Offline!
+  - if:
+    - condition: state
+      state: 'off'
+      for:
+        hours: 0
+        minutes: 1
+        seconds: 0
+      entity_id: binary_sensor.internet_konnektivitat_wan
+    then:
+    - service: notify.telegram_self
+      data:
+        message: Internet komplett Offline!
+    else:
+    - service: notify.telegram_self
+      data:
+        message: Internet wieder Online!
+- id: adaptive_lights_sleep_mode
+  alias: '[Home] - Adaptive Beleuchtung - Schlaf-Modus aus bei Sonnenaufgang'
+  description: ''
+  trigger:
+  - platform: sun
+    event: sunrise
+    offset: 0
+  condition: []
+  action:
+  - service: switch.turn_off
+    data: {}
+    target:
+      entity_id:
+      - switch.adaptive_lighting_sleep_mode_office_adaptive
+      - switch.adaptive_lighting_sleep_mode_bedroom_adaptive
+  mode: single
+- id: '1680832163723'
+  alias: '[Home] - Willkommensnachricht'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - person.sebastian
+    - person.alf
+    - person.christian
+    to: home
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 25
+  condition: []
+  action:
+  - service: script.alexa_tts
+    data:
+      message: Hallo {{ trigger.to_state.attributes.friendly_name }}, die Außentemperatur
+        beträgt {{ states("sensor.temperature_offenbach") }} Grad und in der Wohnung
+        sind es {{ states("sensor.wohnzimmer_temperatur_raum") }} Grad.
+  mode: single
+- id: '1681106908412'
+  alias: '[Benachrichtigung] - System IP-Sperre'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id: persistent_notification.ipban
+  condition:
+  - condition: template
+    value_template: '{{ trigger.to_state.state != off }}'
+  action:
+  - service: notify.hass_info
+    data_template:
+      title: IP-Addresse wurde gesperrt!
+      message: '{{ trigger.state.attributes.message }}'
+  initial_state: 'on'
+- id: '1681490058200'
+  alias: '[Benachrichtigung] - Zigbee Geräte offline '
+  description: ''
+  use_blueprint:
+    path: Mr_Groch/offline-detection-for-z2m-devices-with-last-seen.yaml
+    input:
+      actions:
+      - service: notify.sebs_gerate
+        data:
+          message: '{{sensors}}'
+          title: Zigbee Geräte offline
+      time: 00:00:00
+- id: '1681500790876'
+  alias: '[Benachrichtigung] - Maschinenalarm'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - binary_sensor.waschmaschine_in_betrieb
+    from: 'on'
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 2
+      seconds: 30
+  - platform: state
+    entity_id:
+    - binary_sensor.trockner_in_betrieb
+    to: 'off'
+    for:
+      hours: 0
+      minutes: 10
+      seconds: 0
+    from: 'on'
+  condition: []
+  action:
+  - service: notify.telegram_group
+    data:
+      message: "Bitte erledigen \U0001F44D\U0001F3FB"
+      title: '{{ trigger.to_state.attributes.friendly_name }} hat seinen Dienst verrichtet'
+  - service: notify.alle_gerate
+    data:
+      title: Waschmaschine hat ihren Dienst verrichtet
+      message: "Bitte erledigen \U0001F44D\U0001F3FB"
+    enabled: false
+  - service: script.alexa_tts_alle
+    data:
+      message: Waschmaschine fertig!
+    enabled: false
+  mode: single
+- id: '1683303296548'
+  alias: '[Benachrichtigung] - Festplatte Smart Status'
+  description: ''
+  trigger:
+  - platform: state
+    entity_id:
+    - sensor.hdd_disk_1
+    from: OK
+  condition: []
+  action:
+  - service: notify.sebs_gerate
+    data:
+      message: SSD Festplatte Smart Status beachten!
+  mode: single

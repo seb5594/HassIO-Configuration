@@ -1,0 +1,7 @@
+# Configuration deprecated since Home Assistant 2023.5.0
+- platform: workday
+  name: Werktag
+  country: DE
+  province: HE # hessen
+  workdays: [mon, tue, wed, thu, fri]
+  excludes: [sat, sun, holiday]

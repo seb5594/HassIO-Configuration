@@ -1,0 +1,6 @@
+vaultwarden:
+  title: Vaultwarden
+  icon: mdi:safe
+  url: !secret domain_hass_vault_url
+  #url: http://a0d7b954-bitwarden:7277
+  require_admin: true

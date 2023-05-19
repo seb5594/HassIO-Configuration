@@ -1,0 +1,8 @@
+- platform: trend
+  sensors:
+    ensuite_shower_occupancy:
+      entity_id: sensor.badezimmer_feuchtigkeitssensor_humidity
+      device_class: moisture
+      max_samples: 3
+      sample_duration: 300
+      min_gradient: 0.01666

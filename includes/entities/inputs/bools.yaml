@@ -1,0 +1,29 @@
+maintenance_mode:
+  name: Wartungs Modus
+  icon: mdi:auto-fix
+
+private_mode:
+  name: Privatsphären Modus
+  #icon: mdi:auto-
+  initial: off
+
+urlaubs_modus:
+  name: Urlaubs Modus
+  icon: mdi:airplane
+
+schlaf_modus:
+  name: Schlaf Modus
+  icon: mdi:bed
+  initial: off
+
+tv_mute:
+  name: LG TV Stumm
+  icon: mdi:volume-mute
+
+tv_power:
+  name: LG TV
+  icon: mdi:television-classic
+
+medication_reminder:
+  name: Medikamentenerinnerung
+  icon: mdi:pill

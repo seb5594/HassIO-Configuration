@@ -1,0 +1,89 @@
+- platform: average
+  name: Alfi Temperatur (Raum)
+  unique_id: alfi_temperatur_raum
+  entities:
+    - sensor.alfi_fenster_klein_temperatur
+    - sensor.alfi_fenster_gross_temperatur
+
+- platform: average
+  name: Alfi Temperatur (Lokal)
+  unique_id: alfi_temperatur_lokal
+  entities:
+    - weather.dwd_weather_offenbach
+    - sensor.alfi_temperatur_raum
+    # - sensor.alfi_fenster_klein_temperatur
+    # - sensor.alfi_fenster_gross_temperatur
+
+- platform: average
+  name: Badezimmer Temperatur (Raum)
+  unique_id: badezimmer_temperatur_raum
+  entities:
+    - climate.badezimmer_heizungs_thermostat
+    - sensor.badezimmer_fenster_klein_temperatur
+    - sensor.badezimmer_fenster_gross_temperatur
+
+- platform: average
+  name: Badezimmer Temperatur (Lokal)
+  unique_id: badezimmer_temperatur_lokal
+  entities:
+    - weather.dwd_weather_offenbach
+    - sensor.badezimmer_temperatur_raum
+    # - climate.badezimmer_heizungs_thermostat
+    # - sensor.badezimmer_fenster_klein_temperatur
+    # - sensor.badezimmer_fenster_gross_temperatur
+
+- platform: average
+  name: Küche Temperatur (Raum)
+  unique_id: kueche_temperatur_raum
+  entities:
+    - sensor.kueche_fenster_temperatur
+
+- platform: average
+  name: Küche Temperatur (Lokal)
+  unique_id: kueche_temperatur_lokal
+  entities:
+    - weather.dwd_weather_offenbach
+    - sensor.kueche_temperatur_raum
+#    - sensor.kuche_fenster_temperatur
+
+- platform: average
+  name: Wohnzimmer Temperatur (Raum)
+  unique_id: wohnzimmer_temperatur_raum
+  entities:
+    - sensor.wohnzimmer_fenster_temperatur
+
+- platform: average
+  name: Wohnzimmer Temperatur (Lokal)
+  unique_id: wohnzimmer_temperatur_lokal
+  entities:
+    - weather.dwd_weather_offenbach
+    - sensor.wohnzimmer_temperatur_raum #wohnzimmer_fenster_temperatur
+
+- platform: average
+  name: Sebi Temperatur (Raum)
+  unique_id: sebi_temperatur_raum
+  entities:
+    #- climate.sebi_heizungs_thermostat
+    - sensor.sebi_fenster_klein_temperatur
+    - sensor.sebi_fenster_gross_temperatur
+
+- platform: average
+  name: Sebi Temperatur (Lokal)
+  unique_id: sebi_temperatur_lokal
+  entities:
+    - weather.dwd_weather_offenbach
+    - sensor.sebi_temperatur_raum
+    # - climate.sebi_heizungs_thermostat
+    # - sensor.sebi_fenster_klein_temperatur
+    # - sensor.sebi_fenster_gross_temperatur
+
+- platform: average
+  name: Wohnungs Temperatur
+  unique_id: wohnungs_temperatur
+  duration:
+    days: 3
+  entities:
+    - sensor.alfi_temperatur_raum
+    - sensor.kueche_temperatur_raum
+    - sensor.wohnzimmer_temperatur_raum
+    - sensor.sebi_temperatur_raum

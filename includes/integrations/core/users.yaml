@@ -1,0 +1,12 @@
+person:
+  - name: Christian
+    id: kostja
+    device_trackers:
+      #- device_tracker.s20_von_kostja
+      - device_tracker.nmap_tracker_s20_von_kostja
+      #- device_tracker.tab_s7_fe_von_kostja
+  - name: Lukas
+    id: rfx
+    device_trackers:
+      - device_tracker.rfx
+      - device_tracker.rfxtab

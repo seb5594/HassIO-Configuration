@@ -1,0 +1,5 @@
+diyhue:
+  title: diyHue
+  icon: mdi:home-lightbulb
+  url: !secret domain_hass_diyhue_url
+  require_admin: true

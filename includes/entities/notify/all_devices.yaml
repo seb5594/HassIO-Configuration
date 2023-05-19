@@ -1,0 +1,7 @@
+- platform: group
+  name: Alle Geräte
+  unique_id: all
+  services:
+    - service: mobile_app_xiaomi_mi_10
+    - service: mobile_app_xiaomi_poco_x3_pro
+    - service: mobile_app_xiaomi_poco_x4_pro

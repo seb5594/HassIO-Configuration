@@ -1,0 +1,16 @@
+# refereence: https://www.home-assistant.io/integrations/proxmoxve/
+
+proxmoxve:
+  - host: !secret ip_pve_server
+    nodes:
+      - containers:
+          - 102
+          - 103
+        node: pve01
+        vms:
+          - 100 # hassos
+          - 104
+    password: !secret pve_password
+    username: !secret pve_username
+    verify_ssl: false
+    realm: pam

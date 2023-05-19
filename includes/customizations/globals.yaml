@@ -1,0 +1,48 @@
+#################################################################
+#                                                               #
+#                     Globale Anpassungen                       #
+#                                                               #
+#################################################################
+
+"binary_sensor.*tür*":
+  device_class: door
+"binary_sensor.*fenster*":
+  device_class: window
+"binary_sensor.*bewegungsmelder*":
+  device_class: motion
+
+
+# sensor.tankerkoenig_*:
+#   templates:
+#     friendly_name: >
+#       return entity.attributes.city + ‚ ‚ + entity.attributes.brand + ‚ ‚ + entity.attributes.fuel_type;
+
+# verwandle jede Sensor Klasse mit 'fenster' im Namen zu einen Fenstersensor
+# "binary_sensor.*fenster*":
+#   device_class: window
+
+# verwandle jede Sensor Klasse mit 'fenster' im Namen zu einen Fenstersensor
+# binary_sensor.*tur*:
+#   device_class: door
+
+# binary_sensor.*zugang*:
+#   device_class: door
+
+# mark online status of tracked devices
+# device_tracker.*:
+#   state_card_mode: badges
+#   templates:
+#     theme: >
+#       if (state === 'home') return 'green_badge'; else return 'red_badge';
+
+#sensor.*_coronavirus_*:
+
+#binary_sensor.*battery_level*:
+
+"update.*":
+  hidden: true
+
+input_boolean.*:
+ templates:
+   icon_color: >
+     if (state === 'on') return 'rgb(251, 210, 41)'; return 'rgb(54, 95, 140)';

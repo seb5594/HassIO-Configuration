@@ -1,0 +1,44 @@
+# https://www.home-assistant.io/integrations/ping/
+
+# wan access
+- platform: ping
+  host: google.de
+  name: Internet Konnektivität (WAN)
+  scan_interval: 30
+
+## local devices
+# wan gateway
+- platform: ping
+  host: !secret ip_wan_server
+  name: Lokaler Router
+  scan_interval: 10
+
+# desktop
+- platform: ping
+  host: !secret ip_seb_desktop
+  name: !secret host_seb_desktop
+  scan_interval: 15
+
+# pve server
+- platform: ping
+  host: !secret ip_pve_server
+  name: Lokaler Proxmox Server
+  scan_interval: 30
+
+# dns server
+- platform: ping
+  host: !secret ip_dns_server
+  name: Lokaler DNS Server
+  scan_interval: 15
+
+# # broadlink remote
+# - platform: ping
+#   host: !secret ip_broadlink
+#   name: Broadlink Ping Status
+#   scan_interval: 60
+
+# # tablet
+# - platform: ping
+#   host: !secret ip_tablet
+#   name: Küchentablet Ping Status
+#   scan_interval: 60

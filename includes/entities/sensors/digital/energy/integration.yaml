@@ -1,0 +1,81 @@
+# reference: https://www.home-assistant.io/integrations/integration/
+# riemann sum integral calculations (W -> kWh)
+
+- platform: integration
+  name: Sebi Steckdose Server-Ecke Verbrauch (kWh)
+  unique_id: sebi_steckdose_server_ecke_verbrauch_kwh
+  source: sensor.sebi_steckdose_server_ecke_verbrauch
+  method: left
+  unit_prefix: k
+  unit_time: h
+  round: 2
+#- platform: integration
+#  name: Sebi Steckdose Server-Ecke Verbrauch (kWd)
+#  unique_id: sebi_steckdose_server_ecke_kwd
+#  source: sensor.sebi_steckdose_server_ecke_verbrauch
+#  method: left
+#  unit_prefix: k
+#  unit_time: d
+#  round: 2
+
+- platform: integration
+  name: Sebi Steckdose PC-Ecke Verbrauch (kWh)
+  unique_id: sebi_steckdose_pc_ecke_verbrauch_kwh
+  source: sensor.sebi_steckdose_pc_ecke_verbrauch
+  method: left
+  unit_prefix: k
+  unit_time: h
+  round: 2
+#- platform: integration
+#  name: Sebi Steckdose PC-Ecke Verbrauch (kWd)
+#  unique_id: sebi_steckdose_pc_ecke_kwd
+#  source: sensor.sebi_steckdose_pc_ecke_verbrauch
+#  method: left
+#  unit_prefix: k
+#  unit_time: d
+#  round: 2
+
+- platform: integration
+  name: Abstellkammer Licht Verbrauch (kWh)
+  unique_id: abstellkammmer_licht_verbrauch_kwh
+  source: sensor.abstellkammer_licht_power
+  method: left
+  unit_prefix: k
+  unit_time: h
+  round: 2
+# - platform: integration
+#   name: Wohnzimmer Licht Verbrauch (kWh)
+#   unique_id: wohnzimmer_licht_verbrauch_kwh
+#   source: sensor.abstellkammer_licht_power
+#   method: left
+#   unit_prefix: k
+#   unit_time: h
+#   round: 2
+
+- platform: integration
+  name: Sebi Server Verbrauch (kWh)
+  unique_id: sebi_server_verbrauch_kwh
+  source: sensor.amazon_usv_input_voltage
+  method: left
+  unit_prefix: k
+  unit_time: h
+  round: 2
+  
+  
+- platform: integration
+  name: Badezimmer Steckdose Waschmaschine Verbrauch (kWh)
+  unique_id: badezimmer_steckdose_waschmaschine_verbrauch_kwh
+  source: sensor.badezimmer_steckdose_waschmaschine_verbrauch
+  method: left
+  unit_prefix: k
+  unit_time: h
+  round: 2
+  
+- platform: integration
+  name: Flur Steckdose Trockner Verbrauch (kWh)
+  unique_id: flur_steckdose_trockner_verbrauch_kwh
+  source: sensor.flur_steckdose_trockner_verbrauch
+  method: left
+  unit_prefix: k
+  unit_time: h
+  round: 2

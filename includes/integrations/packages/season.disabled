@@ -1,0 +1,20 @@
+## yaml configuration deprecated in 12.2022
+#sensor:
+#  - platform: season
+#    name: Jahreszeit 
+#    type: astronomical
+
+automation:
+  - alias: Jahreszeitenwechsel Benachrichtigung
+    initial_state: true
+    trigger:
+      - platform: state
+        entity_id: sensor.jahreszeit
+    condition:
+      - condition: template
+        value_template: '{{ trigger.from_state.state | lower != "unknown" }}'
+    action:
+      - service: notify.alle_gerate
+        data_template:
+            message: >
+              Auf Wiedersehen {{ trigger.from_state.state }}, und begrüße den {{ trigger.to_state.state }}!

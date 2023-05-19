@@ -1,0 +1,17 @@
+# reference: https://github.com/KartoffelToby/better_thermostat
+
+- platform: ai_thermostat
+  name: Badezimmer Heizungs-Thermostat (AI)
+  unique_id: badezimmer_heizungs_thermostat_ai
+  thermostat: climate.badezimmer_heizungs_thermostat
+  temperature_sensor: sensor.badezimmer_temperatur_raum
+  window_sensors: binary_sensor.badezimmer_fenster
+  weather: weather.dwd_weather_offenbach
+
+- platform: ai_thermostat
+  name: Wohnzimmer Heizungs-Thermostat (AI)
+  unique_id: wohnzimmer_heizungs_thermostat_ai
+  thermostat: climate.wohnzimmer_heizungs_thermostat
+  temperature_sensor: sensor.wohnzimmer_temperatur_raum
+  window_sensors: binary_sensor.wohnzimmer_zugang
+  weather: weather.dwd_weather_offenbach

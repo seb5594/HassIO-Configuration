@@ -1,0 +1,22 @@
+#################################################################
+#                                                               #
+#                  UI-Lovelace Anpassungen                      #
+#                                                               #
+#################################################################
+
+
+script.broadlink_remote_learn_light_commands:
+  hidden: true
+
+script.broadlink_remote_learn_lgtv_commands:
+  hidden: true
+
+
+person.christian:
+  entity_picture: /local/pictures/users/christian.jpg
+  
+person.lukas:
+  entity_picture: /local/pictures/users/jesus.jpg
+  
+sensor.home_assistant_v2_db_size:
+  unit_of_measurement: GB

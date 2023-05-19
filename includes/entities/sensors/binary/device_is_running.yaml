@@ -1,0 +1,24 @@
+- platform: template
+  sensors:
+    waschmaschine_in_betrieb:
+      friendly_name: Waschmaschine
+      unique_id: waschmaschine_betrieb
+      #icon_template: fa:washing-machine
+      device_class: running
+      value_template: >-
+        {% if states('sensor.badezimmer_steckdose_waschmaschine_verbrauch') | float > 10 %}
+          on
+        {% else %}
+          off
+        {% endif %}
+    trockner_in_betrieb:
+      friendly_name: Trockner
+      unique_id: trockner_betrieb
+      icon_template: mdi:tumble-dryer
+      device_class: running
+      value_template: >-
+        {% if states('sensor.flur_steckdose_trockner_verbrauch') | float > 10 %}
+          on
+        {% else %}
+          off
+        {% endif %}

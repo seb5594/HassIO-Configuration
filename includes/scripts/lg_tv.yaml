@@ -1,0 +1,73 @@
+broadlink_remote_learn_lgtv_commands:
+  alias: "Zimmer Lerne TV FB Kommandos"
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: television
+        command:
+          - power
+          - settings
+          - info
+          - input
+          - exit
+          - back
+          - av_mode
+          - up
+          - down
+          - left
+          - right
+          - volume up
+          - volume down
+          - volume mute
+
+broadlink_remote_tv_power:
+  alias: "Zimmer TV An-/Ausschalten"
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: television
+        command: power
+
+broadlink_remote_tv_volume_up:
+  alias: "Zimmer TV Lautstärke hoch"
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: television
+        command: volume up
+
+broadlink_remote_tv_volume_down:
+  alias: "Zimmer TV Lautstärke runter"
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: television
+        command: volume down
+
+broadlink_remote_tv_volume_mute:
+  alias: "Zimmer TV Stumm"
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: television
+        command: volume mute
+        
+broadlink_remote_tv_info:
+  alias: "Zimmer TV Info"
+  sequence:
+    - service: remote.send_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: television
+        command: info

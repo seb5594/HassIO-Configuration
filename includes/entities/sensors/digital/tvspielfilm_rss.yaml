@@ -1,0 +1,38 @@
+- platform: feedparser
+  name: TV Spielfilm (Jetzt)
+  feed_url: https://www.tvspielfilm.de/tv-programm/rss/jetzt.xm'
+  #date_format: '%a, %d %b %Y %H:%M:%S %Z'
+  scan_interval:
+    minutes: 15
+#   inclusions:
+#     - title
+#     - link
+#     - description
+#     - enclosure
+#     - pubDate
+  exclusions:
+    - language
+
+- platform: feedparser
+  name: TV Spielfilm (20:15 Uhr)
+  feed_url: https://www.tvspielfilm.de/tv-programm/rss/heute2015.xml
+  scan_interval:
+    minutes: 15
+  exclusions:
+    - language
+
+- platform: feedparser
+  name: TV Spielfilm (22:00 Uhr)
+  feed_url: https://www.tvspielfilm.de/tv-programm/rss/heute2200.xml
+  scan_interval:
+    minutes: 15
+  exclusions:
+    - language
+
+- platform: feedparser
+  name: TV Spielfilm (Highlights)
+  feed_url: https://www.tvspielfilm.de/tv-programm/rss/filme.xml
+  scan_interval:
+    hours: 12
+  exclusions:
+    - language

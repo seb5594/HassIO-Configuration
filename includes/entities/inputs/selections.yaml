@@ -1,0 +1,12 @@
+select_current_theme:
+  name: "Aktuelles Design:"
+  options:
+    - default
+    - oxfordblue
+    - teal
+    - darkred
+    - darkcyan
+    - Google - Dark
+    - Google - Light
+  initial: default
+  icon: mdi:palette

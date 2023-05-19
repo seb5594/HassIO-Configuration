@@ -1,0 +1,47 @@
+logger:
+  default: critical
+  logs:
+    # HassIO logging
+    homeassistant.bootstrap: info
+    homeassistant.core: debug
+
+    # Components logging
+    homeassistant.components.automation: warn
+    homeassistant.components.camera: fatal
+    homeassistant.components.http: warning
+    homeassistant.components.light: debug
+    homeassistant.components.logbook: debug
+    homeassistant.components.mqtt: debug
+    homeassistant.components.recorder: error
+    homeassistant.components.rest.sensor: critical
+    homeassistant.components.shell_command: fatal
+    homeassistant.components.websocket_api: fatal
+    homeassistant.components.zha: debug
+    homeassistant.config_entries: error
+    homeassistant.helpers.entity: fatal
+    homeassistant.exceptions: info
+
+    # Zigbee communication logs
+    bellows.zigbee.application: debug
+    bellows.ezsp: debug
+    zhaquirks: debug
+    zigpy: debug
+    zigpy_deconz.zigbee.application: debug
+    zigpy_deconz.api: debug
+    zigpy_xbee.zigbee.application: debug
+    zigpy_xbee.api: debug
+    zigpy_zigate: debug
+    zigpy_znp: debug
+
+    # Custom component logging
+    custom_components.average: debug
+    custom_components.ble_monitor: debug
+    custom_components.localtuya: error
+    custom_components.gtasks: error
+    #custom_components.midea_ac_lan: debug
+    #custom_components.monitor_docker: debug
+    custom_components.powercalc: debug
+    custom_components.pyscript: debug
+    custom_components.snowtire: debug
+    custom_components.zha_toolkit: debug
+    custom_components.zigbee2mqtt: debug

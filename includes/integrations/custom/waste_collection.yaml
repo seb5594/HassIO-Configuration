@@ -1,0 +1,40 @@
+# info nach export im netzwerkverkehr (browser dev tools)
+# https://www.offenbach.de/stadtwerke/stadtservice/Entsorgung/abfallkalender.php
+
+waste_collection_schedule:
+  sources:
+    - name: abfall_io
+      args:
+        key: !secret api_key_abfallio
+        f_id_kommune: 2643
+        f_id_strasse: 2643
+        f_id_strasse_hnr: 9369
+        f_abfallarten:
+          - 206
+          - 207
+          - 56
+          - 38
+          - 74
+          - 76
+      customize:
+        - type: 206 #Braune Tonne (wöchentlich)
+          alias: bio
+          icon: mdi:trash-can
+        - type: 207 #Braune Tonne (2-wöchentlich)
+          alias: bio
+          icon: mdi:trash-can
+        - type: 56 #Graue Tonne (wöchentlich)
+          alias: rest
+          icon: mdi:trash-can
+        - type: 38 #Graue Tonne (2-wöchentlich)
+          alias: rest
+          icon: mdi:trash-can
+        - type: 74 #Gelbe Tonne
+          alias: gelb
+          icon: mdi:recycle
+        - type: 76 #Grüne Tonne
+          alias: papier
+          icon: mdi:trash-can
+      calendar_title: Abfallentsorgung
+  fetch_time: "04:00"
+  day_switch_time: "00:00"

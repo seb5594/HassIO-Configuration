@@ -1,0 +1,42 @@
+# name: Docker remote DNS-Host
+# url: !secret host_docker_remote
+# monitored_conditions:
+#   - allinone
+# switchenabled: true
+# #switchname: "{name} ({memory})"
+# containers_exclude:
+#   - watchtower
+#   - dockerproxy
+# scan_interval: 90
+
+- name: Docker remote DNS-Host
+  url: !secret host_docker_remote
+  monitored_conditions:
+    #- allinone
+    - version
+    - containers_running
+    - containers_paused
+    - containers_stopped
+    - containers_total
+    - containers_cpu_percentage
+    - containers_1cpu_percentage
+    - containers_memory
+    - containers_memory_percentage
+    - state
+    - status
+    - image
+    - uptime
+    - memory
+    - memory_percentage
+    - network_speed_up
+    - network_speed_down
+    - network_total_up
+    - network_total_down
+    - cpu_percentage
+    - 1cpu_percentage
+  switchenabled: true
+  #switchname: "{name} ({memory})"
+  containers_exclude:
+    - watchtower
+    - dockerproxy
+  scan_interval: 90

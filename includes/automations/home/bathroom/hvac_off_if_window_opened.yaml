@@ -1,0 +1,16 @@
+- alias: "[Home] - Badezimmer Heizung aus, wenn Fenster offen"
+  description: ""
+  trigger:
+    - platform: state
+      entity_id:
+        - binary_sensor.badezimmer_fenster_klein
+        - binary_sensor.badezimmer_fenster_gross
+      to: "on"
+      attribute: contact
+  condition: []
+  action:
+    - service: climate.turn_off
+      data: {}
+      target:
+        entity_id: climate.badezimmer_heizungs_thermostat
+  mode: single

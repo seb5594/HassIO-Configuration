@@ -1,0 +1,8 @@
+# Add support for scenes
+# https://www.home-assistant.io/integrations/scene
+
+# This include is for the ui scene editor
+scene: !include ../../../scenes.yaml
+
+# Include manual made scenes
+scene manual: !include_dir_merge_list ../../../scenes

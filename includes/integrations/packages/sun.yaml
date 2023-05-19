@@ -1,0 +1,14 @@
+sun: # use current location to track the sun position (above or below horizon)
+  elevation: !secret location_elevation
+
+
+sensor:
+  - platform: template
+    sensors:
+      next_sunrise:
+        friendly_name: Nächster Sonnenaufgang
+        value_template: "{{ as_timestamp(state_attr('sun.sun', 'next_rising')) | timestamp_custom('%I:%M %p') }}"
+
+      next_sunset:
+        friendly_name: Nächster Sonnenuntergang
+        value_template: "{{ as_timestamp(state_attr('sun.sun', 'next_setting')) | timestamp_custom('%I:%M %p') }}"

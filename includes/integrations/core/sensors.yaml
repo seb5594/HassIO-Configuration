@@ -1,0 +1,13 @@
+#################################################################
+#                                                               #
+#                            Sensoren                           #
+# Sensors are gathering information about states & conditions.  #
+#                                                               #
+# references:                                                   #
+# https://www.home-assistant.io/integrations/binary_sensor/     #
+# https://www.home-assistant.io/integrations/sensor/            #
+#################################################################
+
+binary_sensor: !include_dir_merge_list ../../entities/sensors/binary
+sensor: !include_dir_merge_list ../../entities/sensors/digital
+rest: !include_dir_merge_list ../../entities/sensors/rest

@@ -1,0 +1,11 @@
+livingroom:
+  name: Wohnzimmer
+  entities:
+    - light.wohnzimmer_licht
+    - climate.wohnzimmer_heizungs_thermostat
+    - climate.wohnzimmer_klimaanlage
+    - binary_sensor.wohnzimmer_zugang
+    - binary_sensor.wohnzimmer_balkontur
+    - binary_sensor.wohnzimmer_fenster
+    - sensor.wohnzimmer_temperatur_lokal
+    - sensor.wohnzimmer_temperatur_raum

@@ -1,0 +1,2 @@
+# cleans up all unused docker host images and volumes
+docker_host_cleanup: bash docker system prune --volumes

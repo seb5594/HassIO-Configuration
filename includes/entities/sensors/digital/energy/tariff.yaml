@@ -1,0 +1,8 @@
+- platform: template
+  sensors:
+    energiepreis_kwh:
+      friendly_name: Energiepreis
+      unique_id: energiepreis_kwh
+      device_class: energy
+      unit_of_measurement: €/kWh
+      value_template: "{{ 0.4417 | float }}" # 0.2714

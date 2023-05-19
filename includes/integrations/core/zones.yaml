@@ -1,0 +1,84 @@
+#################################################################
+#                                                               #
+#                            Zonen                              #
+#                                                               #
+#################################################################
+
+zone:
+  # home
+  #- name: !secret zone_1_name
+    #latitude: !secret zone_1_latitude
+    #longitude: !secret zone_1_longitude
+    #radius: 10
+    #icon: mdi:home
+
+  # gf
+  - name: !secret zone_2_name
+    latitude: !secret zone_2_latitude
+    longitude: !secret zone_2_longitude
+    radius: 20
+    icon: mdi:human-pregnant
+
+  # lukas
+  - name: !secret zone_3_name
+    latitude: !secret zone_3_latitude
+    longitude: !secret zone_3_longitude
+    radius: 25
+    icon: mdi:human-wheelchair
+
+  # rewe
+  - name: !secret zone_4_name
+    latitude: !secret zone_4_latitude
+    longitude: !secret zone_4_longitude
+    radius: 25
+    icon: mdi:store-alert
+
+    # uni
+  - name: !secret zone_5_name
+    latitude: !secret zone_5_latitude
+    longitude: !secret zone_5_longitude
+    radius: 100
+    icon: mdi:school
+
+# action
+  - name: !secret zone_6_name
+    latitude: !secret zone_6_latitude
+    longitude: !secret zone_6_longitude
+    radius: 30
+    icon: mdi:alpha-a-circle
+
+# work alfi
+  - name: !secret zone_7_name
+    latitude: !secret zone_7_latitude
+    longitude: !secret zone_7_longitude
+    radius: 35
+    icon: mdi:store-alert
+
+# work sebi
+  - name: !secret zone_8_name
+    latitude: !secret zone_8_latitude
+    longitude: !secret zone_8_longitude
+    radius: 60
+    icon: mdi:store-alert
+
+# timo
+#  - name: !secret zone_9_name
+#    latitude: !secret zone_9_latitude
+#    longitude: !secret zone_9_longitude
+#    radius: 5
+#    icon: mdi:account-hard-hat
+
+# kosti 
+ # - name: !secret zone_10_name
+ #   latitude: !secret zone_10_latitude
+ #   longitude: !secret zone_10_longitude
+ #   radius: 10
+#icon: mdi:account-hard-
+
+  ## absturzplätze
+  # le (darten)
+  - name: !secret zone_31_name
+    latitude: !secret zone_31_latitude
+    longitude: !secret zone_31_longitude
+    radius: 5
+    icon: mdi:glass-mug-variant

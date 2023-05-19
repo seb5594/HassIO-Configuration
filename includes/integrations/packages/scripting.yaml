@@ -1,0 +1,16 @@
+# reference: https://www.home-assistant.io/integrations/script/
+# The script integration allows users to specify a sequence of actions to be
+# executed by Home Assistant when turned on.
+# -> This loads up my custom scripts.
+
+# Scripts created in the ui
+script: !include ../../../scripts.yaml
+
+# Manual created scripts
+script manual: !include_dir_merge_named ../../scripts
+
+python_script:
+
+pyscript:
+  allow_all_imports: true
+  hass_is_global: true

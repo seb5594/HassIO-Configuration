@@ -1,0 +1,10 @@
+# Sensor that shows the time1
+# https://www.home-assistant.io/integrations/time_date/
+# Time
+
+- platform: time_date
+  display_options:
+    - "date"
+    - "time"
+    #- "time_date"
+    #- "date_time"

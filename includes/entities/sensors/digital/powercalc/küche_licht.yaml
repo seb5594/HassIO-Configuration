@@ -1,0 +1,10 @@
+- platform: powercalc
+  name: Küche Licht Strom
+  unique_id: kueche_licht_power
+  entity_id: light.kueche_licht
+  linear:
+    min_power: 1
+    max_power: 22
+  #fixed:
+  #  power: 22
+  energy_integration_method: left

@@ -1,0 +1,10 @@
+- platform: wake_on_lan
+  mac: !secret mac_seb_desktop
+  name: !secret host_seb_desktop
+  host: !secret ip_seb_desktop
+  broadcast_address: !secret ip_home_broadcast
+  turn_off:
+    service: hassio.addon_stdin
+    data:
+      addon: core_rpc_shutdown
+      input: !secret host_seb_desktop

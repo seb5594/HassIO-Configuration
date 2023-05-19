@@ -1,0 +1,3 @@
+# reference: https://www.home-assistant.io/integrations/bayesian/
+
+group: !include_dir_merge_named ../../entities/predictions

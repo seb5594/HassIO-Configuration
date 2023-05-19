@@ -1,0 +1,5 @@
+proxy_manager:
+  title: Proxy Manager
+  icon: mdi:rocket-launch-outline
+  url: !secret domain_hass_proxy_url
+  require_admin: true

@@ -1,0 +1,39 @@
+## yaml configuration deprecated in 12.2022
+#- platform: uptime
+#  name: Betriebszeit
+
+- platform: systemmonitor
+  scan_interval:
+    seconds: 60
+  resources:
+    - type: disk_use_percent
+      arg: / # root path
+    - type: memory_use
+    - type: memory_use_percent
+    - type: memory_free
+    - type: network_in
+      arg: enp0s18
+    - type: network_out
+      arg: enp0s18
+    - type: processor_use
+    #- type: processor_temperature # does not work in a vm
+    #- type: process
+    - type: load_1m
+    - type: load_5m
+    - type: load_15m
+    - type: last_boot
+
+
+- platform: command_line
+  unique_id: invalid_login_attempts
+  name: Gescheiterte Anmeldeversuche
+  command: grep -c 'Login attempt' /home/hass/.homeassistant/home-assistant.log
+
+# Restart time
+- platform: command_line
+  name: HassOS Startzeit
+  unique_id: system_restart_time
+  command: /bin/cat /config/home-assistant.log | /bin/grep 'Home Assistant initialized in' | /usr/bin/awk '{print $10}' | /bin/sed 's/[^0-9.]//g'
+  scan_interval: 60
+  unit_of_measurement: sec
+  

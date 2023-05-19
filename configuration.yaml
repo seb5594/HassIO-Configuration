@@ -1,0 +1,11 @@
+#################################################################
+#                                                               #
+#    Home Assistant Main Configuration Bootstrap                #
+#                                                               #
+#################################################################
+
+## configuration adapted from following repositories:
+# https://github.com/frenck/home-assistant-config
+# https://github.com/klaasnicolaas/Student-homeassistant-config
+
+homeassistant: !include includes/hass.yaml

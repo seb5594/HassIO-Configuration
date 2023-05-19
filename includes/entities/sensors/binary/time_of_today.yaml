@@ -1,0 +1,25 @@
+# https://www.home-assistant.io/integrations/tod/ 
+
+# Morgen
+- platform: tod
+  name: Morgen
+  after: "06:00"
+  before: "12:00"
+  
+# Nachmittag
+- platform: tod
+  name: Nachmittag
+  after: "12:00"
+  before: "18:00"
+  
+# Abend
+- platform: tod 
+  name: Abend
+  after: "18:00"
+  before: "23:00"
+  
+# Nacht
+- platform: tod
+  name: Nacht
+  after: "23:00"
+  before: "06:00"

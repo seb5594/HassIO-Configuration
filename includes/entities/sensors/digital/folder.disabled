@@ -1,0 +1,12 @@
+# https://www.home-assistant.io/integrations/folder/
+# This sensor for monitoring the contents of a folder.
+# It exposes the number of filtered files in the folder, total size in bytes of those files and a comma separated list of the file paths as attributes.
+
+# does not work recursive
+- platform: folder
+  folder: /config
+  filter: "*.yaml" # default: *
+
+- platform: folder
+  folder: /config/includes
+  filter: "*.yaml"

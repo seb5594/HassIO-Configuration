@@ -1,0 +1,12 @@
+- platform: template
+  sensors:
+    kueche_licht_kosten_taeglich:
+      friendly_name: Küche Licht Verbrauch (Heute)
+      unique_id: kueche_licht_kosten_taeglich
+      unit_of_measurement: €/kWd
+      value_template: "{{ states('sensor.kueche_licht_laufzeit_heute') | float * states('sensor.energiepreis_kwh')| float | round(2) }}"
+    flur_steckdose_trockner_kosten_taeglich:
+      friendly_name: Flur Steckdose Trockner Verbrauch (Heute)
+      unique_id: flur_steckdose_trockner_kosten_taeglich
+      unit_of_measurement: €
+      value_template: "{{ states('sensor.flur_steckdose_trockner_verbrauch_kwd') | float * states('sensor.energiepreis_kwh') | float | round(2) }}"

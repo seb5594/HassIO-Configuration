@@ -1,0 +1,19 @@
+# next collection
+- platform: waste_collection_schedule
+  name: Müllabholung
+# next yard waste collection
+#- platform: waste_collection_schedule
+#  name: next_yard_collection
+#  types:
+#    - bio
+#    - gelb
+#    - papier
+
+# next garbage collection
+- platform: waste_collection_schedule
+  name: Nächste Müllabholung
+  types:
+    - bio
+    - gelb
+    - papier
+    - rest

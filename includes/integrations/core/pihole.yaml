@@ -1,0 +1,65 @@
+# https://home-assistant.io/integrations/pi_hole/
+
+# customization
+#homeassistant:
+#  customize:
+#    sensor.pihole_dns_server_non_ssl_ads_blocked_today:
+#      friendly_name: Pi-Hole DNS-Server Werbung heute geblockt
+#    sensor.pihale_dns_server_non_ssl_ads_percentage blocked_today:
+#      friendly_name: Pi-Hole DNS-Server Werbung heute geblockt (%)
+#    sensor.plhole_dns_server_non_ssl_dns_queries_cached:
+#      friendly_name: Pi-Hole DNS-Server Anfragen zwischengespeichert
+#    sensor.plhole_dns server_non_ssl_dns_queries_forwarded:
+#      friendly_name: Pi-Hole DNS-Server Anfragen weitergeleitet
+#    sensor.pihole_dns_server_non_ssl_dns_queries_today:
+#      friendly_name: Pi-Hole DNS-Server Anfragen heute
+#    sensor.pihole_dns_server_non_ssl_dns_unique_clients:
+#      friendly_name: Pi-Hole DNS-Server einzigartige Clients
+#    sensor.pihole_dns_server_non_ssl_dns_unique_domains:
+#      friendly_name: Pi-Hole DNS-Server einzigartige Domänen
+#    sensor.pihole_dns_server_non_ssl_dns_domains_blocked:
+#      friendly_name: Pi-Hole DNS-Server geblockte Domänen
+#    sensor.pihole_dns_server_non_ssl_seen_clients:
+#      friendly_name: Pi-Hole DNS-Server gesehene Clients
+#    update.pihole_dns_server_non_ssl_core_update_available:
+#      friendly_name: Pi-Hole DNS-Server Kern Aktualisierung verfügbar
+#    update.pihole_dns_server_non_ssl_ftl_update_available:
+#      friendly_name: Pi-Hole DNS-Server FTL Aktualisierung verfügbar
+#    update.pihole_dns_server_non_ssl_web_update_available:
+#      friendly_name: Pi-Hole DNS-Server Web Aktualisierung verfügbar
+
+homeassistant:
+  customize_glob:
+    sensor.pihole_*_ads_blocked_today:
+      friendly_name: Pi-Hole DNS-Server Werbung heute geblockt
+    sensor.pihale_*_ads_percentage blocked_today:
+      friendly_name: Pi-Hole DNS-Server Werbung heute geblockt (%)
+    sensor.plhole_*_dns_queries_cached:
+      friendly_name: Pi-Hole DNS-Server Anfragen zwischengespeichert
+    sensor.plhole_*_dns_queries_forwarded:
+      friendly_name: Pi-Hole DNS-Server Anfragen weitergeleitet
+    sensor.pihole_*_dns_queries_today:
+      friendly_name: Pi-Hole DNS-Server Anfragen heute
+    sensor.pihole_*_dns_unique_clients:
+      friendly_name: Pi-Hole DNS-Server einzigartige Clients
+    sensor.pihole_*_dns_unique_domains:
+      friendly_name: Pi-Hole DNS-Server einzigartige Domänen
+    sensor.pihole_*_dns_domains_blocked:
+      friendly_name: Pi-Hole DNS-Server geblockte Domänen
+    sensor.pihole_*_seen_clients:
+      friendly_name: Pi-Hole DNS-Server gesehene Clients
+    update.pihole_*_core_update_available:
+      friendly_name: Pi-Hole DNS-Server Kern Aktualisierung verfügbar
+    update.pihole_*_ftl_update_available:
+      friendly_name: Pi-Hole DNS-Server FTL Aktualisierung verfügbar
+    update.pihole_*_web_update_available:
+      friendly_name: Pi-Hole DNS-Server Web Aktualisierung verfügbar
+# pi_hole:
+#   - host: !secret host_remote_pihole
+#     name: Pi-Hole DNS-Server (non SSL)
+#     ssl: false
+#     verify_ssl: false
+#   - host: !secret domain_remote_pihole
+#     name: Pi-Hole DNS-Server (SSL)
+#     ssl: true
+#     verify_ssl: false

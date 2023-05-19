@@ -1,0 +1,36 @@
+# name: Docker HassIO-Host
+# url: !secret host_docker_local
+# switchenabled: false
+# monitored_conditions:
+#   - allinone
+# containers_exclude: Dockerproxy
+# scan_interval: 90
+
+- name: Docker HassIO-Host
+  url: !secret host_docker_local
+  switchenabled: true
+  monitored_conditions:
+    #- allinone
+    - version
+    - containers_running
+    - containers_paused
+    - containers_stopped
+    - containers_total
+    - containers_cpu_percentage
+    - containers_1cpu_percentage
+    - containers_memory
+    - containers_memory_percentage
+    - state
+    - status
+    - image
+    - uptime
+    - memory
+    - memory_percentage
+    - network_speed_up
+    - network_speed_down
+    - network_total_up
+    - network_total_down
+    - cpu_percentage
+    - 1cpu_percentage
+  containers_exclude: docker-socket-proxy
+  scan_interval: 90

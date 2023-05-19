@@ -1,0 +1,58 @@
+broadlink_remote_learn_firetv_commands:
+  alias: "Sebi Lerne FireTV Kommandos"
+  icon: mdi:fire
+  sequence:
+    - service: remote.learn_command
+      target:
+        entity_id: remote.broadlink_rm4c_mini_remote
+      data:
+        device: remote
+        command:
+          - home
+          - back
+          - menu
+          - play
+          - next
+          - previous
+          - mute
+          - select
+          - left
+          - right
+          - up
+          - down
+
+firetv_sebi_netflix:
+  alias: "Sebi FireTV Netflix"
+  icon: mdi:netflix
+  sequence:
+    - service: androidtv.adb_command
+      target:
+        entity_id: media_player.fire_tv_192_168_31_26
+      data:
+        command: adb shell am start -n com.netflix.ninja/.MainActivity -a android.intent.action.VIEW -d netflix://title/70143825 -f 0x10000020 -e "amzn_deeplink_data" "7014385"
+        
+# 
+firetv_sebi_fireplace:
+  alias: "Sebi FireTV Lagerfeuer"
+  icon: mdi:fireplace
+  sequence:
+  - service: media_player.select_source
+    target:
+      entity_id: media_player.fire_tv_192_168_31_26
+    data:
+      source: "com.edgeway.virtualfireplacehd"
+    #- service: androidtv.adb_command
+    #  target:
+    #    entity_id: media_player.fire_tv_192_168_31_26
+    #  data:
+    #    command: adb shell am start -n com.edgeway.virtualfireplacehd/.MainActivity
+
+firetv_sebi_joyn:
+  alias: "Sebi FireTV Joyn"
+  icon: mdi:television-classic
+  sequence:
+  - service: media_player.select_source
+    target:
+      entity_id: media_player.fire_tv_192_168_31_26
+    data:
+      source: "de.prosiebensat1digital.seventv"

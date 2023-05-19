@@ -1,0 +1,1 @@
+environment_variables: export $(grep -v '^#' /config/secrets.env | xargs)

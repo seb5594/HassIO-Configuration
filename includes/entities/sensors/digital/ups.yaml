@@ -1,0 +1,25 @@
+- platform: template
+  sensors:
+    ups_battery_runtime_mins:
+      friendly_name: USV Batterie Laufzeit
+      unique_id: ups_battery_runtime_mins
+      unit_of_measurement: minutes
+      value_template: "{{ states('sensor.amazon_usv_battery_runtime') | float / 60 | round(1) }}"
+
+    # A = VA / V
+    ups_battery_ampere:
+      friendly_name: USV Ampere
+      unique_id: ups_battery_ampere
+      unit_of_measurement: A
+      device_class: current
+      value_template: "{{ ((states('sensor.amazon_usv_load') | int / 100) * states('sensor.amazonusv_nominal_power') | int) }}"
+      #value_template: "{{ states('sensor.amazonusv_nominal_power') | int / states('sensor.amazon_usv_input_voltage') | float }}"
+
+    # W =  V * A
+    ups_battery_power:
+      friendly_name: USV Watt
+      unique_id: ups_battery_power
+      unit_of_measurement: W
+      device_class: power
+      #value_template: "{{ (states('sensor.ups_battery_ampere') | float) * states('sensor.amazon_usv_input_voltage') | int }}" #amazon_usv_input_voltage;amazonusv_nominal_output_voltage
+      value_template: "{{ states('sensor.amazon_usv_load') | float * (states('sensor.amazonusv_nominal_power') | float) }}"

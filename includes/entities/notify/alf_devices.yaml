@@ -1,0 +1,5 @@
+- platform: group
+  name: Alfs Geräte
+  unique_id: alfi_devices
+  services:
+    - service: mobile_app_xiaomi_poco_x3_pro

@@ -1,0 +1,16 @@
+# https://github.com/stephan192/hochwasserportal
+# pegel list: https://github.com/stephan192/hochwasserportal/blob/main/pegel.md
+
+# ffm osthafen / main
+- platform: hochwasserportal
+  pegel: HE_24700404
+  level: True
+  stage: True
+  flow: True
+
+# krotzenburg / main
+- platform: hochwasserportal
+  pegel: HE_24700335
+  level: True
+  stage: True
+  flow: True

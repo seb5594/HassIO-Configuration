@@ -1,0 +1,43 @@
+# ledermuseum
+- platform: rmvtransport
+  #scan_interval: 120
+  next_departure:
+    - station: 3011264 #3002507
+      #unique_id: rmv_of_ledermuseum
+      #friendly_name: "Offenbach Ledermuseum"
+      time_offset: 5
+      destinations:
+        #- "Offenbach (Main) Ledermuseum"
+        - "Offenbach (Main) Ostbahnhof"
+        #- "Offenbach (Main) Hauptbahnhof"
+        - 'Frankfurt (Main) Hauptbahnhof'
+      products:
+      #  - 'RB'
+      #  - 'RE'
+      #  - 'Bus'
+        - 'S'
+
+# of marktplatz
+- platform: rmvtransport
+  next_departure:
+    - station: 3483349
+    
+# of hbf
+- platform: rmvtransport
+  next_departure:
+    - station: 3482830
+
+# ffm ostendstr.
+- platform: rmvtransport
+  next_departure:
+    - station: 3478402
+    
+# ffm süd
+- platform: rmvtransport
+  next_departure:
+    - station: 3477640
+
+# ffm hbf
+- platform: rmvtransport
+  next_departure:
+    - station: 3000010

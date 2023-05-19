@@ -1,0 +1,45 @@
+# presence detection for own phone
+- platform: template
+  sensors:
+    sebs_smartphone_wifi_location:
+      friendly_name: Sebastians Handy WLAN-Standort
+      unique_id: sebs_smartphone_wifi_location
+      value_template: >-
+        {% set bsid = states('sensor.xiaomi_poco_x4_pro_wifi_connection') %}
+        {% if bsid in ("Anonymous", "Anonymous-5G") %}
+          Zuhause
+        {% elif bsid in ("Krebs", "Krebs 5") %}
+          Christian
+        {% elif bsid == ("FRITZ!Box 6660 Cable WS") %}
+          Jeanine
+        {% elif bsid == ("OettiganG") %}
+          Timo
+        {% elif bsid == ("rfx.home") %}
+          Lukas
+        {% elif bsid == ("-REWE gratis WLAN-") %}
+          Rewe
+        {% elif bsid in ("WLAN@RMV", "WLAN@RMV S-BAHN", "WIFIonICE") %}
+          ÖPNV
+        {% elif bsid == ("<not connected>") %}
+          Unterwegs
+        {% elif bsid is defined %}
+          {{ bsid }}
+        {% endif %}
+    alfs_smartphone_wifi_location:
+      friendly_name: Alfs Handy WLAN-Standort
+      unique_id: alfs_smartphone_wifi_location
+      value_template: >-
+        {% set bsid = states('sensor.xiaomi_poco_x3_pro_wifi_connection') %}
+        {% if bsid in ("Anonymous", "Anonymous-5G") %}
+          Zuhause
+        {% elif bsid in ("Krebs", "Krebs 5") %}
+          Christian
+        {% elif bsid == ("FRITZ!Box 6660 Cable WS") %}
+          Jeanine
+        {% elif bsid == ("-REWE gratis WLAN-") %}
+          Rewe
+        {% elif bsid == ("<not connected>") %}
+          Unterwegs
+        {% elif bsid is defined %}
+          {{ bsid }}
+        {% endif %}

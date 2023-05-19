@@ -1,0 +1,17 @@
+- verify_ssl: false
+  scan_interval: 60
+  resource: http://db21ed7f-scrutiny-fa:8080/api/summary
+  sensor:
+    - name: "SSD disk master"
+      json_attributes_path: "$.data[0].smart_results[0]"
+      value_template: "OK"
+      json_attributes:
+        - "device_wwn"
+        - "date"
+        - "smart_status"
+        - "temp"
+        - "power_on_hours"
+        - "power_cycle_count"
+        - "ata_attributes"
+        - "nvme_attributes"
+        - "scsi_attributes"

@@ -1,0 +1,11 @@
+room_alfi:
+  name: Alf's Zimmer
+  entities:
+    - light.alfi_licht
+    - light.alfi_licht_1
+    - light.alfi_licht_2
+    - light.alfi_licht_3
+    - binary_sensor.alfi_fenster_klein
+    - binary_sensor.alfi_fenster_gross
+    - sensor.alfi_fenster_klein_temperatur
+    - sensor.alfi_fenster_gross_temperatur

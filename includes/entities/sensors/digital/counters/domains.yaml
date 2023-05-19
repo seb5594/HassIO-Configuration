@@ -1,0 +1,53 @@
+# https://github.com/JamesMcCarthy79/Home-Assistant-Config/blob/2c91d5cf8f26fbba33d6af1fa3a04a90f0bd8c16/config/packages/things_status/things_status.yaml
+
+- platform: template
+  sensors:
+    sensor_count:
+      friendly_name: Anzahl Sensoren
+      unique_id: sensors.count
+      value_template: "{{ states.sensor | count }}"
+    automation_count:
+      friendly_name: Anzahl Automatisierungen
+      unique_id: sensors.count.automations
+      value_template: "{{ states.automation | count }}"
+    scene_count:
+      friendly_name: Anzahl Szenen
+      unique_id: sensors.count.scenes
+      value_template: "{{ states.scene | count }}"
+    script_count:
+      friendly_name: Anzahl Scripte
+      unique_id: sensors.count.scripts
+      value_template: "{{ states.script | count }}"
+    switch_count:
+      friendly_name: Anzahl Schalter
+      unique_id: sensors.count.switches
+      value_template: "{{ states.switch | count }}"
+    binary_sensor_count:
+      friendly_name: Anzahl Binärer Sensoren
+      unique_id: sensors.count.binary
+      value_template: "{{ states.binary_sensor | count }}" #states.date
+    lights_count:
+      friendly_name: Anzahl Lichter
+      unique_id: sensors.count.lights
+      value_template: "{{ states.light | count }}"
+    tracker_count:
+      friendly_name: Anzahl Geräte-Tracker
+      value_template: "{{ states.device_tracker | count }}"
+    media_player_count:
+      friendly_name: Anzahl Medien Spieler
+      unique_id: sensors.count.players
+      value_template: "{{ states.media_player | count }}"
+    input_bool_count:
+      friendly_name: Anzahl Eingabeschalter
+      unique_id: sensors.count
+      value_template: "{{ states.input_boolean | count }}"
+    input_datetime_count:
+      friendly_name: Anzahl Datums-Eingabe
+      unique_id: sensors.count.datetimes
+      value_template: "{{ states.input_datetime | count }}"
+    # ----- Zähle alle Entitäten
+    total_entities:
+      friendly_name: Anzahl Entitäten
+      icon_template: mdi:code-tags
+      unique_id: sensors.count.entities
+      value_template: "{{ states('sensor.date') and states | count }}"

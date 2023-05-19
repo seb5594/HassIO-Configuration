@@ -1,0 +1,124 @@
+# Double Take
+# Learn more at https://github.com/jakowenko/double-take/#configuration
+
+# enables authetification
+auth: true
+
+# if authentication is enabled
+# age of access token in api response and mqtt topics (default: shown below)
+# expressed in seconds or a string describing a time span zeit/ms
+# https://github.com/vercel/ms
+token:
+  image: 24h
+
+
+mqtt:
+  host: !secret host_mqtt_broker
+  username: !secret mqtt_user
+  password: !secret mqtt_pass
+  
+
+  topics:
+    # mqtt topic for frigate message subscription
+    frigate: frigate/events
+    #  mqtt topic for home assistant discovery subscription
+    homeassistant: homeassistant
+    # mqtt topic where matches are published by name
+    matches: double-take/matches
+    # mqtt topic where matches are published by camera name
+    cameras: double-take/cameras
+  
+frigate:
+  url: !secret host_frigate
+
+  # if double take should send matches back to frigate as a sub label
+  # NOTE: requires frigate 0.11.0+
+  update_sub_labels: true
+
+  # stop the processing loop if a match is found
+  # if set to false all image attempts will be processed before determining the best match
+  stop_on_match: true
+
+  # object labels that are allowed for facial recognition
+  labels:
+    - person
+    - cat
+
+  attempts:
+    # number of times double take will request a frigate latest.jpg for facial recognition
+    latest: 5
+    # number of times double take will request a frigate snapshot.jpg for facial recognition
+    snapshot: 5
+    # process frigate images from frigate/+/person/snapshot topics
+    mqtt: true
+    # add a delay expressed in seconds between each detection loop
+    delay: 1
+
+  image:
+    # height of frigate image passed for facial recognition
+    height: 500
+    
+# global detect settings (default: shown below)
+detect:
+  match:
+    # save match images
+    save: true
+    # include base64 encoded string in api results and mqtt messages
+    # options: true, false, box
+    base64: false
+    # minimum confidence needed to consider a result a match
+    confidence: 75
+    # hours to keep match images until they are deleted
+    purge: 168
+    # minimum area in pixels to consider a result a match
+    min_area: 10000
+
+  unknown:
+    # save unknown images
+    save: true
+    # include base64 encoded string in api results and mqtt messages
+    # options: true, false, box
+    base64: false
+    # minimum confidence needed before classifying a name as unknown
+    confidence: 35
+    # hours to keep unknown images until they are deleted
+    purge: 24
+    # minimum area in pixels to keep an unknown result
+    min_area: 0
+  
+detectors:
+  deepstack:
+    url: http://c7657554-deepstack:5000 #!secret host_deepstack
+  #  key:
+    timeout: 20
+    # require opencv to find a face before processing with detector
+    opencv_face_required: false
+    
+  
+  #compreface:
+  #  url: http://192.168.31.11:8915 #!secret host_compreface
+    # recognition api key
+  #  key: !secret api_key_compreface
+    # number of seconds before the request times out and is aborted
+  #  timeout: 20
+    # minimum required confidence that a recognized face is actually a face
+    # value is between 0.0 and 1.0
+  #  det_prob_threshold: 0.75
+    # require opencv to find a face before processing with detector
+  #  opencv_face_required: false
+    # comma-separated slugs of face plugins
+    # https://github.com/exadel-inc/CompreFace/blob/master/docs/Face-services-and-plugins.md)
+  #  face_plugins: age #, gender #mask,gender,age
+    # only process images from specific cameras, if omitted then all cameras will be processed
+    # cameras:
+    #   - front-door
+    #   - garage
+    
+    
+# opencv settings (default: shown below)
+# docs: https://docs.opencv.org/4.6.0/d1/de5/classcv_1_1CascadeClassifier.html
+opencv:
+  scale_factor: 1.05
+  min_neighbors: 4.5
+  min_size_width: 30
+  min_size_height: 30

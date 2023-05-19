@@ -1,0 +1,9 @@
+camera:
+  - platform: generic
+    name: Sebi Indoor PTZ-Camera
+    authentication: basic
+    username: ptz_cam_user
+    password: !secret ptz_cam_pass
+    verify_ssl: false
+    #still_image_url: !secret ptz_cam_image
+    stream_source: !secret ptz_cam_rtsp

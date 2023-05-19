@@ -1,0 +1,10 @@
+alle_räume:
+  name: Alle Räume
+  #unique_id: all_rooms
+  entities:
+    - light.alle_lichter
+    - group.room_alfi
+    - group.bathroom
+    - group.hallway
+    - group.kitchen
+    - group.room_sebi

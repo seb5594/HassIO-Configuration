@@ -1,0 +1,2 @@
+gen_fakesecrets: "bash /config/bin/make_fake_secrets.sh"
+push_to_github: "bash /config/bin/gitupdate.sh"

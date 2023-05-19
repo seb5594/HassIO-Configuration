@@ -1,0 +1,165 @@
+# docs: https://docs.frigate.video/
+
+mqtt:
+  host: "!secret host_mqtt_broker"
+  port: 1883
+  user: "!secret mqtt_user"
+  password: "!secret mqtt_pass"
+  topic_prefix: frigate
+  # Optional: tls_insecure (true/false) for enabling TLS verification of
+  # the server hostname in the server certificate (default: None)
+  #tls_insecure: True
+
+# Optional: logger verbosity settings
+logger:
+  # Optional: Default log verbosity (default: shown below)
+  default: info
+
+  # Optional: Component specific logger overrides
+  logs:
+    frigate.event: debug
+
+#detectors:
+#  cpu1:
+#    type: cpu
+#    num_threads: 2
+    
+detectors:
+  coral:
+    type: edgetpu
+    device: usb
+
+cameras:
+  Eingang: # <------ Name the camera
+    mqtt:
+      timestamp: False
+      bounding_box: False
+      crop: True
+      quality: 1
+      height: 500
+    ffmpeg:
+      inputs:
+        - path: rtsp://192.168.31.15/live/ch00_0 #"!secret spycam_rtsp"
+          roles:
+            - detect
+            - rtmp
+            - record
+            - live
+    rtmp:
+      enabled: True # <-- RTMP should be disabled if your stream is not H264
+    detect:
+      width: 1920 # <---- update for your camera's resolution
+      height: 1080 # <---- update for your camera's resolution
+      fps: 7 # default 5
+  Sebi_Zimmer:
+    mqtt:
+      timestamp: False
+      bounding_box: False
+      crop: True
+      quality: 1
+      height: 500
+    ffmpeg:
+      inputs:
+        - path: rtsp://admin:056565099@192.168.31.16:8554/Streaming/Channels/101 #"!secret ptz_cam_rtsp"
+          roles:
+            - detect
+            - rtmp
+            - record
+            - live
+    rtmp:
+      enabled: True # <-- RTMP should be disabled if your stream is not H264
+    detect:
+      width: 1280 # <---- update for your camera's resolution
+      height: 720 # <---- update for your camera's resolution
+      fps: 20
+
+# options for ffmpeg configuration
+# Hardware Acceleration for Intel-based CPUs (<10th Generation) via Quicksync
+ffmpeg:
+  hwaccel_args:
+    - -hwaccel
+    - vaapi
+    - -hwaccel_device
+    - /dev/dri/renderD128
+    - -hwaccel_output_format
+    - yuv420p
+
+# Optional: Record configuration
+# NOTE: Can be overridden at the camera level
+record:
+  # Optional: Enable recording (default: shown below)
+  # WARNING: If recording is disabled in the config, turning it on via
+  #          the UI or MQTT later will have no effect.
+  # WARNING: Frigate does not currently support limiting recordings based
+  #          on available disk space automatically. If using recordings,
+  #          you must specify retention settings for a number of days that
+  #          will fit within the available disk space of your drive or Frigate
+  #          will crash.
+  enabled: False
+  # Optional: Number of minutes to wait between cleanup runs (default: shown below)
+  # This can be used to reduce the frequency of deleting recording segments from disk if you want to minimize i/o
+  expire_interval: 60
+  # Optional: Retention settings for recording
+  retain:
+    # Optional: Number of days to retain recordings regardless of events (default: shown below)
+    # NOTE: This should be set to 0 and retention should be defined in events section below
+    #       if you only want to retain recordings of events.
+    days: 3
+    # Optional: Mode for retention. Available options are: all, motion, and active_objects
+    #   all - save all recording segments regardless of activity
+    #   motion - save all recordings segments with any detected motion
+    #   active_objects - save all recording segments with active/moving objects
+    # NOTE: this mode only applies when the days setting above is greater than 0
+    mode: all
+
+# Optional: Live stream configuration for WebUI
+# NOTE: Can be overridden at the camera level
+live:
+  # Optional: Set the height of the live stream. (default: 720)
+  # This must be less than or equal to the height of the detect stream. Lower resolutions
+  # reduce bandwidth required for viewing the live stream. Width is computed to match known aspect ratio.
+  height: 720
+  # Optional: Set the encode quality of the live stream (default: shown below)
+  # 1 is the highest quality, and 31 is the lowest. Lower quality feeds utilize less CPU resources.
+  quality: 3
+
+# Optional: Object configuration
+# NOTE: Can be overridden at the camera level
+objects:
+  # Optional: list of objects to track from labelmap.txt (default: shown below)
+  track:
+    - person
+    - cat #katze
+    - dog #hund
+  filters:
+    person:
+      min_score: 0.6
+      threshold: 0.5
+    cat:
+      min_score: 0.4
+      threshold: 0.5
+    dog:
+      min_score: 0.4
+      threshold: 0.5
+
+# Optional: birdseye configuration
+birdseye:
+  # Optional: Enable birdseye view (default: shown below)
+  enabled: True
+  # Optional: Width of the output resolution (default: shown below)
+  width: 1280
+  # Optional: Height of the output resolution (default: shown below)
+  height: 720
+  # Optional: Encoding quality of the mpeg1 feed (default: shown below)
+  # 1 is the highest quality, and 31 is the lowest. Lower quality feeds utilize less CPU resources.
+  quality: 1
+  # Optional: Mode of the view. Available options are: objects, motion, and continuous
+  #   objects - cameras are included if they have had a tracked object within the last 30 seconds
+  #   motion - cameras are included if motion was detected in the last 30 seconds
+  #   continuous - all cameras are included always
+  mode: continuous #objects
+
+# model:
+#   labelmap:
+#     1: katze
+#     2: hund

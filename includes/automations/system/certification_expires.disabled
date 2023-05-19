@@ -1,0 +1,15 @@
+- id: system_notification_certification_expiration
+  alias: "[System] - Benachrichtigung - SSL Zertifikat"
+  trigger:
+    - platform: template
+      value_template: >
+        {{ states.sensor.ssl_certificate_expiry.state | int  <= 14 }}
+  condition:
+    condition: template
+    value_template: >
+      {{ states.sensor.ssl_certificate_expiry.state != "unknown" }}
+  action:
+    service: notify.telegram_self
+    data_template:
+      message: >
+        Home Assistant's SSL-Zertifikat läuft ab in {{ states.sensor.ssl_certificate_expiry.state }} Tage.

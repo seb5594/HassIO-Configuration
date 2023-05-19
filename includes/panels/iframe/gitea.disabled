@@ -1,0 +1,5 @@
+gitea:
+  title: Gitea
+  icon: fab:git
+  url: !secret domain_hass_gitea_url
+  require_admin: true

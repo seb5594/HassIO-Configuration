@@ -1,0 +1,18 @@
+automation:
+  - id: errorcounterautomation
+    alias: "[System] - Fehlerzähler"
+    trigger:
+      platform: event
+      event_type: system_log_event
+      event_data:
+        level: ERROR
+    action:
+      service: counter.increment
+      target:
+        entity_id: counter.error_counter
+
+counter:
+  error_counter:
+    name: Anzahl Fehler
+    icon: mdi:alert
+    restore: false

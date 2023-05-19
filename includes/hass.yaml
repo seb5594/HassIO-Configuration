@@ -1,0 +1,65 @@
+#################################################################
+# Configure a default setup of Home Assistant (frontend, api, etc)
+#################################################################
+
+name: !secret zone_1_name
+latitude: !secret zone_1_latitude
+longitude: !secret zone_1_longitude
+elevation: !secret location_elevation
+time_zone: !secret location_time_zone
+currency: !secret location_currency
+temperature_unit: !secret unit_temperature
+unit_system: !secret unit_system
+country: DE
+language: de
+
+external_url: !secret domain_hass_external_url
+internal_url: !secret domain_hass_internal_url
+
+# Customization
+customize: !include customizations/entities.yaml
+
+# Lets me custimize all entities in a domain
+customize_domain: !include customizations/domains.yaml
+
+customize_glob: !include customizations/globals.yaml
+
+# loads all files from the integrations directory
+packages: !include_dir_named integrations
+
+# Whitelist #
+allowlist_external_dirs:
+  - /config
+  - /media
+  #- /recordings
+
+allowlist_external_urls:
+  - !secret domain_local_lan_url
+  - !secret domain_localhost_url
+  - !secret domain_hass_external_url
+  - !secret domain_hass_gitea_url
+  - !secret domain_hass_tandoor_url
+
+# Authentication #
+auth_providers:
+  - type: homeassistant
+    # - type: trusted_networks
+    trusted_networks:
+      - 127.0.0.1
+      #   - !secret ip_seb_android
+      - !secret ip_seb_desktop
+  #   - !secret ip_seb_laptop_lan
+  #   - !secret ip_seb_laptop_wifi
+  #   - !secret ip_alf_android
+  #   - !secret ip_alf_laptop_lan
+  #   - !secret ip_alf_laptop_wifi
+
+auth_mfa_modules:
+  - type: totp
+    name: Authentifizierungs app
+
+media_dirs:
+  media: /media
+  recordings: /media/recordings
+
+legacy_templates: false

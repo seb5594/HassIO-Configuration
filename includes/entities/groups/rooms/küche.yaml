@@ -1,0 +1,7 @@
+kitchen:
+  name: Küche
+  entities:
+    - binary_sensor.kueche_fenster
+    - sensor.kueche_temperatur_lokal
+    - sensor.kueche_temperatur_raum
+    - light.kueche_licht

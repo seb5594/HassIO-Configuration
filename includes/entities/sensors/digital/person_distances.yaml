@@ -1,0 +1,8 @@
+- platform: template
+  sensors:
+    distance_person1_person2:
+      friendly_name: Distanz person1 & person2
+      unique_id: distance_person1_person2
+      icon_template: mdi:signal-distance-variant
+      unit_of_measurement: km
+      value_template: "{{ distance('device_tracker.xiaomi_poco_x4_pro','device_tracker.xiaomi_poco_x3_pro') | round(2) }}"

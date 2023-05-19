@@ -1,0 +1,9 @@
+#- resource: https://hass.seb5594.duckdns.org/api/hassio/addons
+#  headers:
+#    Authorization: !secret api_key_hassos
+#  name: Addons
+#  json_attributes_path: "$.data"
+#  json_attributes:
+#    - addons
+#    - addons_repositories
+#  value_template: "{{ value_json.data.addons | count}}"

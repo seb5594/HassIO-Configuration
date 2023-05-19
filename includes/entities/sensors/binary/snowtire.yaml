@@ -1,0 +1,4 @@
+- platform: snowtire
+  name: Autoreifen Saison
+  unique_id: autoreifen_saison
+  weather: weather.dwd_weather_offenbach

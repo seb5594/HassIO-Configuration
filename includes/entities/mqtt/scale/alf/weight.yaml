@@ -1,0 +1,8 @@
+- name: "Alf Gewicht"
+  state_topic: "miscale/Alf/weight"
+  value_template: "{{ value_json['weight'] }}"
+  unit_of_measurement: "kg"
+  json_attributes_topic: "miscale/Alf/weight"
+  icon: mdi:scale-bathroom
+  # Below lines only needed if long term statistics are required
+  state_class: "measurement"

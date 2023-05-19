@@ -1,0 +1,88 @@
+substitutions:
+  name: "abstellkammer-licht"
+  friendly_name: "Abstellkammer Licht"
+  project_name: "brihome.rgbww-light"
+  project_version: "1.0"
+  light_restore_mode: RESTORE_DEFAULT_ON
+  color_interlock: 'true'
+
+esphome:
+  name: "${name}"
+
+esp8266:
+  board: esp01_1m
+
+# Enable logging
+logger:
+
+# Enable Home Assistant API
+api:
+
+ota:
+  password: "mySuperSecretOTAPa$$"
+
+wifi:
+  ssid: !secret wifi_main_ssid
+  password: !secret wifi_main_pass
+
+  # Enable fallback hotspot (captive portal) in case wifi connection fails
+  ap: {} # This spawns an AP with the device name and mac address with no password.
+
+captive_portal:
+
+web_server:
+  port: 80
+
+binary_sensor:
+  - platform: status
+    name: "${friendly_name} Status"
+
+sensor:
+  - platform: uptime
+    name: "${friendly_name} Betriebszeit"
+  - platform: wifi_signal
+    name: "${friendly_name} WiFi Signal Sensor"
+    update_interval: 60s
+
+button:
+  - platform: restart
+    id: restart_button
+    name: "${friendly_name} Neustart"
+    
+# Define output pins
+output:
+  - platform: esp8266_pwm
+    id: red_output
+    pin: GPIO4
+  - platform: esp8266_pwm
+    id: green_output
+    pin: GPIO12
+  - platform: esp8266_pwm
+    id: blue_output
+    pin: GPIO14
+  - platform: esp8266_pwm
+    id: warm_white_output
+    pin: GPIO13
+  - platform: esp8266_pwm
+    id: white_output
+    pin: GPIO5
+
+# Define a light entity
+light:
+  - platform: rgbww
+    name: "${friendly_name}"
+    restore_mode: ${light_restore_mode}
+    red: red_output
+    green: green_output
+    blue: blue_output
+    warm_white: warm_white_output
+    cold_white: white_output
+    cold_white_color_temperature: 5000 K
+    warm_white_color_temperature: 2700 K
+    color_interlock: ${color_interlock}
+
+text_sensor:
+  - platform: wifi_info
+    ip_address:
+      name: "${friendly_name} IP Addresse"
+      disabled_by_default: true

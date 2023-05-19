@@ -1,0 +1,8 @@
+hallway:
+  name: Flur
+  entities:
+    - light.flur_licht
+    - light.flur_licht_1
+    - light.flur_licht_2
+    - binary_sensor.flur_eingangstur
+    - sensor.wohnungs_temperatur

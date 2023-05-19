@@ -1,0 +1,33 @@
+# homematic:
+#   interfaces:
+#     # wired:
+#     #   host: !secret rm_host
+#     #   port: 2000
+#     #   resolvenames: json
+#     #   username: !secret ccu_user
+#     #   password: !secret ccu_pass
+#     #    rf:
+#     #      host: !secret rm_host
+#     #      port: 2001
+#     #      resolvenames: json
+#     #      username: !secret ccu_user
+#     #      password: !secret ccu_pass
+#     ip:
+#       host: !secret rm_host
+#       #port: 2010
+#       resolvenames: json
+#       username: !secret ccu_user
+#       password: !secret ccu_pass
+#     #    groups:
+#     #      host: !secret rm_host
+#     #      port: 9292
+#     #      resolvenames: json
+#     #      username: !secret ccu_user
+#     #      password: !secret ccu_pass
+#     #      path: /groups
+#     hosts:
+#       ccu3:
+#       host: !secret rm_host
+#       port: 2010
+#       username: !secret ccu_user
+#       password: !secret ccu_pass

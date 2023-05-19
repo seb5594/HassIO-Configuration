@@ -1,0 +1,4 @@
+# reference: https://www.home-assistant.io/integrations/todoist/
+
+platform: todoist
+token: !secret api_key_todoist

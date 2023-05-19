@@ -1,0 +1,8 @@
+climates:
+  name: Klima
+  #unique_id: all_trv_radiators
+  entities:
+    - climate.badezimmer_heizungs_thermostat
+    - climate.wohnzimmer_klimaanlage
+    - climate.wohnzimmer_heizungs_thermostat
+    #- climate.sebi_heizungs_thermostat

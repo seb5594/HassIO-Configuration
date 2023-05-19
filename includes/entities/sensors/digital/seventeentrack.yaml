@@ -1,0 +1,7 @@
+# seventeen track integration
+
+- platform: seventeentrack
+  username: !secret seventeentrack_user
+  password: !secret seventeentrack_pass
+  show_archived: false
+  show_delivered: true

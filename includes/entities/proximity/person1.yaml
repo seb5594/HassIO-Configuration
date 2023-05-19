@@ -1,0 +1,41 @@
+# proximity:
+#   home:
+#     ignored_zones:
+#       - work
+#       - school
+#     devices:
+#       - device_tracker.car1
+#       - device_tracker.iphone1
+#       - device_tracker.iphone2
+#     tolerance: 50
+#     unit_of_measurement: mi
+#   home3:
+#     zone: home3
+#     devices:
+#       - device_tracker.iphone1
+#     tolerance: 50
+#   work:
+#     zone: work
+#     devices:
+#       - person.paulus
+#     tolerance: 10
+
+sebi_home:
+  #ignored_zones:
+  #- !secret zone_7_name
+  #- !secret zone_8_name
+  zone: home #!secret zone_1_name
+  devices:
+    - person.sebastian
+    #- device_tracker.xiaomi_poco_x4_pro
+  tolerance: 15
+  unit_of_measurement: m
+sebi_work:
+  zone: !secret zone_8_name
+  ignored_zones:
+    - home #!secret zone_1_name
+  devices:
+    - person.sebastian
+    - device_tracker.xiaomi_poco_x4_pro
+  tolerance: 75
+  unit_of_measurement: km

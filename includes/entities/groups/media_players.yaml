@@ -1,0 +1,15 @@
+all:
+  name: Medienspieler
+  entities:
+    - media_player.mass_vlc_telnet
+    - media_player.mass_e89bd1de_8b4504bc
+    - media_player.sebis_echo_dot
+    - media_player.alf_echo_dot
+    #- media_player.alf_firetvstick
+    
+alexa_players:
+  name: Alexa Geräte
+  entities:
+    - media_player.sebis_echo_dot
+    - media_player.alf_echo_dot
+    #- media_player.alf_firetvstick

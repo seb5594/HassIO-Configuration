@@ -1,0 +1,20 @@
+# reference: https://www.home-assistant.io/integrations/telegram/
+
+
+# Example configuration.yaml entry for the Telegram Bot
+telegram_bot:
+  - platform: polling
+    api_key: !secret telegram_bot_token
+    allowed_chat_ids:
+      - !secret telegram_chat_self_id
+      - !secret telegram_chat_group_id
+
+# Example configuration.yaml entry for the notifier
+notify:
+  - platform: telegram
+    name: telegram_self
+    chat_id: !secret telegram_chat_self_id
+
+  - platform: telegram
+    name: telegram_group
+    chat_id: !secret telegram_chat_group_id

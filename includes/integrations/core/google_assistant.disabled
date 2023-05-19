@@ -1,0 +1,162 @@
+# reference: https://www.home-assistant.io/integrations/google_assistant/
+#            https://www.home-assistant.io/integrations/google_assistant/#yaml-configuration
+
+google_assistant:
+  project_id: !secret google_assistant_project_id
+  service_account: !include /share/google/service_account.json
+  report_state: true
+  secure_devices_pin: "5594" #!secret google_assistant_secure_pin
+  exposed_domains:
+    #- switch
+    #- light
+    #- group
+    #- media_player
+    - climate
+    #- input_boolean
+  entity_config:
+    ## lights
+    light.abstellkammer_licht:
+      expose: true
+    light.alfi_licht_1:
+      room: Alfi
+      expose: true
+    light.alfi_licht_2:
+      room: Alfi
+      expose: true
+    light.alfi_licht_3:
+      room: Alfi
+      expose: true
+    light.badezimmer_licht:
+      expose: true
+    light.flur_licht_1:
+      expose: true
+    light.flur_licht_2:
+      expose: true
+    light.wohnzimmer_licht:
+      expose: true
+    light.kueche_licht:
+      expose: true
+    light.sebi_licht:
+      expose: true
+    
+  
+    # my broadlink light
+    script.broadlink_remote_light_power:
+      name: Zimmer Licht
+      aliases: Sebi Licht
+      room: Sebi
+      expose: true
+    script.broadlink_remote_light_turn_on:
+      room: Sebi
+      aliases:
+        - Sebi Licht an
+        - Zimmer Licht an
+        - Mein Licht an
+      expose: true
+    script.broadlink_remote_light_turn_off:
+      room: Sebi
+      aliases:
+        - Sebi Licht aus
+        - Zimmer Licht aus
+        - Mein Licht aus
+      expose: true
+    script.broadlink_remote_light_blue:
+      room: Sebi
+      aliases:
+        - Sebi Licht Blau
+        - Zimmer Licht Blau
+        - Mein Licht Blau
+      expose: true
+    script.broadlink_remote_light_red:
+      room: Sebi
+      aliases:
+        - Sebi Licht Rot
+        - Zimmer Licht Rot
+        - Mein Licht Rot
+      expose: true
+    script.broadlink_remote_light_green:
+      room: Sebi
+      aliases:
+        - Sebi Licht Grün
+        - Zimmer Licht Grün
+        - Mein Licht Grün
+      expose: true
+    script.broadlink_remote_light_lamp:
+      room: Sebi
+      aliases:
+        - Sebi Licht Lampe
+        - Zimmer Licht Lampe
+        - Mein Licht Lampe
+      expose: true
+    script.broadlink_remote_light_rgb:
+      room: Sebi
+      aliases:
+        - Sebi Licht RGB
+        - Zimmer Licht RGB
+        - Mein Licht RGB
+      expose: true
+    script.broadlink_remote_light_jumpy:
+      room: Sebi
+      aliases:
+        - Sebi Licht Party
+        - Zimmer Licht Party
+        - Mein Licht Party
+      expose: true
+    script.broadlink_remote_light_gradual:
+      room: Sebi
+      aliases:
+        - Sebi Licht Graduell
+        - Zimmer Licht Graduell
+        - Mein Licht Graduell
+      expose: true
+
+
+    input_boolean.private_mode:
+      aliases:
+        - Bums Modus
+        - Ficker Modus
+        - Wichs Modus
+        - Wixx Modus
+      room:
+        Sebi
+    switch.desktop_5594:
+      aliases:
+        - Mein PC
+        - Sebi PC
+    
+    script.broadlink_remote_tv_power:
+      room: Sebi
+      aliases:
+        - Sebi TV
+        - Zimmer TV
+        - Mein TV
+    script.broadlink_remote_tv_volume_up:
+      room: Sebi
+      aliases:
+        - Sebi TV Lautstärke Hoch
+        - Zimmer TV Lautstärke Hoch
+        - Mein TV Lautstärke Hoch
+      expose: true
+    script.broadlink_remote_tv_volume_down:
+      room: Sebi
+      aliases:
+        - Sebi TV Lautstärke Runter
+        - Zimmer TV Lautstärke Runter
+        - Mein TV Lautstärke Runter
+      expose: true
+    script.broadlink_remote_tv_volume_mute:
+      room: Sebi
+      aliases:
+        - Sebi TV Stumm
+        - Zimmer TV Stumm
+        - Mein TV Stumm
+      expose: true
+      
+    media_player.mass_vlc_telnet:
+      room: Sebi
+      aliases: Meine Boxen
+      expose: true
+      
+    media_player.mass_e89bd1de_8b4504bc:
+      name: Küche Tablet
+      expose: true

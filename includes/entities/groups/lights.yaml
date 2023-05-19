@@ -1,0 +1,16 @@
+alle_lichter:
+  name: Alle Lichter
+  #unique_id: all_lights
+  entities:
+    - light.abstellkammer_licht
+    - light.alfi_licht_1
+    - light.alfi_licht_2
+    - light.alfi_licht_3
+    - light.badezimmer_licht
+    - light.flur_licht_1
+    - light.flur_licht_2
+    - light.kueche_licht
+    - light.sebi_licht
+    - light.sebi_stimmungslicht
+    - light.wohnzimmer_licht
+    - script.broadlink_remote_light_power

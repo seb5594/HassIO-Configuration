@@ -1,0 +1,11 @@
+room_sebi:
+  name: Sebi's Zimmer
+  entities:
+    #- climate.sebi_heizungs_thermostat
+    - binary_sensor.sebi_fenster
+    - binary_sensor.sebi_fenster_klein
+    - binary_sensor.sebi_fenster_gross
+    - sensor.sebi_fenster_klein_temperatur
+    - sensor.sebi_fenster_gross_temperatur
+    - light.sebi_licht
+    - light.sebi_stimmungslicht
