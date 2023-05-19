@@ -1,4 +1,4 @@
-# Herzlich Willkommen!
+# Willkommen!
 
 Dies ist meine Home Assistant Konfiguration für die Version <b>2023.5.3</b>.
 
@@ -12,7 +12,7 @@ Als Hauptsicherungsspeicher dient ein alter 8GB großer USB-Stick, auf dem tägl
 Bei der zweiten Sicherung verlasse ich mich auf Google's Drive Dienst.
 
 ## Ordnerstruktur
-Die Haupt-Konfiguration dieses Servers befindet sich in der [configuration.yaml-Datei](../configuration.yaml). Die restliche Konfiguration ist im includes Ordner vorzufinden.
+Die Haupt-Konfiguration dieses Servers befindet sich in der [configuration.yaml-Datei](/config/configuration.yaml). Die restliche Konfiguration ist im includes Ordner vorzufinden.
 Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 ## Ein paar Statistiken über meine Installation:
