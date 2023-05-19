@@ -12,7 +12,7 @@ Als Hauptsicherungsspeicher dient ein alter 8GB großer USB-Stick, auf dem tägl
 Bei der zweiten Sicherung verlasse ich mich auf Google's Drive Dienst.
 
 ## Ordnerstruktur
-Die Haupt-Konfiguration dieses Servers befindet sich in der [configuration.yaml-Datei](/config/configuration.yaml). Die restliche Konfiguration ist im includes Ordner vorzufinden.
+Die Haupt-Konfiguration dieses Servers befindet sich in der Datei [configuration.yaml](configuration.yaml). Die restliche Konfiguration ist im Ordner [includes](/includes) vorzufinden.
 Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 ## Ein paar Statistiken über meine Installation:
