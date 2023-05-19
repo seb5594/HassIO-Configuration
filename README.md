@@ -1,53 +1,63 @@
-# Willkommen!
+# Herzlich Willkommen!
 
-Dies ist meine Home Assistant Konfiguration für Version <b>2023.5.3</b>.
+Dies ist meine Home Assistant Konfiguration für die Version <b>2023.5.3</b>.
 
 ## Hardware
 Die Produktions-Instanz von Home Assistant wird betrieben vom [Home Assistant Betriebssystem](https://github.com/home-assistant/operating-system) auf einem alten [Intel-NUC7i3BNK](https://ark.intel.com/content/www/de/de/ark/products/95069/intel-nuc-kit-nuc7i3bnk.html) mit 16GB RAM.
+Über die USB-Schnittstelle sind folgende Geräte angeschlossen: Ein [Google Coral USB-Beschleuniger](https://coral.ai/products/accelerator/) zur Objekt-Erkennung, ein [Phoscon Conbee 2 Stick](https://phoscon.de/en/conbee2) für das Zigbee-Protokol sowie ein USB-Stick für eine tägliche Sicherung.
+
+## Sicherungen
+Der Server wurde so konfiguriert, dass Sicherungen auf 2 Wegen funktioniert.
+Als Hauptsicherungsspeicher dient ein alter 8GB großer USB-Stick, auf dem täglich die wichtigsten Daten lokal gespiegelt werden mithilfe von R-Sync.
+Bei der zweiten Sicherung verlasse ich mich auf Google's Drive Dienst.
+
+## Ordnerstruktur
+Die Haupt-Konfiguration dieses Servers befindet sich in der [configuration.yaml-Datei](../configuration.yaml). Die restliche Konfiguration ist im includes Ordner vorzufinden.
+Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 ## Ein paar Statistiken über meine Installation:
 
 Beschreibung | Wert
 -- | --
-Anzahl Sensoren | 457
-Anzahl Entitäten | 1089
-Anzahl Entitäten in Domänen:
-[`automation`](https://www.home-assistant.io/components/automation) | 50
-[`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 81
-[`button`](https://www.home-assistant.io/components/button) | 5
-[`calendar`](https://www.home-assistant.io/components/calendar) | 8
-[`camera`](https://www.home-assistant.io/components/camera) | 12
-[`climate`](https://www.home-assistant.io/components/climate) | 4
-[`counter`](https://www.home-assistant.io/components/counter) | 1
-[`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 83
-[`group`](https://www.home-assistant.io/components/group) | 16
-[`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
-[`input_number`](https://www.home-assistant.io/components/input_number) | 2
-[`input_select`](https://www.home-assistant.io/components/input_select) | 3
-[`input_text`](https://www.home-assistant.io/components/input_text) | 4
-[`light`](https://www.home-assistant.io/components/light) | 31
-[`lock`](https://www.home-assistant.io/components/lock) | 2
-[`media_player`](https://www.home-assistant.io/components/media_player) | 6
-[`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 3
-[`person`](https://www.home-assistant.io/components/person) | 6
-[`proximity`](https://www.home-assistant.io/components/proximity) | 4
-[`remote`](https://www.home-assistant.io/components/remote) | 1
-[`scene`](https://www.home-assistant.io/components/scene) | 1
-[`schedule`](https://www.home-assistant.io/components/schedule) | 1
-[`script`](https://www.home-assistant.io/components/script) | 26
-[`select`](https://www.home-assistant.io/components/select) | 19
-[`sensor`](https://www.home-assistant.io/components/sensor) | 457
-[`stt`](https://www.home-assistant.io/components/stt) | 1
-[`sun`](https://www.home-assistant.io/components/sun) | 1
-[`switch`](https://www.home-assistant.io/components/switch) | 77
-[`timer`](https://www.home-assistant.io/components/timer) | 1
-[`update`](https://www.home-assistant.io/components/update) | 161
-[`weather`](https://www.home-assistant.io/components/weather) | 1
-[`zone`](https://www.home-assistant.io/components/zone) | 9
+Anzahl Sensoren | 7
+Anzahl Entitäten | 1086
+Anzahl Entitäten nach Domäne
+  [`automation`](https://www.home-assistant.io/components/automation) | 50
+  [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 81
+  [`button`](https://www.home-assistant.io/components/button) | 5
+  [`calendar`](https://www.home-assistant.io/components/calendar) | 8
+  [`camera`](https://www.home-assistant.io/components/camera) | 12
+  [`climate`](https://www.home-assistant.io/components/climate) | 4
+  [`counter`](https://www.home-assistant.io/components/counter) | 1
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 83
+  [`group`](https://www.home-assistant.io/components/group) | 16
+  [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
+  [`input_number`](https://www.home-assistant.io/components/input_number) | 2
+  [`input_select`](https://www.home-assistant.io/components/input_select) | 3
+  [`input_text`](https://www.home-assistant.io/components/input_text) | 4
+  [`light`](https://www.home-assistant.io/components/light) | 31
+  [`lock`](https://www.home-assistant.io/components/lock) | 2
+  [`media_player`](https://www.home-assistant.io/components/media_player) | 6
+  [`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 3
+  [`person`](https://www.home-assistant.io/components/person) | 6
+  [`proximity`](https://www.home-assistant.io/components/proximity) | 4
+  [`remote`](https://www.home-assistant.io/components/remote) | 1
+  [`scene`](https://www.home-assistant.io/components/scene) | 1
+  [`schedule`](https://www.home-assistant.io/components/schedule) | 1
+  [`script`](https://www.home-assistant.io/components/script) | 26
+  [`select`](https://www.home-assistant.io/components/select) | 19
+  [`sensor`](https://www.home-assistant.io/components/sensor) | 455
+  [`stt`](https://www.home-assistant.io/components/stt) | 1
+  [`sun`](https://www.home-assistant.io/components/sun) | 1
+  [`switch`](https://www.home-assistant.io/components/switch) | 77
+  [`timer`](https://www.home-assistant.io/components/timer) | 1
+  [`update`](https://www.home-assistant.io/components/update) | 160
+  [`weather`](https://www.home-assistant.io/components/weather) | 1
+  [`zone`](https://www.home-assistant.io/components/zone) | 9
 
-## Meine installierten Erweiterungen:
+## Meine installierten Erweiterungen / Addons:
 
-### Add-ons
+### Erweiterungen / Add-ons
 - AdGuard Home (4.8.7)
 - Advanced SSH & Web Terminal (15.0.0)
 - AirCast (3.5.3)
@@ -118,7 +128,6 @@ Anzahl Entitäten in Domänen:
 - [<img src="https://brands.home-assistant.io/_/edge_tts/icon.png" height="24"/>](https://brands.home-assistant.io/_/edge_tts/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/edge_tts/icon.png" height="24"/>](https://brands.home-assistant.io/_/edge_tts/icon.png#gh-light-mode-only) [Microsoft Edge Tts (None)](https://github.com/hasscc/hass-edge-tts)
 - [<img src="https://brands.home-assistant.io/_/midea_ac_lan/icon.png" height="24"/>](https://brands.home-assistant.io/_/midea_ac_lan/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/midea_ac_lan/icon.png" height="24"/>](https://brands.home-assistant.io/_/midea_ac_lan/icon.png#gh-light-mode-only) [Midea Ac Lan (v0.3.16)](https://github.com/georgezhao2010/midea_ac_lan)
 - [<img src="https://brands.home-assistant.io/_/monitor_docker/icon.png" height="24"/>](https://brands.home-assistant.io/_/monitor_docker/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/monitor_docker/icon.png" height="24"/>](https://brands.home-assistant.io/_/monitor_docker/icon.png#gh-light-mode-only) [Monitor Docker (1.14)](https://github.com/ualex73/monitor_docker)
-- [<img src="https://brands.home-assistant.io/_/npm_switches/icon.png" height="24"/>](https://brands.home-assistant.io/_/npm_switches/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/npm_switches/icon.png" height="24"/>](https://brands.home-assistant.io/_/npm_switches/icon.png#gh-light-mode-only) [Npm Switches (v1.0.0)](https://github.com/InTheDaylight14/nginx-proxy-manager-switches)
 - [<img src="https://brands.home-assistant.io/_/places/icon.png" height="24"/>](https://brands.home-assistant.io/_/places/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/places/icon.png" height="24"/>](https://brands.home-assistant.io/_/places/icon.png#gh-light-mode-only) [Places (v2.3.5)](https://github.com/custom-components/places)
 - [<img src="https://brands.home-assistant.io/_/powercalc/icon.png" height="24"/>](https://brands.home-assistant.io/_/powercalc/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/powercalc/icon.png" height="24"/>](https://brands.home-assistant.io/_/powercalc/icon.png#gh-light-mode-only) [Powercalc (v1.6.1)](https://github.com/bramstroker/homeassistant-powercalc)
 - [<img src="https://brands.home-assistant.io/_/pyscript/icon.png" height="24"/>](https://brands.home-assistant.io/_/pyscript/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/pyscript/icon.png" height="24"/>](https://brands.home-assistant.io/_/pyscript/icon.png#gh-light-mode-only) [Pyscript (1.4.0)](https://github.com/custom-components/pyscript)
@@ -210,3 +219,7 @@ Anzahl Entitäten in Domänen:
 ### Github
 ![Letzter commit](https://img.shields.io/github/last-commit/seb5594/HassIO-Configuration?style=flat-square)
 ![Commit Aktivität](https://img.shields.io/github/commit-activity/w/seb5594/HassIO-Configuration?style=flat-square)
+
+***
+
+Wie alle anderen Home Assistant-Instanzen ist auch diese Konfiguration eine laufende Arbeit, die niemals zu 100 % erfüllt sein wird :D
