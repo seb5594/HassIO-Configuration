@@ -1,6 +1,6 @@
 # Willkommen !
 
-Dies ist meine Home Assistant Konfiguration, welche mit [Version](../.HA_VERSION) kompatibel ist.
+Dies ist meine Home Assistant Konfiguration, welche mit [Version](.HA_VERSION) kompatibel ist.
 
 
 ## Hardware
