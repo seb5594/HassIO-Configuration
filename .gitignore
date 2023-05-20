@@ -36,5 +36,6 @@ addons_config/epicgamesfree
 tts/*.mp3
 zigbee2mqtt
 templates
+!templates/README.j2
 esphome/.esphome
 ps5-mqtt

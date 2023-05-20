@@ -1,6 +1,6 @@
-# Willkommen!
+# Herzlich Willkommen!
 
-Dies ist meine Home Assistant Konfiguration für die Version <b>2023.5.3</b>.
+Dies ist meine Konfiguration der Smart-Home Plattform <b>Home Assistant</b> für die Version <b>2023.5.3</b>.
 
 ## Hardware
 Die Produktions-Instanz von Home Assistant wird betrieben vom [Home Assistant Betriebssystem](https://github.com/home-assistant/operating-system) auf einem alten [Intel-NUC7i3BNK](https://ark.intel.com/content/www/de/de/ark/products/95069/intel-nuc-kit-nuc7i3bnk.html) mit 16GB RAM.
@@ -11,9 +11,9 @@ Die Produktions-Instanz von Home Assistant wird betrieben vom [Home Assistant Be
   - USB-Stick für tägliche Sicherung.
 
 ## Sicherungen
-Der Server wurde so konfiguriert, dass Sicherungen auf 2 Wegen funktioniert.
-Als Hauptsicherungsspeicher dient ein alter 8GB großer USB-Stick, auf dem täglich die wichtigsten Daten lokal gespiegelt werden mithilfe von R-Sync.
-Bei der zweiten Sicherung verlasse ich mich auf Google's Drive Dienst.
+Der Server wurde so konfiguriert, dass Sicherungen auf 2 Wegen funktionieren.
+Als Hauptsicherungsspeicher dient ein alter 8GB großer USB-Stick, auf dem täglich die wichtigsten Daten lokal gespiegelt werden mithilfe vom R-Sync Addon.
+Bei der zweiten Sicherung verlasse ich mich auf Google's Drive Dienst und dem Addon "Home Assistant Google Drive Backup".
 
 ## Ordnerstruktur
 Die Haupt-Konfiguration dieses Servers befindet sich in der Datei [configuration.yaml](configuration.yaml). Die restliche Konfiguration ist im Ordner [includes](/includes) vorzufinden.
@@ -23,23 +23,23 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 Beschreibung | Wert
 -- | --
-Anzahl Sensoren | 7
-Anzahl Entitäten | 1075
+Anzahl Sensoren | 508
+Anzahl Entitäten | 1130
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
-  [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 80
-  [`button`](https://www.home-assistant.io/components/button) | 5
+  [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
+  [`button`](https://www.home-assistant.io/components/button) | 8
   [`calendar`](https://www.home-assistant.io/components/calendar) | 8
-  [`camera`](https://www.home-assistant.io/components/camera) | 12
+  [`camera`](https://www.home-assistant.io/components/camera) | 13
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
-  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 83
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 85
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
   [`input_select`](https://www.home-assistant.io/components/input_select) | 3
   [`input_text`](https://www.home-assistant.io/components/input_text) | 4
-  [`light`](https://www.home-assistant.io/components/light) | 30
+  [`light`](https://www.home-assistant.io/components/light) | 29
   [`lock`](https://www.home-assistant.io/components/lock) | 2
   [`media_player`](https://www.home-assistant.io/components/media_player) | 6
   [`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 3
@@ -50,12 +50,12 @@ Anzahl Entitäten nach Domäne
   [`schedule`](https://www.home-assistant.io/components/schedule) | 1
   [`script`](https://www.home-assistant.io/components/script) | 26
   [`select`](https://www.home-assistant.io/components/select) | 19
-  [`sensor`](https://www.home-assistant.io/components/sensor) | 455
+  [`sensor`](https://www.home-assistant.io/components/sensor) | 508
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
-  [`switch`](https://www.home-assistant.io/components/switch) | 77
+  [`switch`](https://www.home-assistant.io/components/switch) | 78
   [`timer`](https://www.home-assistant.io/components/timer) | 1
-  [`update`](https://www.home-assistant.io/components/update) | 151
+  [`update`](https://www.home-assistant.io/components/update) | 145
   [`weather`](https://www.home-assistant.io/components/weather) | 1
   [`zone`](https://www.home-assistant.io/components/zone) | 9
 
@@ -88,7 +88,7 @@ Anzahl Entitäten nach Domäne
 - Music Assistant BETA (2.0.0b30)
 - Network UPS Tools (0.11.2)
 - Nginx Proxy Manager (0.12.3)
-- Paperless NGX (1.14.4-2)
+- Paperless NGX (1.14.5)
 - Portainer (2.18.2)
 - PS5 MQTT (1.3.1)
 - RPC Shutdown (2.4)
@@ -140,7 +140,6 @@ Anzahl Entitäten nach Domäne
 - [<img src="https://brands.home-assistant.io/_/snowtire/icon.png" height="24"/>](https://brands.home-assistant.io/_/snowtire/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/snowtire/icon.png" height="24"/>](https://brands.home-assistant.io/_/snowtire/icon.png#gh-light-mode-only) [Snowtire Sensor (1.4.5)](https://github.com/Limych/ha-snowtire)
 - [<img src="https://brands.home-assistant.io/_/waste_collection_schedule/icon.png" height="24"/>](https://brands.home-assistant.io/_/waste_collection_schedule/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/waste_collection_schedule/icon.png" height="24"/>](https://brands.home-assistant.io/_/waste_collection_schedule/icon.png#gh-light-mode-only) [Waste Collection Schedule (1.39.0)](https://github.com/mampfes/hacs_waste_collection_schedule)
 - [<img src="https://brands.home-assistant.io/_/watchman/icon.png" height="24"/>](https://brands.home-assistant.io/_/watchman/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/watchman/icon.png" height="24"/>](https://brands.home-assistant.io/_/watchman/icon.png#gh-light-mode-only) [Watchman (v0.6.1)](https://github.com/dummylabs/thewatchman)
-- [<img src="https://brands.home-assistant.io/_/whatspie/icon.png" height="24"/>](https://brands.home-assistant.io/_/whatspie/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/whatspie/icon.png" height="24"/>](https://brands.home-assistant.io/_/whatspie/icon.png#gh-light-mode-only) [Whatspie (None)](https://github.com/arifwn/homeassistant-whatspie-integration)
 - [<img src="https://brands.home-assistant.io/_/xiaomi_miot/icon.png" height="24"/>](https://brands.home-assistant.io/_/xiaomi_miot/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/xiaomi_miot/icon.png" height="24"/>](https://brands.home-assistant.io/_/xiaomi_miot/icon.png#gh-light-mode-only) [Xiaomi Miot Auto (v0.7.8)](https://github.com/al-one/hass-xiaomi-miot)
 - [<img src="https://brands.home-assistant.io/_/zha_toolkit/icon.png" height="24"/>](https://brands.home-assistant.io/_/zha_toolkit/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/zha_toolkit/icon.png" height="24"/>](https://brands.home-assistant.io/_/zha_toolkit/icon.png#gh-light-mode-only) [🧰 Zha Toolkit   Service For Advanced Zigbee Usage (v0.8.39)](https://github.com/mdeweerd/zha-toolkit)
 
@@ -159,7 +158,6 @@ Anzahl Entitäten nach Domäne
 - [Config Template Card (1.3.6)](https://github.com/iantrich/config-template-card)
 - [Custom Icons (v0.3.7)](https://github.com/Mariusthvdb/custom-icons)
 - [Dark Thermostat (0.0.5)](https://github.com/ciotlosm/lovelace-thermostat-dark-card)
-- [Datetime Card (v1.0.2)](https://github.com/a-p-z/datetime-card)
 - [Digital Clock (v1.2.4)](https://github.com/wassy92x/lovelace-digital-clock)
 - [Dual Gauge Card (0.5.3)](https://github.com/custom-cards/dual-gauge-card)
 - [Entity Attributes Card (0.1.2)](https://github.com/custom-cards/entity-attributes-card)
@@ -170,16 +168,14 @@ Anzahl Entitäten nach Domäne
 - [Gauge Card (0.2.3)](https://github.com/custom-cards/gauge-card)
 - [Github Flexi Card / Entity Row (v2.0.0)](https://github.com/maxwroc/github-flexi-card)
 - [Ha Floorplan (1.0.34)](https://github.com/ExperienceLovelace/ha-floorplan)
-- [Hass Hue Icons (v1.2.51)](https://github.com/arallsopp/hass-hue-icons)
 - [Header Cards (0.0.10)](https://github.com/gadgetchnnel/lovelace-header-cards)
 - [Home Assistant Swipe Navigation (v1.11.1)](https://github.com/zanna-37/hass-swipe-navigation)
 - [Hourly Weather Card (4.11.0)](https://github.com/decompil3d/lovelace-hourly-weather)
-- [List Card (0.1.2)](https://github.com/iantrich/list-card)
+- [Layout Card (2.4.4)](https://github.com/thomasloven/lovelace-layout-card)
 - [Logbook Card (1.10.1)](https://github.com/royto/logbook-card)
 - [Midea Humidifier Card (v1.0.8)](https://github.com/sicknesz/midea-humidifier-card)
 - [Mini Graph Card (v0.11.0)](https://github.com/kalkih/mini-graph-card)
 - [Minimalistic Area Card (v1.1.16)](https://github.com/junalmeida/homeassistant-minimalistic-area-card)
-- [Multiple Entity Row (v4.4.1)](https://github.com/benct/lovelace-multiple-entity-row)
 - [Mushroom (v2.7.1)](https://github.com/piitaya/lovelace-mushroom)
 - [Person (v0.8.0)](https://github.com/gerardag/person-entity-card)
 - [Rmv Card (None)](https://github.com/custom-cards/rmv-card)
@@ -192,12 +188,10 @@ Anzahl Entitäten nach Domäne
 - [State Switch (1.9.5)](https://github.com/thomasloven/lovelace-state-switch)
 - [Tab Redirect Card (None)](https://github.com/ben8p/lovelace-tab-redirect-card)
 - [Tankerkoenig Card (v1.2.2)](https://github.com/KrX3D/tankerkoenig-card)
-- [Template Entity Row (1.3.2)](https://github.com/thomasloven/lovelace-template-entity-row)
 - [Tv Remote Card (v0.2.1)](https://github.com/marrobHD/tv-card)
 - [Unused Card (1.1)](https://github.com/custom-cards/unused-card)
 - [Uptime Card (v0.14.0)](https://github.com/dylandoamaral/uptime-card)
 - [Vertical Slider Cover Card (v0.1.5)](https://github.com/konnectedvn/lovelace-vertical-slider-cover-card)
-- [Vertical Stack In Card (v0.4.4)](https://github.com/ofekashery/vertical-stack-in-card)
 - [Weather Radar Card (v2.1.0)](https://github.com/Makin-Things/weather-radar-card)
 - [Your Ha Digital Twin Floor3D Card (v.1.5.3)](https://github.com/adizanni/floor3d-card)
 
@@ -217,4 +211,4 @@ Anzahl Entitäten nach Domäne
 
 ***
 
-Wie alle anderen Home Assistant-Instanzen ist auch diese Konfiguration eine laufende Arbeit, die niemals zu 100 % erfüllt sein wird :D
+Wie alle anderen Home Assistant-Instanzen oder Smart-Home Systeme ist auch diese Konfiguration eine laufende Arbeit, die niemals zu 100 % erfüllt sein wird :D
