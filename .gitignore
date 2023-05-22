@@ -6,12 +6,12 @@
 .storage
 .cloud
 .google.token
+.HA_VERSION
 
 # Ensure these YAML files are ignored, otherwise your secret data/credentials will leak.
 ip_bans.yaml
 secrets.yaml
 known_devices.yaml
-.HA_VERSION
 
 # Exclude file formats
 *.png
@@ -35,7 +35,5 @@ addons_config/double-take/.*
 addons_config/epicgamesfree
 tts/*.mp3
 zigbee2mqtt
-templates
-!templates/README.j2
 esphome/.esphome
 ps5-mqtt

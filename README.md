@@ -24,7 +24,7 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 Beschreibung | Wert
 -- | --
 Anzahl Sensoren | 508
-Anzahl Entitäten | 1134
+Anzahl Entitäten | 1142
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
   [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
@@ -33,7 +33,7 @@ Anzahl Entitäten nach Domäne
   [`camera`](https://www.home-assistant.io/components/camera) | 13
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
-  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 87
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 90
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
@@ -42,7 +42,7 @@ Anzahl Entitäten nach Domäne
   [`light`](https://www.home-assistant.io/components/light) | 29
   [`lock`](https://www.home-assistant.io/components/lock) | 2
   [`media_player`](https://www.home-assistant.io/components/media_player) | 6
-  [`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 3
+  [`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 4
   [`person`](https://www.home-assistant.io/components/person) | 6
   [`proximity`](https://www.home-assistant.io/components/proximity) | 4
   [`remote`](https://www.home-assistant.io/components/remote) | 1
@@ -53,7 +53,7 @@ Anzahl Entitäten nach Domäne
   [`sensor`](https://www.home-assistant.io/components/sensor) | 508
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
-  [`switch`](https://www.home-assistant.io/components/switch) | 80
+  [`switch`](https://www.home-assistant.io/components/switch) | 84
   [`timer`](https://www.home-assistant.io/components/timer) | 1
   [`update`](https://www.home-assistant.io/components/update) | 145
   [`weather`](https://www.home-assistant.io/components/weather) | 1
@@ -81,7 +81,7 @@ Anzahl Entitäten nach Domäne
 - File editor (5.6.0)
 - Frigate (0.12.0)
 - Gitea (1.19.3)
-- Glances (0.19.0)
+- Glances (0.19.2)
 - Home Assistant Google Drive Backup (0.110.4)
 - MariaDB (2.6.1)
 - Mosquitto broker (6.2.1)
@@ -105,7 +105,7 @@ Anzahl Entitäten nach Domäne
 - Zigbee2MQTT (1.30.4-1)
 
 ### Benutzerdefinierte Integrationen
-- [<img src="https://brands.home-assistant.io/_/adaptive_lighting/icon.png" height="24"/>](https://brands.home-assistant.io/_/adaptive_lighting/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/adaptive_lighting/icon.png" height="24"/>](https://brands.home-assistant.io/_/adaptive_lighting/icon.png#gh-light-mode-only) [Adaptive Lighting (1.11.0)](https://github.com/basnijholt/adaptive-lighting)
+- [<img src="https://brands.home-assistant.io/_/adaptive_lighting/icon.png" height="24"/>](https://brands.home-assistant.io/_/adaptive_lighting/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/adaptive_lighting/icon.png" height="24"/>](https://brands.home-assistant.io/_/adaptive_lighting/icon.png#gh-light-mode-only) [Adaptive Lighting (1.12.0)](https://github.com/basnijholt/adaptive-lighting)
 - [<img src="https://brands.home-assistant.io/_/alexa_media/icon.png" height="24"/>](https://brands.home-assistant.io/_/alexa_media/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/alexa_media/icon.png" height="24"/>](https://brands.home-assistant.io/_/alexa_media/icon.png#gh-light-mode-only) [Alexa Media Player (v4.6.4)](https://github.com/custom-components/alexa_media_player)
 - [<img src="https://brands.home-assistant.io/_/anniversaries/icon.png" height="24"/>](https://brands.home-assistant.io/_/anniversaries/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/anniversaries/icon.png" height="24"/>](https://brands.home-assistant.io/_/anniversaries/icon.png#gh-light-mode-only) [Anniversaries (5.2.0)](https://github.com/pinkywafer/Anniversaries)
 - [<img src="https://brands.home-assistant.io/_/average/icon.png" height="24"/>](https://brands.home-assistant.io/_/average/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/average/icon.png" height="24"/>](https://brands.home-assistant.io/_/average/icon.png#gh-light-mode-only) [Average Sensor (2.3.0)](https://github.com/Limych/ha-average)
@@ -130,7 +130,7 @@ Anzahl Entitäten nach Domäne
 - [<img src="https://brands.home-assistant.io/_/edge_tts/icon.png" height="24"/>](https://brands.home-assistant.io/_/edge_tts/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/edge_tts/icon.png" height="24"/>](https://brands.home-assistant.io/_/edge_tts/icon.png#gh-light-mode-only) [Microsoft Edge Tts (None)](https://github.com/hasscc/hass-edge-tts)
 - [<img src="https://brands.home-assistant.io/_/midea_ac_lan/icon.png" height="24"/>](https://brands.home-assistant.io/_/midea_ac_lan/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/midea_ac_lan/icon.png" height="24"/>](https://brands.home-assistant.io/_/midea_ac_lan/icon.png#gh-light-mode-only) [Midea Ac Lan (v0.3.16)](https://github.com/georgezhao2010/midea_ac_lan)
 - [<img src="https://brands.home-assistant.io/_/monitor_docker/icon.png" height="24"/>](https://brands.home-assistant.io/_/monitor_docker/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/monitor_docker/icon.png" height="24"/>](https://brands.home-assistant.io/_/monitor_docker/icon.png#gh-light-mode-only) [Monitor Docker (1.14)](https://github.com/ualex73/monitor_docker)
-- [<img src="https://brands.home-assistant.io/_/places/icon.png" height="24"/>](https://brands.home-assistant.io/_/places/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/places/icon.png" height="24"/>](https://brands.home-assistant.io/_/places/icon.png#gh-light-mode-only) [Places (v2.3.5)](https://github.com/custom-components/places)
+- [<img src="https://brands.home-assistant.io/_/places/icon.png" height="24"/>](https://brands.home-assistant.io/_/places/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/places/icon.png" height="24"/>](https://brands.home-assistant.io/_/places/icon.png#gh-light-mode-only) [Places (v2.4)](https://github.com/custom-components/places)
 - [<img src="https://brands.home-assistant.io/_/powercalc/icon.png" height="24"/>](https://brands.home-assistant.io/_/powercalc/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/powercalc/icon.png" height="24"/>](https://brands.home-assistant.io/_/powercalc/icon.png#gh-light-mode-only) [Powercalc (v1.6.1)](https://github.com/bramstroker/homeassistant-powercalc)
 - [<img src="https://brands.home-assistant.io/_/pyscript/icon.png" height="24"/>](https://brands.home-assistant.io/_/pyscript/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/pyscript/icon.png" height="24"/>](https://brands.home-assistant.io/_/pyscript/icon.png#gh-light-mode-only) [Pyscript (1.4.0)](https://github.com/custom-components/pyscript)
 - [<img src="https://brands.home-assistant.io/_/qr_generator/icon.png" height="24"/>](https://brands.home-assistant.io/_/qr_generator/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/qr_generator/icon.png" height="24"/>](https://brands.home-assistant.io/_/qr_generator/icon.png#gh-light-mode-only) [Qr Code Generator (v.1.0.4)](https://github.com/DeerMaximum/QR-Code-Generator)
@@ -138,7 +138,7 @@ Anzahl Entitäten nach Domäne
 - [<img src="https://brands.home-assistant.io/_/rki_covid/icon.png" height="24"/>](https://brands.home-assistant.io/_/rki_covid/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/rki_covid/icon.png" height="24"/>](https://brands.home-assistant.io/_/rki_covid/icon.png#gh-light-mode-only) [Rki Covid Numbers (1.5.8)](https://github.com/thebino/rki_covid)
 - [<img src="https://brands.home-assistant.io/_/ssh/icon.png" height="24"/>](https://brands.home-assistant.io/_/ssh/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/ssh/icon.png" height="24"/>](https://brands.home-assistant.io/_/ssh/icon.png#gh-light-mode-only) [Sensor.Ssh (1.15)](https://github.com/custom-components/sensor.ssh)
 - [<img src="https://brands.home-assistant.io/_/snowtire/icon.png" height="24"/>](https://brands.home-assistant.io/_/snowtire/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/snowtire/icon.png" height="24"/>](https://brands.home-assistant.io/_/snowtire/icon.png#gh-light-mode-only) [Snowtire Sensor (1.4.5)](https://github.com/Limych/ha-snowtire)
-- [<img src="https://brands.home-assistant.io/_/waste_collection_schedule/icon.png" height="24"/>](https://brands.home-assistant.io/_/waste_collection_schedule/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/waste_collection_schedule/icon.png" height="24"/>](https://brands.home-assistant.io/_/waste_collection_schedule/icon.png#gh-light-mode-only) [Waste Collection Schedule (1.39.0)](https://github.com/mampfes/hacs_waste_collection_schedule)
+- [<img src="https://brands.home-assistant.io/_/waste_collection_schedule/icon.png" height="24"/>](https://brands.home-assistant.io/_/waste_collection_schedule/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/waste_collection_schedule/icon.png" height="24"/>](https://brands.home-assistant.io/_/waste_collection_schedule/icon.png#gh-light-mode-only) [Waste Collection Schedule (1.40.0)](https://github.com/mampfes/hacs_waste_collection_schedule)
 - [<img src="https://brands.home-assistant.io/_/watchman/icon.png" height="24"/>](https://brands.home-assistant.io/_/watchman/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/watchman/icon.png" height="24"/>](https://brands.home-assistant.io/_/watchman/icon.png#gh-light-mode-only) [Watchman (v0.6.1)](https://github.com/dummylabs/thewatchman)
 - [<img src="https://brands.home-assistant.io/_/xiaomi_miot/icon.png" height="24"/>](https://brands.home-assistant.io/_/xiaomi_miot/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/xiaomi_miot/icon.png" height="24"/>](https://brands.home-assistant.io/_/xiaomi_miot/icon.png#gh-light-mode-only) [Xiaomi Miot Auto (v0.7.8)](https://github.com/al-one/hass-xiaomi-miot)
 - [<img src="https://brands.home-assistant.io/_/zha_toolkit/icon.png" height="24"/>](https://brands.home-assistant.io/_/zha_toolkit/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/zha_toolkit/icon.png" height="24"/>](https://brands.home-assistant.io/_/zha_toolkit/icon.png#gh-light-mode-only) [🧰 Zha Toolkit   Service For Advanced Zigbee Usage (v0.8.39)](https://github.com/mdeweerd/zha-toolkit)
@@ -164,7 +164,7 @@ Anzahl Entitäten nach Domäne
 - [Flex Table   Highly Customizable, Data Visualization (v0.7.2)](https://github.com/custom-cards/flex-table-card)
 - [Flexible Horseshoe Card For Lovelace (v1.2)](https://github.com/AmoebeLabs/flex-horseshoe-card)
 - [Fold Entity Row (2.2.0)](https://github.com/thomasloven/lovelace-fold-entity-row)
-- [Frigate Card (v5.0.0)](https://github.com/dermotduffy/frigate-hass-card)
+- [Frigate Card (v5.1.1)](https://github.com/dermotduffy/frigate-hass-card)
 - [Gauge Card (0.2.3)](https://github.com/custom-cards/gauge-card)
 - [Github Flexi Card / Entity Row (v2.0.0)](https://github.com/maxwroc/github-flexi-card)
 - [Ha Floorplan (1.0.34)](https://github.com/ExperienceLovelace/ha-floorplan)

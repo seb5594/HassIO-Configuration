@@ -1,0 +1,68 @@
+# Herzlich Willkommen!
+
+Dies ist meine Konfiguration der Smart-Home Plattform <b>Home Assistant</b> für die Version <b>{{ states('sensor.current_version') }}</b>.
+
+## Hardware
+Die Produktions-Instanz von Home Assistant wird betrieben vom [Home Assistant Betriebssystem](https://github.com/home-assistant/operating-system) auf einem alten [Intel-NUC7i3BNK](https://ark.intel.com/content/www/de/de/ark/products/95069/intel-nuc-kit-nuc7i3bnk.html) mit 16GB RAM.
+
+Über die USB-Schnittstelle sind folgende Geräte angeschlossen:
+  - [Google Coral USB-Beschleuniger](https://coral.ai/products/accelerator/) zur Objekt-Erkennung
+  - [Phoscon Conbee 2 Stick](https://phoscon.de/en/conbee2) für das Zigbee-Protokol
+  - USB-Stick für tägliche Sicherung.
+
+## Sicherungen
+Der Server wurde so konfiguriert, dass Sicherungen auf 2 Wegen funktionieren.
+Als Hauptsicherungsspeicher dient ein alter 8GB großer USB-Stick, auf dem täglich die wichtigsten Daten lokal gespiegelt werden mithilfe vom R-Sync Addon.
+Bei der zweiten Sicherung verlasse ich mich auf Google's Drive Dienst und dem Addon "Home Assistant Google Drive Backup".
+
+## Ordnerstruktur
+Die Haupt-Konfiguration dieses Servers befindet sich in der Datei [configuration.yaml](configuration.yaml). Die restliche Konfiguration ist im Ordner [includes](/includes) vorzufinden.
+Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
+
+## Ein paar Statistiken über meine Installation:
+
+Beschreibung | Wert
+-- | --
+Anzahl Sensoren | {{ states.sensor | count }}
+Anzahl Entitäten | {{ states | count }}
+Anzahl Entitäten nach Domäne
+{%- set data = namespace(domains=[]) %}
+{%- for state in states %}
+  {%- if state.domain not in data.domains %}
+    {%- set data.domains = data.domains + [state.domain] %}
+  {%- endif %}
+{%- endfor %}
+{%- for domain in data.domains | sort() %}
+  [`{{domain}}`](https://www.home-assistant.io/components/{{domain}}) | {{states[domain] | count }}
+{%- endfor %}
+
+## Meine installierten Erweiterungen / Addons:
+
+### Erweiterungen / Add-ons
+{%- for addon in addons | sort(attribute='name') %}
+- {{addon.name}} ({{addon.version}})
+{%- endfor %}
+
+### Benutzerdefinierte Integrationen
+{%- for component in hacs_components | selectattr('category', 'equalto', 'integration') | sort(attribute='name') %}
+- [<img src="https://brands.home-assistant.io/_/{{component.domain}}/icon.png" height="24"/>](https://brands.home-assistant.io/_/{{component.domain}}/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/{{component.domain}}/icon.png" height="24"/>](https://brands.home-assistant.io/_/{{component.domain}}/icon.png#gh-light-mode-only) [{{component.name}} ({{component.installed_version}})]({{component.documentation}})
+{%- endfor %}
+
+### Lovelace plugins
+{%- for component in hacs_components | selectattr('category', 'equalto', 'plugin') | sort(attribute='name') %}
+- [{{component.name}} ({{component.installed_version}})]({{component.documentation}})
+{%- endfor %}
+
+### Themen
+{%- for component in hacs_components | selectattr('category', 'equalto', 'theme') | sort(attribute='name') %}
+- [{{component.name}}]({{component.documentation}})
+{%- endfor %}
+
+
+### Github
+![Letzter commit](https://img.shields.io/github/last-commit/seb5594/HassIO-Configuration?style=flat-square)
+![Commit Aktivität](https://img.shields.io/github/commit-activity/w/seb5594/HassIO-Configuration?style=flat-square)
+
+***
+
+Wie alle anderen Home Assistant-Instanzen oder Smart-Home Systeme ist auch diese Konfiguration eine laufende Arbeit, die niemals zu 100 % erfüllt sein wird :D
