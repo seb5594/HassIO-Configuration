@@ -23,8 +23,8 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 Beschreibung | Wert
 -- | --
-Anzahl Sensoren | 508
-Anzahl Entitäten | 1142
+Anzahl Sensoren | 492
+Anzahl Entitäten | 1115
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
   [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
@@ -33,7 +33,7 @@ Anzahl Entitäten nach Domäne
   [`camera`](https://www.home-assistant.io/components/camera) | 13
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
-  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 90
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 80
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
@@ -42,7 +42,7 @@ Anzahl Entitäten nach Domäne
   [`light`](https://www.home-assistant.io/components/light) | 29
   [`lock`](https://www.home-assistant.io/components/lock) | 2
   [`media_player`](https://www.home-assistant.io/components/media_player) | 6
-  [`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 4
+  [`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 2
   [`person`](https://www.home-assistant.io/components/person) | 6
   [`proximity`](https://www.home-assistant.io/components/proximity) | 4
   [`remote`](https://www.home-assistant.io/components/remote) | 1
@@ -50,10 +50,10 @@ Anzahl Entitäten nach Domäne
   [`schedule`](https://www.home-assistant.io/components/schedule) | 1
   [`script`](https://www.home-assistant.io/components/script) | 26
   [`select`](https://www.home-assistant.io/components/select) | 19
-  [`sensor`](https://www.home-assistant.io/components/sensor) | 508
+  [`sensor`](https://www.home-assistant.io/components/sensor) | 492
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
-  [`switch`](https://www.home-assistant.io/components/switch) | 84
+  [`switch`](https://www.home-assistant.io/components/switch) | 85
   [`timer`](https://www.home-assistant.io/components/timer) | 1
   [`update`](https://www.home-assistant.io/components/update) | 145
   [`weather`](https://www.home-assistant.io/components/weather) | 1
@@ -63,7 +63,7 @@ Anzahl Entitäten nach Domäne
 
 ### Erweiterungen / Add-ons
 - AdGuard Home (4.8.7)
-- Advanced SSH & Web Terminal (15.0.0)
+- Advanced SSH & Web Terminal (15.0.1)
 - AirCast (3.5.3)
 - Arpspoof (1.0.0-2)
 - CEC Scanner (3.0)
@@ -77,7 +77,7 @@ Anzahl Entitäten nach Domäne
 - Double Take (1.13.1)
 - Duck DNS (1.15.0)
 - Epic Games Free (c0dfe30ee94fa609a9efcb5eb2b8fd0c1dafe6e2-2023-05-03)
-- ESPHome (2023.5.1)
+- ESPHome (2023.5.2)
 - File editor (5.6.0)
 - Frigate (0.12.0)
 - Gitea (1.19.3)
@@ -179,8 +179,8 @@ Anzahl Entitäten nach Domäne
 - [Mushroom (v2.7.1)](https://github.com/piitaya/lovelace-mushroom)
 - [Person (v0.8.0)](https://github.com/gerardag/person-entity-card)
 - [Rmv Card (None)](https://github.com/custom-cards/rmv-card)
-- [Room Card (1.07.22)](https://github.com/marcokreeft87/room-card)
-- [Sankey Chart Card (v1.13.0)](https://github.com/MindFreeze/ha-sankey-chart)
+- [Room Card (1.07.23)](https://github.com/marcokreeft87/room-card)
+- [Sankey Chart Card (v1.14.0)](https://github.com/MindFreeze/ha-sankey-chart)
 - [Search Card (None)](https://github.com/postlund/search-card)
 - [Seventeen Track Card (1.6.1)](https://github.com/KrX3D/seventeen-track-card)
 - [Slider Button Card (v1.10.10)](https://github.com/custom-cards/slider-button-card)
