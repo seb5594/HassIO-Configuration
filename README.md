@@ -23,8 +23,8 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 Beschreibung | Wert
 -- | --
-Anzahl Sensoren | 492
-Anzahl Entitäten | 1115
+Anzahl Sensoren | 548
+Anzahl Entitäten | 1197
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
   [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
@@ -33,16 +33,15 @@ Anzahl Entitäten nach Domäne
   [`camera`](https://www.home-assistant.io/components/camera) | 13
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
-  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 80
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 81
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
   [`input_select`](https://www.home-assistant.io/components/input_select) | 3
   [`input_text`](https://www.home-assistant.io/components/input_text) | 4
-  [`light`](https://www.home-assistant.io/components/light) | 29
+  [`light`](https://www.home-assistant.io/components/light) | 33
   [`lock`](https://www.home-assistant.io/components/lock) | 2
-  [`media_player`](https://www.home-assistant.io/components/media_player) | 6
-  [`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 2
+  [`media_player`](https://www.home-assistant.io/components/media_player) | 12
   [`person`](https://www.home-assistant.io/components/person) | 6
   [`proximity`](https://www.home-assistant.io/components/proximity) | 4
   [`remote`](https://www.home-assistant.io/components/remote) | 1
@@ -50,10 +49,10 @@ Anzahl Entitäten nach Domäne
   [`schedule`](https://www.home-assistant.io/components/schedule) | 1
   [`script`](https://www.home-assistant.io/components/script) | 26
   [`select`](https://www.home-assistant.io/components/select) | 19
-  [`sensor`](https://www.home-assistant.io/components/sensor) | 492
+  [`sensor`](https://www.home-assistant.io/components/sensor) | 548
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
-  [`switch`](https://www.home-assistant.io/components/switch) | 85
+  [`switch`](https://www.home-assistant.io/components/switch) | 102
   [`timer`](https://www.home-assistant.io/components/timer) | 1
   [`update`](https://www.home-assistant.io/components/update) | 145
   [`weather`](https://www.home-assistant.io/components/weather) | 1
@@ -77,7 +76,7 @@ Anzahl Entitäten nach Domäne
 - Double Take (1.13.1)
 - Duck DNS (1.15.0)
 - Epic Games Free (c0dfe30ee94fa609a9efcb5eb2b8fd0c1dafe6e2-2023-05-03)
-- ESPHome (2023.5.2)
+- ESPHome (2023.5.3)
 - File editor (5.6.0)
 - Frigate (0.12.0)
 - Gitea (1.19.3)
