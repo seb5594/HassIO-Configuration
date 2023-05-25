@@ -23,8 +23,8 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 Beschreibung | Wert
 -- | --
-Anzahl Sensoren | 548
-Anzahl Entitäten | 1197
+Anzahl Sensoren | 549
+Anzahl Entitäten | 1200
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
   [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
@@ -33,7 +33,8 @@ Anzahl Entitäten nach Domäne
   [`camera`](https://www.home-assistant.io/components/camera) | 13
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
-  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 81
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 82
+  [`geo_location`](https://www.home-assistant.io/components/geo_location) | 1
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
@@ -49,7 +50,7 @@ Anzahl Entitäten nach Domäne
   [`schedule`](https://www.home-assistant.io/components/schedule) | 1
   [`script`](https://www.home-assistant.io/components/script) | 26
   [`select`](https://www.home-assistant.io/components/select) | 19
-  [`sensor`](https://www.home-assistant.io/components/sensor) | 548
+  [`sensor`](https://www.home-assistant.io/components/sensor) | 549
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
   [`switch`](https://www.home-assistant.io/components/switch) | 102
@@ -75,8 +76,8 @@ Anzahl Entitäten nach Domäne
 - diyHue (2.0.8)
 - Double Take (1.13.1)
 - Duck DNS (1.15.0)
-- Epic Games Free (c0dfe30ee94fa609a9efcb5eb2b8fd0c1dafe6e2-2023-05-03)
-- ESPHome (2023.5.3)
+- Epic Games Free (c0dfe30ee94fa609a9efcb5eb2b8fd0c1dafe6e2-2023-05-03-2)
+- ESPHome (2023.5.4)
 - File editor (5.6.0)
 - Frigate (0.12.0)
 - Gitea (1.19.3)
@@ -92,7 +93,7 @@ Anzahl Entitäten nach Domäne
 - PS5 MQTT (1.3.1)
 - RPC Shutdown (2.4)
 - rsync local (1.6.0)
-- Samba share (10.0.1)
+- Samba share (10.0.2)
 - Scrutiny (Full Access) (v0.7.1)
 - Studio Code Server (5.5.5)
 - Teamspeak server (3.13.6-8)
@@ -110,7 +111,7 @@ Anzahl Entitäten nach Domäne
 - [<img src="https://brands.home-assistant.io/_/average/icon.png" height="24"/>](https://brands.home-assistant.io/_/average/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/average/icon.png" height="24"/>](https://brands.home-assistant.io/_/average/icon.png#gh-light-mode-only) [Average Sensor (2.3.0)](https://github.com/Limych/ha-average)
 - [<img src="https://brands.home-assistant.io/_/better_thermostat/icon.png" height="24"/>](https://brands.home-assistant.io/_/better_thermostat/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/better_thermostat/icon.png" height="24"/>](https://brands.home-assistant.io/_/better_thermostat/icon.png#gh-light-mode-only) [Better Thermostat (1.0.3)](https://github.com/KartoffelToby/better_thermostat)
 - [<img src="https://brands.home-assistant.io/_/blitzortung/icon.png" height="24"/>](https://brands.home-assistant.io/_/blitzortung/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/blitzortung/icon.png" height="24"/>](https://brands.home-assistant.io/_/blitzortung/icon.png#gh-light-mode-only) [Blitzortung.Org Lightning Detector (v1.3.1)](https://github.com/mrk-its/homeassistant-blitzortung)
-- [<img src="https://brands.home-assistant.io/_/browser_mod/icon.png" height="24"/>](https://brands.home-assistant.io/_/browser_mod/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/browser_mod/icon.png" height="24"/>](https://brands.home-assistant.io/_/browser_mod/icon.png#gh-light-mode-only) [Browser Mod (2.2.1)](https://github.com/thomasloven/hass-browser_mod)
+- [<img src="https://brands.home-assistant.io/_/browser_mod/icon.png" height="24"/>](https://brands.home-assistant.io/_/browser_mod/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/browser_mod/icon.png" height="24"/>](https://brands.home-assistant.io/_/browser_mod/icon.png#gh-light-mode-only) [Browser Mod (2.2.2)](https://github.com/thomasloven/hass-browser_mod)
 - [<img src="https://brands.home-assistant.io/_/config_editor/icon.png" height="24"/>](https://brands.home-assistant.io/_/config_editor/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/config_editor/icon.png" height="24"/>](https://brands.home-assistant.io/_/config_editor/icon.png#gh-light-mode-only) [Config Editor (4.3)](https://github.com/htmltiger/config-editor)
 - [<img src="https://brands.home-assistant.io/_/dwd_weather/icon.png" height="24"/>](https://brands.home-assistant.io/_/dwd_weather/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/dwd_weather/icon.png" height="24"/>](https://brands.home-assistant.io/_/dwd_weather/icon.png#gh-light-mode-only) [Deutscher Wetterdienst (v1.2.27)](https://github.com/FL550/dwd_weather)
 - [<img src="https://brands.home-assistant.io/_/dwd_pollenflug/icon.png" height="24"/>](https://brands.home-assistant.io/_/dwd_pollenflug/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/dwd_pollenflug/icon.png" height="24"/>](https://brands.home-assistant.io/_/dwd_pollenflug/icon.png#gh-light-mode-only) [Dwd Pollenflug (1.0.3)](https://github.com/mampfes/hacs_dwd_pollenflug)
