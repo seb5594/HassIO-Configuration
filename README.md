@@ -23,11 +23,11 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 Beschreibung | Wert
 -- | --
-Anzahl Sensoren | 549
-Anzahl Entitäten | 1200
+Anzahl Sensoren | 550
+Anzahl Entitäten | 1205
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
-  [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
+  [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 85
   [`button`](https://www.home-assistant.io/components/button) | 8
   [`calendar`](https://www.home-assistant.io/components/calendar) | 8
   [`camera`](https://www.home-assistant.io/components/camera) | 13
@@ -40,7 +40,7 @@ Anzahl Entitäten nach Domäne
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
   [`input_select`](https://www.home-assistant.io/components/input_select) | 3
   [`input_text`](https://www.home-assistant.io/components/input_text) | 4
-  [`light`](https://www.home-assistant.io/components/light) | 33
+  [`light`](https://www.home-assistant.io/components/light) | 34
   [`lock`](https://www.home-assistant.io/components/lock) | 2
   [`media_player`](https://www.home-assistant.io/components/media_player) | 12
   [`person`](https://www.home-assistant.io/components/person) | 6
@@ -50,7 +50,7 @@ Anzahl Entitäten nach Domäne
   [`schedule`](https://www.home-assistant.io/components/schedule) | 1
   [`script`](https://www.home-assistant.io/components/script) | 26
   [`select`](https://www.home-assistant.io/components/select) | 19
-  [`sensor`](https://www.home-assistant.io/components/sensor) | 549
+  [`sensor`](https://www.home-assistant.io/components/sensor) | 550
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
   [`switch`](https://www.home-assistant.io/components/switch) | 102
@@ -70,7 +70,7 @@ Anzahl Entitäten nach Domäne
 - Check Home Assistant configuration (3.11.0)
 - chrony (2.6.0)
 - Crowdsec (1.4.6)
-- Crowdsec Firewall Bouncer (v0.0.26)
+- Crowdsec Firewall Bouncer (v0.0.26-ha2)
 - Dasshio (0.3.8)
 - DeepStack (2021.09.1)
 - diyHue (2.0.8)
