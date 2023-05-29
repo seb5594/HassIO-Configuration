@@ -24,7 +24,7 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 Beschreibung | Wert
 -- | --
 Anzahl Sensoren | 550
-Anzahl Entitäten | 1205
+Anzahl Entitäten | 1209
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
   [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 85
@@ -33,8 +33,7 @@ Anzahl Entitäten nach Domäne
   [`camera`](https://www.home-assistant.io/components/camera) | 13
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
-  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 82
-  [`geo_location`](https://www.home-assistant.io/components/geo_location) | 1
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 84
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
@@ -43,6 +42,7 @@ Anzahl Entitäten nach Domäne
   [`light`](https://www.home-assistant.io/components/light) | 34
   [`lock`](https://www.home-assistant.io/components/lock) | 2
   [`media_player`](https://www.home-assistant.io/components/media_player) | 12
+  [`persistent_notification`](https://www.home-assistant.io/components/persistent_notification) | 1
   [`person`](https://www.home-assistant.io/components/person) | 6
   [`proximity`](https://www.home-assistant.io/components/proximity) | 4
   [`remote`](https://www.home-assistant.io/components/remote) | 1
@@ -53,7 +53,7 @@ Anzahl Entitäten nach Domäne
   [`sensor`](https://www.home-assistant.io/components/sensor) | 550
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
-  [`switch`](https://www.home-assistant.io/components/switch) | 102
+  [`switch`](https://www.home-assistant.io/components/switch) | 104
   [`timer`](https://www.home-assistant.io/components/timer) | 1
   [`update`](https://www.home-assistant.io/components/update) | 145
   [`weather`](https://www.home-assistant.io/components/weather) | 1
@@ -85,7 +85,7 @@ Anzahl Entitäten nach Domäne
 - Home Assistant Google Drive Backup (0.110.4)
 - MariaDB (2.6.1)
 - Mosquitto broker (6.2.1)
-- Music Assistant BETA (2.0.0b31)
+- Music Assistant BETA (2.0.0b32)
 - Network UPS Tools (0.11.2)
 - Nginx Proxy Manager (0.12.3)
 - Paperless NGX (1.14.5)
