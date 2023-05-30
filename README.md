@@ -23,8 +23,8 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 Beschreibung | Wert
 -- | --
-Anzahl Sensoren | 550
-Anzahl Entitäten | 1209
+Anzahl Sensoren | 548
+Anzahl Entitäten | 1211
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
   [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 85
@@ -33,7 +33,7 @@ Anzahl Entitäten nach Domäne
   [`camera`](https://www.home-assistant.io/components/camera) | 13
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
-  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 84
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 86
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
@@ -50,10 +50,10 @@ Anzahl Entitäten nach Domäne
   [`schedule`](https://www.home-assistant.io/components/schedule) | 1
   [`script`](https://www.home-assistant.io/components/script) | 26
   [`select`](https://www.home-assistant.io/components/select) | 19
-  [`sensor`](https://www.home-assistant.io/components/sensor) | 550
+  [`sensor`](https://www.home-assistant.io/components/sensor) | 548
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
-  [`switch`](https://www.home-assistant.io/components/switch) | 104
+  [`switch`](https://www.home-assistant.io/components/switch) | 106
   [`timer`](https://www.home-assistant.io/components/timer) | 1
   [`update`](https://www.home-assistant.io/components/update) | 145
   [`weather`](https://www.home-assistant.io/components/weather) | 1
@@ -63,7 +63,7 @@ Anzahl Entitäten nach Domäne
 
 ### Erweiterungen / Add-ons
 - AdGuard Home (4.8.7)
-- Advanced SSH & Web Terminal (15.0.1)
+- Advanced SSH & Web Terminal (15.0.2)
 - AirCast (3.5.3)
 - Arpspoof (1.0.0-2)
 - CEC Scanner (3.0)
@@ -77,7 +77,7 @@ Anzahl Entitäten nach Domäne
 - Double Take (1.13.1)
 - Duck DNS (1.15.0)
 - Epic Games Free (c0dfe30ee94fa609a9efcb5eb2b8fd0c1dafe6e2-2023-05-03-2)
-- ESPHome (2023.5.4)
+- ESPHome (2023.5.5)
 - File editor (5.6.0)
 - Frigate (0.12.0)
 - Gitea (1.19.3)
