@@ -23,11 +23,11 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 Beschreibung | Wert
 -- | --
-Anzahl Sensoren | 548
-Anzahl Entitäten | 1211
+Anzahl Sensoren | 551
+Anzahl Entitäten | 1212
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
-  [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 85
+  [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
   [`button`](https://www.home-assistant.io/components/button) | 8
   [`calendar`](https://www.home-assistant.io/components/calendar) | 8
   [`camera`](https://www.home-assistant.io/components/camera) | 13
@@ -50,10 +50,10 @@ Anzahl Entitäten nach Domäne
   [`schedule`](https://www.home-assistant.io/components/schedule) | 1
   [`script`](https://www.home-assistant.io/components/script) | 26
   [`select`](https://www.home-assistant.io/components/select) | 19
-  [`sensor`](https://www.home-assistant.io/components/sensor) | 548
+  [`sensor`](https://www.home-assistant.io/components/sensor) | 551
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
-  [`switch`](https://www.home-assistant.io/components/switch) | 106
+  [`switch`](https://www.home-assistant.io/components/switch) | 107
   [`timer`](https://www.home-assistant.io/components/timer) | 1
   [`update`](https://www.home-assistant.io/components/update) | 145
   [`weather`](https://www.home-assistant.io/components/weather) | 1
@@ -69,7 +69,7 @@ Anzahl Entitäten nach Domäne
 - CEC Scanner (3.0)
 - Check Home Assistant configuration (3.11.0)
 - chrony (2.6.0)
-- Crowdsec (1.4.6)
+- Crowdsec (1.5.2-ha1)
 - Crowdsec Firewall Bouncer (v0.0.26-ha2)
 - Dasshio (0.3.8)
 - DeepStack (2021.09.1)
@@ -131,7 +131,7 @@ Anzahl Entitäten nach Domäne
 - [<img src="https://brands.home-assistant.io/_/midea_ac_lan/icon.png" height="24"/>](https://brands.home-assistant.io/_/midea_ac_lan/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/midea_ac_lan/icon.png" height="24"/>](https://brands.home-assistant.io/_/midea_ac_lan/icon.png#gh-light-mode-only) [Midea Ac Lan (v0.3.16)](https://github.com/georgezhao2010/midea_ac_lan)
 - [<img src="https://brands.home-assistant.io/_/monitor_docker/icon.png" height="24"/>](https://brands.home-assistant.io/_/monitor_docker/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/monitor_docker/icon.png" height="24"/>](https://brands.home-assistant.io/_/monitor_docker/icon.png#gh-light-mode-only) [Monitor Docker (1.14)](https://github.com/ualex73/monitor_docker)
 - [<img src="https://brands.home-assistant.io/_/places/icon.png" height="24"/>](https://brands.home-assistant.io/_/places/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/places/icon.png" height="24"/>](https://brands.home-assistant.io/_/places/icon.png#gh-light-mode-only) [Places (v2.4)](https://github.com/custom-components/places)
-- [<img src="https://brands.home-assistant.io/_/powercalc/icon.png" height="24"/>](https://brands.home-assistant.io/_/powercalc/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/powercalc/icon.png" height="24"/>](https://brands.home-assistant.io/_/powercalc/icon.png#gh-light-mode-only) [Powercalc (v1.6.3)](https://github.com/bramstroker/homeassistant-powercalc)
+- [<img src="https://brands.home-assistant.io/_/powercalc/icon.png" height="24"/>](https://brands.home-assistant.io/_/powercalc/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/powercalc/icon.png" height="24"/>](https://brands.home-assistant.io/_/powercalc/icon.png#gh-light-mode-only) [Powercalc (v1.6.5)](https://github.com/bramstroker/homeassistant-powercalc)
 - [<img src="https://brands.home-assistant.io/_/pyscript/icon.png" height="24"/>](https://brands.home-assistant.io/_/pyscript/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/pyscript/icon.png" height="24"/>](https://brands.home-assistant.io/_/pyscript/icon.png#gh-light-mode-only) [Pyscript (1.4.0)](https://github.com/custom-components/pyscript)
 - [<img src="https://brands.home-assistant.io/_/qr_generator/icon.png" height="24"/>](https://brands.home-assistant.io/_/qr_generator/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/qr_generator/icon.png" height="24"/>](https://brands.home-assistant.io/_/qr_generator/icon.png#gh-light-mode-only) [Qr Code Generator (v.1.0.4)](https://github.com/DeerMaximum/QR-Code-Generator)
 - [<img src="https://brands.home-assistant.io/_/rewe/icon.png" height="24"/>](https://brands.home-assistant.io/_/rewe/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/rewe/icon.png" height="24"/>](https://brands.home-assistant.io/_/rewe/icon.png#gh-light-mode-only) [Rewe Discounts (2023.04.0)](https://github.com/FaserF/ha-rewe)
