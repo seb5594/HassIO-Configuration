@@ -23,8 +23,8 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 Beschreibung | Wert
 -- | --
-Anzahl Sensoren | 551
-Anzahl Entitäten | 1212
+Anzahl Sensoren | 552
+Anzahl Entitäten | 1214
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
   [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
@@ -33,7 +33,7 @@ Anzahl Entitäten nach Domäne
   [`camera`](https://www.home-assistant.io/components/camera) | 13
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
-  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 86
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 87
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
@@ -50,7 +50,7 @@ Anzahl Entitäten nach Domäne
   [`schedule`](https://www.home-assistant.io/components/schedule) | 1
   [`script`](https://www.home-assistant.io/components/script) | 26
   [`select`](https://www.home-assistant.io/components/select) | 19
-  [`sensor`](https://www.home-assistant.io/components/sensor) | 551
+  [`sensor`](https://www.home-assistant.io/components/sensor) | 552
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
   [`switch`](https://www.home-assistant.io/components/switch) | 107
@@ -102,7 +102,7 @@ Anzahl Entitäten nach Domäne
 - wgeasy (7)
 - Whisper (0.2.0)
 - Xiaomi Mi Scale (0.3.6)
-- Zigbee2MQTT (1.30.4-1)
+- Zigbee2MQTT (1.31.0-1)
 
 ### Benutzerdefinierte Integrationen
 - [<img src="https://brands.home-assistant.io/_/adaptive_lighting/icon.png" height="24"/>](https://brands.home-assistant.io/_/adaptive_lighting/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/adaptive_lighting/icon.png" height="24"/>](https://brands.home-assistant.io/_/adaptive_lighting/icon.png#gh-light-mode-only) [Adaptive Lighting (1.12.0)](https://github.com/basnijholt/adaptive-lighting)
@@ -140,7 +140,7 @@ Anzahl Entitäten nach Domäne
 - [<img src="https://brands.home-assistant.io/_/snowtire/icon.png" height="24"/>](https://brands.home-assistant.io/_/snowtire/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/snowtire/icon.png" height="24"/>](https://brands.home-assistant.io/_/snowtire/icon.png#gh-light-mode-only) [Snowtire Sensor (1.4.5)](https://github.com/Limych/ha-snowtire)
 - [<img src="https://brands.home-assistant.io/_/waste_collection_schedule/icon.png" height="24"/>](https://brands.home-assistant.io/_/waste_collection_schedule/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/waste_collection_schedule/icon.png" height="24"/>](https://brands.home-assistant.io/_/waste_collection_schedule/icon.png#gh-light-mode-only) [Waste Collection Schedule (1.40.0)](https://github.com/mampfes/hacs_waste_collection_schedule)
 - [<img src="https://brands.home-assistant.io/_/watchman/icon.png" height="24"/>](https://brands.home-assistant.io/_/watchman/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/watchman/icon.png" height="24"/>](https://brands.home-assistant.io/_/watchman/icon.png#gh-light-mode-only) [Watchman (v0.6.1)](https://github.com/dummylabs/thewatchman)
-- [<img src="https://brands.home-assistant.io/_/xiaomi_miot/icon.png" height="24"/>](https://brands.home-assistant.io/_/xiaomi_miot/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/xiaomi_miot/icon.png" height="24"/>](https://brands.home-assistant.io/_/xiaomi_miot/icon.png#gh-light-mode-only) [Xiaomi Miot Auto (v0.7.8)](https://github.com/al-one/hass-xiaomi-miot)
+- [<img src="https://brands.home-assistant.io/_/xiaomi_miot/icon.png" height="24"/>](https://brands.home-assistant.io/_/xiaomi_miot/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/xiaomi_miot/icon.png" height="24"/>](https://brands.home-assistant.io/_/xiaomi_miot/icon.png#gh-light-mode-only) [Xiaomi Miot Auto (v0.7.9)](https://github.com/al-one/hass-xiaomi-miot)
 - [<img src="https://brands.home-assistant.io/_/zha_toolkit/icon.png" height="24"/>](https://brands.home-assistant.io/_/zha_toolkit/dark_icon.png#gh-dark-mode-only)[<img src="https://brands.home-assistant.io/_/zha_toolkit/icon.png" height="24"/>](https://brands.home-assistant.io/_/zha_toolkit/icon.png#gh-light-mode-only) [🧰 Zha Toolkit   Service For Advanced Zigbee Usage (v0.8.39)](https://github.com/mdeweerd/zha-toolkit)
 
 ### Lovelace plugins
