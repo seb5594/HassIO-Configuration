@@ -24,7 +24,7 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 Beschreibung | Wert
 -- | --
 Anzahl Sensoren | 552
-Anzahl Entitäten | 1214
+Anzahl Entitäten | 1218
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
   [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
@@ -33,7 +33,7 @@ Anzahl Entitäten nach Domäne
   [`camera`](https://www.home-assistant.io/components/camera) | 13
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
-  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 87
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 89
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
@@ -53,7 +53,7 @@ Anzahl Entitäten nach Domäne
   [`sensor`](https://www.home-assistant.io/components/sensor) | 552
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
-  [`switch`](https://www.home-assistant.io/components/switch) | 107
+  [`switch`](https://www.home-assistant.io/components/switch) | 109
   [`timer`](https://www.home-assistant.io/components/timer) | 1
   [`update`](https://www.home-assistant.io/components/update) | 145
   [`weather`](https://www.home-assistant.io/components/weather) | 1
