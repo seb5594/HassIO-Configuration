@@ -172,7 +172,7 @@ Anzahl Entitäten nach Domäne
 - [Home Assistant Swipe Navigation (v1.11.1)](https://github.com/zanna-37/hass-swipe-navigation)
 - [Hourly Weather Card (4.11.0)](https://github.com/decompil3d/lovelace-hourly-weather)
 - [Layout Card (2.4.4)](https://github.com/thomasloven/lovelace-layout-card)
-- [Logbook Card (1.10.1)](https://github.com/royto/logbook-card)
+- [Logbook Card (1.11.0)](https://github.com/royto/logbook-card)
 - [Midea Humidifier Card (v1.0.8)](https://github.com/sicknesz/midea-humidifier-card)
 - [Mini Graph Card (v0.11.0)](https://github.com/kalkih/mini-graph-card)
 - [Minimalistic Area Card (v1.1.16)](https://github.com/junalmeida/homeassistant-minimalistic-area-card)
