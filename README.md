@@ -24,7 +24,7 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 Beschreibung | Wert
 -- | --
 Anzahl Sensoren | 553
-Anzahl Entitäten | 1320
+Anzahl Entitäten | 1220
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
   [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
@@ -34,7 +34,6 @@ Anzahl Entitäten nach Domäne
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
   [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 90
-  [`geo_location`](https://www.home-assistant.io/components/geo_location) | 100
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
   [`input_number`](https://www.home-assistant.io/components/input_number) | 2
