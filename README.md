@@ -23,8 +23,8 @@ Die übrig verbleibenden YAML-Dateien sind Addon-Konfigurationen.
 
 Beschreibung | Wert
 -- | --
-Anzahl Sensoren | 553
-Anzahl Entitäten | 1221
+Anzahl Sensoren | 554
+Anzahl Entitäten | 1223
 Anzahl Entitäten nach Domäne
   [`automation`](https://www.home-assistant.io/components/automation) | 50
   [`binary_sensor`](https://www.home-assistant.io/components/binary_sensor) | 82
@@ -33,7 +33,7 @@ Anzahl Entitäten nach Domäne
   [`camera`](https://www.home-assistant.io/components/camera) | 13
   [`climate`](https://www.home-assistant.io/components/climate) | 4
   [`counter`](https://www.home-assistant.io/components/counter) | 1
-  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 90
+  [`device_tracker`](https://www.home-assistant.io/components/device_tracker) | 91
   [`geo_location`](https://www.home-assistant.io/components/geo_location) | 1
   [`group`](https://www.home-assistant.io/components/group) | 16
   [`input_boolean`](https://www.home-assistant.io/components/input_boolean) | 12
@@ -51,7 +51,7 @@ Anzahl Entitäten nach Domäne
   [`schedule`](https://www.home-assistant.io/components/schedule) | 1
   [`script`](https://www.home-assistant.io/components/script) | 26
   [`select`](https://www.home-assistant.io/components/select) | 19
-  [`sensor`](https://www.home-assistant.io/components/sensor) | 553
+  [`sensor`](https://www.home-assistant.io/components/sensor) | 554
   [`stt`](https://www.home-assistant.io/components/stt) | 1
   [`sun`](https://www.home-assistant.io/components/sun) | 1
   [`switch`](https://www.home-assistant.io/components/switch) | 109
